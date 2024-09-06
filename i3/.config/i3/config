@@ -23,7 +23,7 @@ exec --no-startup-id feh --bg-scale ~/backgrounds/vladalex.jpg
 #exec --no-startup-id nitrogen --set-auto /backgrounds/vladalex.jpg --head=0 && nitrogen --set-auto /backgrounds/vladalex.jpg --head=1
 exec_always --no-startup-id autotiling
 # uncomment this one only if using the 2nd monitor
-#exec_always --no-startup-id xrandr --output $pm --primary --mode 1920x1080 --pos 1920x0 --rotate normal --output DP1 --off --output $sm --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI2 --off --output VIRTUAL1 --off
+exec_always --no-startup-id xrandr --output $pm --primary --mode 1920x1080 --pos 1920x0 --rotate normal --output DP1 --off --output $sm --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI2 --off --output VIRTUAL1 --off
 
 
 
