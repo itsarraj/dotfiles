@@ -180,6 +180,48 @@ vim.opt.scrolloff = 10
 vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+-- Custom keymaps
+
+-- Key mappings
+vim.keymap.set('n', '<Leader>E', ':Explore<CR>', { noremap = true, silent = true, desc = 'Open [E]xplore - NetRW' })
+-- vim.keymap.set('n', '<Leader>wq', ':wq<CR>', { noremap = true, silent = true, desc = 'Save and [Q]uit' })
+-- vim.keymap.set('n', '<Leader>wa', ':wa<CR>', { noremap = true, silent = true, desc = 'Save [A]ll' })
+-- vim.keymap.set('n', '<Leader>q!', ':q!<CR>', { noremap = true, silent = true, desc = 'Force [Q]uit without saving' })
+-- vim.keymap.set('n', '<Leader>q', ':q<CR>', { noremap = true, silent = true, desc = 'Quit' })
+
+-- Insert current date and time in normal mode with F3
+vim.keymap.set('n', '<F3>', 'i<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>', { noremap = true, silent = true, desc = 'Insert current date and time' })
+
+-- Insert current date and time in insert mode with F3
+vim.keymap.set('i', '<F3>', '<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>', { noremap = true, silent = true, desc = 'Insert current date and time' })
+
+-- Function to create a file in the current netrw directory
+local function create_file(filename)
+  local current_directory = vim.fn.expand '%:p:h' -- Get the current directory
+  vim.cmd('silent !touch ' .. current_directory .. '/' .. filename)
+  vim.cmd 'redraw' -- Refresh the view
+end
+
+-- Keymap to create a file with the name DDMMYYYY.md
+vim.keymap.set('n', '<leader>df', function()
+  local date = os.date '%d%m%Y'
+  local filename = date .. '.md'
+  create_file(filename)
+  print('Created file: ' .. filename)
+end, { desc = 'Create file with current [D]ate in DDMMYYYY format' })
+
+-- Keymap to create a file with the name DDMMYYYYHHMMSS.md
+vim.keymap.set('n', '<leader>dtf', function()
+  local date_time = os.date '%d%m%Y%H%M%S'
+  local filename = date_time .. '.md'
+  create_file(filename)
+  print('Created file: ' .. filename)
+end, { desc = 'Create file with current [D]ate and [T]ime in DDMMYYYYHHMMSS format' })
+
+--
+--
+--
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
@@ -1108,7 +1150,7 @@ require('lazy').setup({
   -- EditFile[7]..BufEnter Autocommands for "*":
   -- ]] --
 
-  require 'kickstart.plugins.autopairs',
+  -- require 'kickstart.plugins.autopairs',
   -- require 'kickstart.plugins.neo-tree',
   -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
