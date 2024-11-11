@@ -195,6 +195,21 @@ vim.keymap.set('n', '<F3>', 'i<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>', 
 -- Insert current date and time in insert mode with F3
 vim.keymap.set('i', '<F3>', '<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>', { noremap = true, silent = true, desc = 'Insert current date and time' })
 
+-- Function to insert current date in the specified format at cursor position
+vim.keymap.set('n', '<leader>dd', function()
+  vim.api.nvim_put({ os.date '%Y-%m-%d' }, 'c', true, true)
+end, { desc = 'Insert current [D]ate' })
+
+-- Function to insert current time in the specified format at cursor position
+vim.keymap.set('n', '<leader>tt', function()
+  vim.api.nvim_put({ os.date '%H:%M' }, 'c', true, true)
+end, { desc = 'Insert current [T]ime' })
+
+-- Function to insert current date and time in the specified format at cursor position
+vim.keymap.set('n', '<leader>dtt', function()
+  vim.api.nvim_put({ os.date '%Y-%m-%d %H:%M' }, 'c', true, true)
+end, { desc = 'Insert current [D]ate and [T]ime' })
+
 -- Function to create a file in the current netrw directory
 local function create_file(filename)
   local current_directory = vim.fn.expand '%:p:h' -- Get the current directory
@@ -202,21 +217,20 @@ local function create_file(filename)
   vim.cmd 'redraw' -- Refresh the view
 end
 
--- Keymap to create a file with the name DDMMYYYY.md
+-- Keymap to create a file with the name YYYYMMDD.md
 vim.keymap.set('n', '<leader>df', function()
-  local date = os.date '%d%m%Y'
+  local date = os.date '%Y%m%d'
   local filename = date .. '.md'
   create_file(filename)
-  print('Created file: ' .. filename)
-end, { desc = 'Create file with current [D]ate in DDMMYYYY format' })
+end, { desc = 'Create file with current [D]ate in YYYYMMDD format' })
 
--- Keymap to create a file with the name DDMMYYYYHHMMSS.md
+-- Keymap to create a file with the name YYYYMMDDHHMMSS.md
 vim.keymap.set('n', '<leader>dtf', function()
-  local date_time = os.date '%d%m%Y%H%M%S'
+  local date_time = os.date '%Y%m%d%H%M%S'
   local filename = date_time .. '.md'
   create_file(filename)
   print('Created file: ' .. filename)
-end, { desc = 'Create file with current [D]ate and [T]ime in DDMMYYYYHHMMSS format' })
+end, { desc = 'Create file with current [D]ate and [T]ime in YYYYMMDDHHMMSS format' })
 
 --
 --
@@ -1085,9 +1099,6 @@ require('lazy').setup({
     --     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
     --   end,
   },
-  { --
-    'AntonVanAssche/date-time-inserter.nvim',
-  },
   {
     'christoomey/vim-tmux-navigator',
     cmd = {
@@ -1187,33 +1198,3 @@ require('lazy').setup({
 
 --[[ Custom Plugin Configurations ]]
 --
--- 'AntonVanAssche/date-time-inserter.nvim'
--- Plugin configuration
-local date_time_inserter_status_ok, date_time_inserter = pcall(require, 'date-time-inserter')
-if not date_time_inserter_status_ok then
-  return
-end
-
-date_time_inserter.setup {
-  date_format = 'DDMMYYYY',
-  date_separator = '-',
-  time_format = 24,
-  show_seconds = false,
-}
--- Custom key mappings with descriptions
-vim.keymap.set('n', '<leader>dd', function()
-  date_time_inserter.insert_date()
-end, { desc = 'Insert current [D]ate' })
-vim.keymap.set('n', '<leader>tt', function()
-  date_time_inserter.insert_time()
-end, { desc = 'Insert current [T]ime' })
-vim.keymap.set('n', '<leader>dtt', function()
-  date_time_inserter.insert_date_time()
-end, { desc = 'Insert current [D]ate and [T]ime' })
-
---[[
--- 
-insert_date_map = '<leader>dd',
-insert_time_map = '<leader>tt',
-insert_date_time_map = '<leader>dtt',
---]]
