@@ -14,6 +14,7 @@
 set $mm primary
 set $pm "eDP-1" 
 set $sm "HDMI-1"
+set $tm "HDMI-0"
 
 set $mod Mod1
 exec --no-startup-id picom
@@ -296,12 +297,18 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+    mode hide
     tray_output $mm
     tray_output $sm
+    tray_output $tm
     output $mm
     output $sm
+    output $tm
 
+    hidden_state hide
+    modifier Mod1+Mod4
     position top 
+
     status_command i3status
 #    status_command SCRIPT_DIR=~/.config/i3blocks/scripts i3blocks
 #    separator_symbol ""
