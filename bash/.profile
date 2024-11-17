@@ -15,3 +15,7 @@ alias pacfzf="sudo pacman -Sy; sudo pacman -Slq | fzf -m --preview 'cat <(yay -S
 export PATH="$HOME/.local/bin:$PATH"
 . ~/.xprofile
 
+# PS1='[\u@\h \W]\$ '
+# PS1='[\W]\$ '
+PS1='[username@hostname \W]\$ '
+

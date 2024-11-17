@@ -107,7 +107,7 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 
-vim.o.termguicolors = true
+vim.opt.termguicolors = true
 
 -- [[ ---------- ]] --
 
@@ -546,6 +546,34 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>sn', function()
         builtin.find_files { cwd = vim.fn.stdpath 'config' }
       end, { desc = '[S]earch [N]eovim files' })
+    end,
+  },
+
+  {
+    'nvim-telescope/telescope-file-browser.nvim',
+    dependencies = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' },
+    opts = {
+      extensions = {
+        file_browser = {
+          hidden = { file_browser = true, folder_browser = true },
+        },
+      },
+    },
+    config = function()
+      vim.keymap.set('n', '<space>fb', ':Telescope file_browser<CR>', { noremap = true, silent = true, desc = 'Open Telescope [F]ile [Browser]' })
+
+      -- open file_browser with the path of the current buffer
+      vim.keymap.set(
+        'n',
+        '<space>fbb',
+        ':Telescope file_browser path=%:p:h select_buffer=true<CR>',
+        { noremap = true, silent = true, desc = 'Open Telescope [F]ile [Browser] in current [B]uffer' }
+      )
+
+      -- -- Alternatively, using lua API
+      -- vim.keymap.set("n", "<space>fb", function()
+      -- 	require("telescope").extensions.file_browser.file_browser()
+      -- end)
     end,
   },
 
