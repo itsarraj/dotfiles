@@ -337,6 +337,25 @@ require('lazy').setup({
     },
   },
 
+  { 'dinhhuy258/git.nvim', opts = {} },
+  { 'folke/zen-mode.nvim', opts = {} },
+  { 'norcalli/nvim-colorizer.lua', opts = {} },
+  { 'windwp/nvim-ts-autotag', opts = {} },
+  { 'nvimdev/lspsaga.nvim', opts = {} },
+  { 'MunifTanjim/prettier.nvim', opts = {} },
+  { 'jose-elias-alvarez/null-ls.nvim', opts = {} },
+  -- { 'onsails/lspkind.nvim', opts = {} },
+  -- { 'nvim-lualine/lualine.nvim', opts = {} },
+  -- { 'svrana/neosolarized.nvim', opts = {} },
+  -- { '', opts = {} },
+  -- { '', opts = {} },
+  -- { '', opts = {} },
+  -- { '', opts = {} },
+  -- { '', opts = {} },
+  -- { '', opts = {} },
+  -- { '', opts = {} },
+
+  --
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
   --
   -- This is often very useful to both group configuration, as well as handle
