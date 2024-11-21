@@ -66,35 +66,18 @@ ls.add_snippets('markdown', {
     t { '', 'tags: [daily-notes]' },
     t { '', '---' },
     t { '', '' },
-    t { '', '# Daily Notes - ' },
-    f(get_filename_date),
-    t { '', '' },
-    t { '', '## Goal to Achieve today' },
-    t { '' },
+
+    t { '## Goals and Plans for today', '' },
     i(1),
-    t { '', '## Plan for today' },
     t { '', '' },
-    t { '' },
+    t { '## Tasks & Progress', '' },
     i(2),
-    t { '', '## Tasks & Progress' },
-    t { '', '- [ ] ' },
+    t { '', '' },
+    t { '## Goals and Plans for next day', '' },
     i(3),
     t { '', '' },
-    t { '', '## Plan for next day' },
+    t { '## Distribution of Task', '' },
     i(0),
-    t { '', '' },
-    t { '', '## Hourly Schedule' },
-    t { '', '' },
-    -- t(generate_daily_schedule()),
-    t { '', '---' },
-    t { '', '## Daily Review, Next Steps & Next Day Goals' },
-    t { '', '### Review:' },
-    t { '', '- ' },
-    i(6),
-    t { '', '### Next Steps:' },
-    t { '', '- ' },
-    t { '', '### Next Day Goals:' },
-    t { '', '- ' },
   }),
 })
 
@@ -113,7 +96,7 @@ local function generate_weekly_plan()
   for day_of_week = 0, 6 do
     -- Calculate the exact date for each day of the week (Sunday to Saturday)
     local day_in_week = os.date('%Y-%m-%d', sunday_date + (day_of_week * 24 * 3600))
-    table.insert(days, '- ' .. day_in_week .. ' - [ ] ')
+    table.insert(days, '- ' .. day_in_week .. '')
   end
   return days
 end
@@ -122,43 +105,33 @@ ls.add_snippets('markdown', {
   s('weeklynote', {
     t '---',
     t { '', 'id: ' },
-    f(get_filename_id), -- Use the new ID extraction method
+    f(get_filename_id),
     t { '', 'title: Weekly Note' },
     t { '', 'type: weekly' },
     t { '', 'date: ' },
-    f(get_filename_date), -- Use the new date extraction method
+    f(get_filename_date),
     t { '', 'tags: [weekly-notes]' },
     t { '', '---' },
     t { '', '' },
     t { '', '# Weekly Notes - ' },
-    f(get_filename_date), -- Display the formatted date here as well
+    f(get_filename_date),
     t { '', '' },
-    t { '', '## Goal for this week' },
-    t { '', '- ' },
+    t { '', '## Goals and Plans for this week' },
+    t { '', '' },
     i(1),
-    t { '', '' },
     t { '', '## Tasks & Progress' },
-    t { '', '- [ ] ' },
-    i(2),
     t { '', '' },
-    t { '', '---' },
-    t { '', '## Plans to execute' },
+    i(2),
+    t { '', '## Goals and Plans for next week' },
+    t { '', '' },
+    i(0),
+    t { '', '## Distribution of Task' },
     t { '', '' },
     t(generate_weekly_plan()),
-    t { '', '---' },
-    t { '', '## Weekly Review, Next Steps & Next Week Goals' },
-    t { '', '### Review:' },
-    t { '', '- ' },
-    i(6),
-    t { '', '### Next Steps:' },
-    t { '', '- ' },
-    t { '', '### Next Week Goals:' },
-    t { '', '- ' },
-    i(0),
   }),
 })
 
--- monthlynote.lua
+-- monthlynote.lua -- abandonded
 
 local function get_filename_year_month()
   local filename = vim.fn.expand '%:t:r' or ''
@@ -287,23 +260,22 @@ end
 
 ls.add_snippets('markdown', {
   s('yearlynote', {
-    -- Header section
     t { '---', 'id: ' },
     f(get_filename_year),
     t { '', 'title: Yearly Note', 'type: yearly', 'date: ' },
     f(get_filename_year),
     t { '', 'tags: [yearly-notes]', '---', '' },
 
-    -- Yearly sections
-    t { '# Goals', '' },
-    t { '', '' }, -- Added empty line here for better formatting
+    t { '## Goals and Plans', '' },
+    i(1),
+    t { '', '' },
 
-    t { '# Tasks & Progress', '' },
-    t { '', '' }, -- Added empty line here for better formatting
+    t { '## Tasks & Progress', '' },
+    i(0),
+    t { '', '' },
 
-    -- Monthly Plans and Reviews
-    t { '---', '', '# Plans to Execute', '' },
-    t(generate_monthly_plan_for_yearly()), -- Assuming this function generates monthly plans
-    t { '', '---' },
+    t { '', '' },
+    t(generate_monthly_plan_for_yearly()),
+    t { '', '' },
   }),
 })
