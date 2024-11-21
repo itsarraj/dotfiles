@@ -6,7 +6,7 @@ local f = ls.function_node
 
 -- Function to extract filename (without .md) as `id`, or fallback to current date-time if not in format
 local function get_filename_id()
-  local filename = vim.fn.expand '%:t:r' -- Gets the current filename without the extension
+  local filename = vim.fn.expand '%:t:r' or '' -- Gets the current filename without the extension
   return filename:match '^(%d%d%d%d%d%d%d%d%d%d%d%d%d%d)$' or os.date '%Y%m%d%H%M%S' or 'YYYYMMDDHHMMSS'
 end
 
