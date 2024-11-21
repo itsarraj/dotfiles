@@ -29,30 +29,30 @@ end
 -- dailynote.lua
 
 -- Generate daily schedule with sleep time from 22:00 to 06:00
-local function generate_daily_schedule()
-  local lines = {}
-
-  -- Sleep time from 22:00 to 06:00
-  for hour = 22, 23 do
-    table.insert(lines, string.format('%02d:00 - Sleep [ ]', hour))
-  end
-  for hour = 0, 5 do
-    table.insert(lines, string.format('%02d:00 - Sleep [ ]', hour))
-  end
-
-  -- From 06:00 onward, hourly intervals for tasks
-  for hour = 6, 21 do
-    table.insert(lines, string.format('%02d:00 - [ ]', hour))
-    table.insert(lines, '') -- Blank line between hours for better readability
-  end
-
-  -- Sleep time continuation from 22:00
-  for hour = 22, 23 do
-    table.insert(lines, string.format('%02d:00 - Sleep [ ]', hour))
-  end
-
-  return lines
-end
+-- local function generate_daily_schedule()
+--   local lines = {}
+--
+--   -- Sleep time from 22:00 to 06:00
+--   for hour = 22, 23 do
+--     table.insert(lines, string.format('%02d:00 - Sleep [ ]', hour))
+--   end
+--   for hour = 0, 5 do
+--     table.insert(lines, string.format('%02d:00 - Sleep [ ]', hour))
+--   end
+--
+--   -- From 06:00 onward, hourly intervals for tasks
+--   for hour = 6, 21 do
+--     table.insert(lines, string.format('%02d:00 - [ ]', hour))
+--     table.insert(lines, '') -- Blank line between hours for better readability
+--   end
+--
+--   -- Sleep time continuation from 22:00
+--   for hour = 22, 23 do
+--     table.insert(lines, string.format('%02d:00 - Sleep [ ]', hour))
+--   end
+--
+--   return lines
+-- end
 
 ls.add_snippets('markdown', {
   s('dailynote', {
@@ -70,19 +70,22 @@ ls.add_snippets('markdown', {
     f(get_filename_date),
     t { '', '' },
     t { '', '## Goal to Achieve today' },
-    t { '', '' },
+    t { '' },
+    i(1),
     t { '', '## Plan for today' },
     t { '', '' },
+    t { '' },
+    i(2),
     t { '', '## Tasks & Progress' },
     t { '', '- [ ] ' },
-    i(1),
+    i(3),
     t { '', '' },
     t { '', '## Plan for next day' },
     i(0),
     t { '', '' },
     t { '', '## Hourly Schedule' },
     t { '', '' },
-    t(generate_daily_schedule()),
+    -- t(generate_daily_schedule()),
     t { '', '---' },
     t { '', '## Daily Review, Next Steps & Next Day Goals' },
     t { '', '### Review:' },
