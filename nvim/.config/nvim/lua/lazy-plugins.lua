@@ -52,7 +52,7 @@ else
   -- table.insert(plugins, require 'kickstart/plugins/telescope-file-browser')
   -- table.insert(plugins, require 'kickstart/plugins/lspconfig')
   -- table.insert(plugins, require 'kickstart/plugins/conform')
-  -- table.insert(plugins, require 'kickstart/plugins/cmp')
+  table.insert(plugins, require 'kickstart/plugins/cmp')
   table.insert(plugins, require 'kickstart/plugins/onedark')
   -- table.insert(plugins, require 'kickstart/plugins/tokyonight')
   -- table.insert(plugins, require 'kickstart/plugins/onedarkpro')
