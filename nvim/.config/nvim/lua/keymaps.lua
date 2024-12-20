@@ -11,11 +11,14 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- Custom keymaps
 
 -- Key mappings
-vim.keymap.set('n', '<Leader>E', ':Explore<CR>', { noremap = true, silent = true, desc = 'Open [E]xplore - NetRW' })
--- vim.keymap.set('n', '<Leader>wq', ':wq<CR>', { noremap = true, silent = true, desc = 'Save and [Q]uit' })
--- vim.keymap.set('n', '<Leader>wa', ':wa<CR>', { noremap = true, silent = true, desc = 'Save [A]ll' })
--- vim.keymap.set('n', '<Leader>q!', ':q!<CR>', { noremap = true, silent = true, desc = 'Force [Q]uit without saving' })
--- vim.keymap.set('n', '<Leader>q', ':q<CR>', { noremap = true, silent = true, desc = 'Quit' })
+-- vim.keymap.set('n', '<Leader>f', ':Explore<CR>', { noremap = true, silent = true, desc = 'Open [E]xplore - NetRW file explorer' })
+vim.keymap.set('n', '<Leader>w', ':w!<CR>', { noremap = true, silent = true, desc = '[W]rite the current buffer' })
+vim.keymap.set('n', '<Leader>a', ':wa!<CR>', { noremap = true, silent = true, desc = '[W]rite [A]ll buffers' })
+-- vim.keymap.set('n', '<Leader>q!', ':q!<CR>', { noremap = true, silent = true, desc = 'Force [Q]uit and discard changes to the buffer' })
+vim.keymap.set('n', '<Leader>q', ':q<CR>', { noremap = true, silent = true, desc = '[Q]uit the current buffer' })
+vim.keymap.set('n', '<Leader>x', ':x!<CR>', { noremap = true, silent = true, desc = '[W]rite and [Q]uit the current buffer' })
+-- vim.keymap.set('n', '<Leader>xa', ':xa!<CR>', { noremap = true, silent = true, desc = '[X] quit and save all buffers' })
+
 
 -- Insert current date and time in normal mode with F3
 vim.keymap.set('n', '<F3>', 'i<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>', { noremap = true, silent = true, desc = 'Insert current date and time' })
