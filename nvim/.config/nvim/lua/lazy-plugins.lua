@@ -47,8 +47,8 @@ if is_vscode then
 else
   -- Plugins for VS Code and regular Neovim
   -- table.insert(plugins, require 'kickstart/plugins/gitsigns')
-  -- table.insert(plugins, require 'kickstart/plugins/which-key')
-  -- table.insert(plugins, require 'kickstart/plugins/telescope')
+  table.insert(plugins, require 'kickstart/plugins/which-key')
+  table.insert(plugins, require 'kickstart/plugins/telescope')
   -- table.insert(plugins, require 'kickstart/plugins/telescope-file-browser')
   -- table.insert(plugins, require 'kickstart/plugins/lspconfig')
   -- table.insert(plugins, require 'kickstart/plugins/conform')
@@ -62,6 +62,8 @@ else
   -- table.insert(plugins, require 'kickstart/plugins/vim-tmux-navigator')
   -- table.insert(plugins, require 'kickstart/plugins/deoplete')
   -- table.insert(plugins, require 'kickstart/plugins/markdown-preview')
+  -- table.insert(plugins, require 'kickstart/plugins/neovim-fuzzy')
+
 end
 
 require('lazy').setup(plugins, {
