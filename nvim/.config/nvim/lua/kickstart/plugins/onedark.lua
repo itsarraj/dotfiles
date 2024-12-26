@@ -7,8 +7,8 @@ return {
     -- end,
     config = function()
       require('onedark').setup {
-        style = 'dark', -- change theme style to darker
-        transparent = true, -- do not make background transparent
+        style = 'darker', -- change theme style to darker
+        -- transparent = true, -- do not make background transparent
         -- term_colors = true, -- apply theme colors to terminal
         -- ending_tildes = false, -- disable end-of-buffer tildes
         -- toggle_style_key = '<leader>ts', -- set toggle key for changing theme style
