@@ -25,17 +25,28 @@ exec_always --no-startup-id autotiling
 # uncomment this one only if using the 2nd monitor
 exec_always --no-startup-id xrandr --output $pm --primary --mode 1920x1080 --pos 1920x0 --rotate normal --output DP1 --off --output $sm --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI2 --off --output VIRTUAL1 --off
 
+# bindsym Print exec --no-startup-id sh -c 'maim -o -u --format=png "/home/$USER/Pictures/screenshot-$(date -u +'%Y-%m-%d_%H-%M-%S')-all.png" | tee >(xclip -selection clipboard -t image/png)'
+#
+# bindsym Shift+Print exec --no-startup-id sh -c 'maim -s -o -u --format=png "/home/$USER/Pictures/screenshot-$(date -u +'%Y-%m-%d_%H-%M-%S')-selected.png" | tee >(xclip -selection clipboard -t image/png)'
+
+# bindsym Print exec --no-startup-id sh -c 'maim -o -u --format=png "/home/$USER/Pictures/screenshot-$(date -u +'%Y-%m-%d_%H-%M-%S')-all.png" && maim -o -u --format=png | xclip -selection clipboard -t image/png -i'
+# bindsym Shift+Print exec --no-startup-id sh -c 'maim -s -o -u --format=png "/home/$USER/Pictures/screenshot-$(date -u +'%Y-%m-%d_%H-%M-%S')-selected.png" && maim -s -o -u --format=png | xclip -selection clipboard -t image/png -i'
 
 
+# bindsym Print exec maim -s -o -u | xclip -selection clipboard -t image/png -i
 
-## Screenshot of the entire screen
-bindsym Print exec --no-startup-id sh -c 'maim --format=png "/home/$USER/Pictures/screenshot-$(date -u +'%Y-%m-%d_%H-%M-%S')-all.png" | tee >(xclip -selection clipboard -t image/png)'
+# Screenshot of the entire screen
+# bindsym Print exec --no-startup-id sh -c 'maim -o -u --format=png "/home/$USER/Pictures/screenshot-$(date -u +'%Y-%m-%d_%H-%M-%S')-all.png" | tee >(xclip -selection clipboard -t image/png)'
+bindsym Print exec --no-startup-id sh -c 'maim -o -u --format=png | tee >(xclip -selection clipboard -t image/png -i) > "/home/$USER/Pictures/screenshot-$(date -u +'%Y-%m-%d_%H-%M-%S')-all.png"'
 
-## Screenshot of the active window
-bindsym $mod+Print exec --no-startup-id sh -c 'maim --format=png --window $(xdotool getactivewindow) "/home/$USER/Pictures/screenshot-$(date -u +'%Y-%m-%d_%H-%M-%S')-current.png" | tee >(xclip -selection clipboard -t image/png)'
+#
+# # Screenshot of the active window
+# bindsym $mod+Print exec --no-startup-id sh -c 'maim  -s -o -u --format=png --window $(xdotool getactivewindow) "/home/$USER/Pictures/screenshot-$(date -u +'%Y-%m-%d_%H-%M-%S')-current.png" | tee >(xclip -selection clipboard -t image/png)'
+#
+# # Screenshot of a selected area
+# bindsym Shift+Print exec --no-startup-id sh -c 'maim -s -o  -u --format=png --select "/home/$USER/Pictures/screenshot-$(date -u +'%Y-%m-%d_%H-%M-%S')-selected.png" |  tee >(xclip -selection clipboard -t image/png)'
 
-## Screenshot of a selected area
-bindsym Shift+Print exec --no-startup-id sh -c 'maim --format=png --select "/home/$USER/Pictures/screenshot-$(date -u +'%Y-%m-%d_%H-%M-%S')-selected.png" | tee >(xclip -selection clipboard -t image/png)'
+bindsym Shift+Print exec --no-startup-id sh -c 'maim -s -o -u --format=png --select | tee >(xclip -selection clipboard -t image/png -i) > "/home/$USER/Pictures/screenshot-$(date -u +'%Y-%m-%d_%H-%M-%S')-selected.png"'
 
 
 ##  Screenshots in files
@@ -44,9 +55,9 @@ bindsym Shift+Print exec --no-startup-id sh -c 'maim --format=png --select "/hom
 #bindsym Shift+Print exec --no-startup-id maim --format=png --select "/home/$USER/Pictures/screenshot-$(date -u +'%Y-%m-%d_%H-%M-%S')-selected.png"
 
 ## Screenshots in clipboards
-bindsym Ctrl+Print exec --no-startup-id maim --format=png | xclip -selection clipboard -t image/png
-bindsym Ctrl+$mod+Print exec --no-startup-id maim --format=png --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
-bindsym Ctrl+Shift+Print exec --no-startup-id maim --format=png --select | xclip -selection clipboard -t image/png
+# bindsym Ctrl+Print exec --no-startup-id maim --format=png | xclip -selection clipboard -t image/png
+# bindsym Ctrl+$mod+Print exec --no-startup-id maim --format=png --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+# bindsym Ctrl+Shift+Print exec --no-startup-id maim --format=png --select | xclip -selection clipboard -t image/png
 
 
 
