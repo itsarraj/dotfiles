@@ -6,7 +6,7 @@ return {
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
       -- A list of parser names, or "all"
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'java' },
+      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'java', "tsx", "toml", "fish", "php", "json", "yaml", "css", "html", "lua", "go"},
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {

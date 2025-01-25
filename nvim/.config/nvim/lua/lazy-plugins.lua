@@ -46,7 +46,7 @@ if is_vscode then -- Plugins for VS Code Neovim
   -- table.insert(plugins, require 'kickstart/plugins/neovim-fuzzy')
 else
   -- Plugins for VS Code and regular Neovim
-  -- table.insert(plugins, require 'kickstart/plugins/gitsigns')
+  table.insert(plugins, require 'kickstart/plugins/gitsigns')
   table.insert(plugins, require 'kickstart/plugins/which-key')
   table.insert(plugins, require 'kickstart/plugins/telescope')
   -- table.insert(plugins, require 'kickstart/plugins/telescope-file-browser')
@@ -56,9 +56,9 @@ else
   table.insert(plugins, require 'kickstart/plugins/onedark')
   -- table.insert(plugins, require 'kickstart/plugins/tokyonight')
   -- table.insert(plugins, require 'kickstart/plugins/onedarkpro')
-  -- table.insert(plugins, require 'kickstart/plugins/todo-comments')
+  table.insert(plugins, require 'kickstart/plugins/todo-comments')
   -- table.insert(plugins, require 'kickstart/plugins/mini')
-  -- table.insert(plugins, require 'kickstart/plugins/treesitter')
+  table.insert(plugins, require 'kickstart/plugins/treesitter')
   -- table.insert(plugins, require 'kickstart/plugins/vim-tmux-navigator')
   -- table.insert(plugins, require 'kickstart/plugins/deoplete')
   -- table.insert(plugins, require 'kickstart/plugins/markdown-preview')
