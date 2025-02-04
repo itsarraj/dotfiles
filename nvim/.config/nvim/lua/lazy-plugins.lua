@@ -26,7 +26,7 @@ local plugins = {
   -- include a plugin definition from file lua/path/name.lua
 }
 
-if is_vscode then -- Plugins for VS Code Neovim
+-- if is_vscode then -- Plugins for VS Code Neovim
   -- table.insert(plugins, require 'kickstart/plugins/gitsigns')
   -- table.insert(plugins, require 'kickstart/plugins/which-key')
   -- table.insert(plugins, require 'kickstart/plugins/telescope')
@@ -44,14 +44,14 @@ if is_vscode then -- Plugins for VS Code Neovim
   -- table.insert(plugins, require 'kickstart/plugins/deoplete')
   -- table.insert(plugins, require 'kickstart/plugins/markdown-preview')
   -- table.insert(plugins, require 'kickstart/plugins/neovim-fuzzy')
-else
+-- else
   -- Plugins for VS Code and regular Neovim
   table.insert(plugins, require 'kickstart/plugins/gitsigns')
   table.insert(plugins, require 'kickstart/plugins/which-key')
   table.insert(plugins, require 'kickstart/plugins/telescope')
-  -- table.insert(plugins, require 'kickstart/plugins/telescope-file-browser')
+  table.insert(plugins, require 'kickstart/plugins/telescope-file-browser')
   -- table.insert(plugins, require 'kickstart/plugins/lspconfig')
-  -- table.insert(plugins, require 'kickstart/plugins/conform')
+  table.insert(plugins, require 'kickstart/plugins/conform')
   table.insert(plugins, require 'kickstart/plugins/cmp')
   table.insert(plugins, require 'kickstart/plugins/onedark')
   -- table.insert(plugins, require 'kickstart/plugins/tokyonight')
@@ -71,7 +71,7 @@ else
   -- table.insert(plugins, require 'kickstart/plugins/debug')
   -- table.insert(plugins, require 'kickstart/plugins/neo-tree')
   table.insert(plugins, require 'kickstart/plugins/render-markdown')
-end
+-- end
 
 require('lazy').setup(plugins, {
   ui = {
