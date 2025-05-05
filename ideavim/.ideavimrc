@@ -1,0 +1,59 @@
+" Set leader key
+let mapleader = " "
+
+" Enable relative line numbers (requires a JetBrains IDE that supports this option)
+set relativenumber
+set number
+
+" Enable system clipboard
+set clipboard=unnamed
+
+" Search enhancements
+set hlsearch
+set ignorecase
+set smartcase
+
+" Cursor styles (IdeaVim doesn't support cursor shape config as in VSCode)
+" So this section is skipped
+
+" Buffer navigation
+nnoremap <S-h> :bprevious<CR>
+nnoremap <S-l> :bnext<CR>
+
+" Split windows
+nnoremap <leader>v :vsplit<CR>
+nnoremap <leader>s :split<CR>
+
+" Move between panes
+nnoremap <leader>h <C-w>h
+nnoremap <leader>j <C-w>j
+nnoremap <leader>k <C-w>k
+nnoremap <leader>l <C-w>l
+
+" File actions
+nnoremap <leader>w :w!<CR>
+nnoremap <leader>a :wa<CR>
+nnoremap <leader>q :q!<CR>
+nnoremap <leader>x :x!<CR>
+nnoremap <leader>xa :xa!<CR>
+
+" Go to previous/next diagnostic (you can customize using Idea actions if needed)
+nnoremap [d :action GotoPreviousError<CR>
+nnoremap ]d :action GotoNextError<CR>
+
+" Quick Fix
+nnoremap <leader>ca :action ShowIntentionActions<CR>
+
+" Quick Open
+nnoremap <leader>f :action GotoFile<CR>
+
+" Format document
+nnoremap <leader>p :action ReformatCode<CR>
+
+" Hover definition (peek)
+nnoremap gh :action ShowQuickDoc<CR>
+
+" Move selected lines up/down in visual mode
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
