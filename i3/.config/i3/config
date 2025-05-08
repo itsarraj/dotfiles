@@ -11,7 +11,8 @@
 
 
 #varible 
-set $mm primary
+# set $mm primary
+set $mm "eDP1" 
 set $pm "eDP-1" 
 set $sm "HDMI-1"
 set $tm "HDMI-0"
