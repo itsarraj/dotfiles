@@ -3,7 +3,6 @@
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
 
-
 -- Set the cursor style to a block for normal (n), visual (v), insert (i), and command (c) modes.
 vim.opt.guicursor = 'n-v-i-c:block-Cursor'
 vim.opt.tabstop = 4
