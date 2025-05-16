@@ -77,15 +77,17 @@ bindsym Shift+Print exec --no-startup-id sh -c 'maim -s -o -u --format=png --sel
 
 # my keybaord layout for umlauts and eszet
 # Switch to US layout
-bindsym $mod+Shift+u exec "setxkbmap us"
+# bindsym $mod+Shift+u exec "setxkbmap us"
 
 # Switch to US International layout
-bindsym $mod+Shift+i exec "setxkbmap us -variant altgr-intl"
+# bindsym $mod+Shift+i exec "setxkbmap us -variant altgr-intl"
 
+# Russian layout
+# bindsym $mod+Shift+p exec "setxkbmap ru"
 
-
-
-
+# Makes Caps Lock work as Shift when held
+# exec --no-startup-id setxkbmap -option caps:shiftlock  
+# bindsym Mod1+Control+Shift+Caps_Lock exec "~/.local/scripts/cycle_kb_layout.sh"
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
