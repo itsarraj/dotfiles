@@ -19,7 +19,6 @@ vim.keymap.set('n', '<Leader>q', ':q<CR>', { noremap = true, silent = true, desc
 vim.keymap.set('n', '<Leader>x', ':x!<CR>', { noremap = true, silent = true, desc = '[W]rite and [Q]uit the current buffer' })
 -- vim.keymap.set('n', '<Leader>xa', ':xa!<CR>', { noremap = true, silent = true, desc = '[X] quit and save all buffers' })
 
-
 -- Insert current date and time in normal mode with F3
 vim.keymap.set('n', '<F3>', 'i<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>', { noremap = true, silent = true, desc = 'Insert current date and time' })
 
