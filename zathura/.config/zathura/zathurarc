@@ -1,0 +1,33 @@
+# first theme
+
+# set recolor                true
+# set recolor-keephue        true
+# set recolor-lightcolor     "#1e1e2e"
+# set recolor-darkcolor      "#cdd6f4"
+#
+# set default-bg             "#1e1e2e"
+# set default-fg             "#cdd6f4"
+#
+# set statusbar-bg           "#1e1e2e"
+# set statusbar-fg           "#cdd6f4"
+# set inputbar-bg            "#1e1e2e"
+# set inputbar-fg            "#cdd6f4"
+#
+
+# another theme
+
+set recolor               true
+set recolor-keephue       true
+
+set recolor-lightcolor    "#1e1e1e"   # Page background
+set recolor-darkcolor     "#d4d4d4"   # Main text
+
+set default-bg            "#1e1e1e"   # Background around page
+set default-fg            "#d4d4d4"   # Default text color
+
+set statusbar-bg          "#1e1e1e"
+set statusbar-fg          "#569cd6"   # Accent color for status/info
+
+set inputbar-bg           "#1e1e1e"
+set inputbar-fg           "#569cd6"   # Input color
+
