@@ -169,8 +169,8 @@ bindsym $mod+Shift+l move right
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-#bindsym $mod+s layout stacking
-#bindsym $mod+w layout tabbed
+# bindsym $mod+s layout stacking
+# bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -420,7 +420,8 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%- && $re
 #bindsym $mod+m exec volctrl All mute
 #
 ####---Mount and unmount android---###
-#bindsym $mod+a exec mntandroid
+# bindsym $mod+a exec mntandroid
+# bindsym $mod+a exec dmtpfs
 #
 ####---Toggle External Display---###
 #bindsym $mod+x exec multimonitor
@@ -504,8 +505,8 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%- && $re
 ##---------------------------------
 
 # Assign applications to specific workspaces
-#assign [class="Alacritty"] workspace $ws1
-#assign [class="Brave-browser"] workspace $ws2
+# assign [class="Alacritty"] workspace $ws1
+# assign [class="Brave-browser"] workspace $ws2
 
 # Start applications on specified workspaces
 #exec --no-startup-id i3-msg 'workspace $ws1; exec alacritty'

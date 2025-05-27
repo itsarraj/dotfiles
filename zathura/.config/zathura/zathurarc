@@ -1,3 +1,25 @@
+set recolor               false
+set recolor-keephue       true
+
+set recolor-lightcolor    "#1e1e1e"   # Page background (dark)
+set recolor-darkcolor     "#d4d4d4"   # Main text (light)
+
+set default-bg            "#1e1e1e"   # Surrounding background
+set default-fg            "#d4d4d4"   # Default text color
+
+set statusbar-bg          "#1e1e1e"
+set statusbar-fg          "#569cd6"   # Accent (blue)
+
+set inputbar-bg           "#1e1e1e"
+set inputbar-fg           "#569cd6"
+
+set selection-clipboard clipboard
+# set window-title-basename true
+# set statusbar-basename true
+# set zoom-max 10000
+
+
+# -------------------------------------------
 # first theme
 
 # set recolor                true
@@ -16,18 +38,18 @@
 
 # another theme
 
-set recolor               true
-set recolor-keephue       true
-
-set recolor-lightcolor    "#1e1e1e"   # Page background
-set recolor-darkcolor     "#d4d4d4"   # Main text
-
-set default-bg            "#1e1e1e"   # Background around page
-set default-fg            "#d4d4d4"   # Default text color
-
-set statusbar-bg          "#1e1e1e"
-set statusbar-fg          "#569cd6"   # Accent color for status/info
-
-set inputbar-bg           "#1e1e1e"
-set inputbar-fg           "#569cd6"   # Input color
-
+# set recolor               true
+# set recolor-keephue       true
+#
+# set recolor-lightcolor    "#1e1e1e"   # Page background
+# set recolor-darkcolor     "#d4d4d4"   # Main text
+#
+# set default-bg            "#1e1e1e"   # Background around page
+# set default-fg            "#d4d4d4"   # Default text color
+#
+# set statusbar-bg          "#1e1e1e"
+# set statusbar-fg          "#569cd6"   # Accent color for status/info
+#
+# set inputbar-bg           "#1e1e1e"
+# set inputbar-fg           "#569cd6"   # Input color
+#
