@@ -388,7 +388,8 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%- && $re
 # Suspend
 # bindsym $mod+Shift+period exec systemctl suspend
 
-
+# Prevent UI blocking
+exec --no-startup-id ionice -c 3 i3
 #---------------------------------
 #--------Custom keys Start--------
 #---------------------------------
