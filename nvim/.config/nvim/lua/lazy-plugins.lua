@@ -31,8 +31,9 @@ require('lazy').setup({
   require 'kickstart/plugins/conform',
   require 'kickstart/plugins/cmp',
   require 'kickstart/plugins/onedark',
-  -- require 'kickstart/plugins/tokyonight';
-  -- require 'kickstart/plugins/onedarkpro';
+  -- require 'kickstart/plugins/tokyonight',
+  -- require 'kickstart/plugins/onedarkpro',
+  -- require 'kickstart/plugins/catppuccin',
   require 'kickstart/plugins/todo-comments',
   -- require 'kickstart/plugins/mini';
   require 'kickstart/plugins/treesitter',
@@ -46,7 +47,7 @@ require('lazy').setup({
   -- require 'kickstart/plugins/lint',
   -- require 'kickstart/plugins/debug';
   -- require 'kickstart/plugins/neo-tree';
-  require 'kickstart/plugins/render-markdown',
+  -- require 'kickstart/plugins/render-markdown',
   -- require 'kickstart/plugins/rustaceanvim';
 
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
