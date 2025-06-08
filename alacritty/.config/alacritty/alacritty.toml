@@ -1,6 +1,17 @@
 [env]
 TERM = "xterm-256color"
 
+
+# [general]
+# import = [
+#     "~/.config/alacritty/themes/themes/one_dark.toml"
+# ]
+
+# [general]
+# import = [
+#     "~/.config/alacritty/themes/themes/solarized_dark.toml"
+# ]
+
 [font]
 size = 14
 

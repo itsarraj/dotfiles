@@ -31,16 +31,13 @@ require('lazy').setup({
   require 'kickstart/plugins/conform',
   require 'kickstart/plugins/cmp',
   require 'kickstart/plugins/onedark',
-  -- require 'kickstart/plugins/tokyonight',
-  -- require 'kickstart/plugins/onedarkpro',
-  -- require 'kickstart/plugins/catppuccin',
+  -- require 'kickstart/plugins/solarized',
   require 'kickstart/plugins/todo-comments',
   -- require 'kickstart/plugins/mini';
   require 'kickstart/plugins/treesitter',
   -- require 'kickstart/plugins/vim-tmux-navigator';
   -- require 'kickstart/plugins/deoplete';
   -- require 'kickstart/plugins/markdown-preview';
-  -- require 'kickstart/plugins/neovim-fuzzy';
   -- require 'kickstart/plugins/comment';
   -- require 'kickstart/plugins/autopairs';
   -- require 'kickstart/plugins/indent_line';
