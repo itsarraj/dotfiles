@@ -1,2 +1,20 @@
-blog.rust-lang.org/feed.xml rust
-https://this-week-in-rust.org/rss.xml rust
+http://blog.rust-lang.org/feed.xml "rust"
+https://this-week-in-rust.org/rss.xml "rust"
+https://increment.com/feed.xml
+https://martin.kleppmann.com/atom.xml
+https://jepsen.io/atom.xml
+https://colinbreck.com/feed/
+https://peter.bourgon.org/index.xml
+https://bravenewgeek.com/feed.xml
+https://danluu.com/atom.xml
+
+https://lobste.rs/t/distributed.rss
+https://hnrss.org/newest?q=distributed+systems
+
+https://www.youtube.com/@NoBoilerplate/videos
+https://www.youtube.com/@LukeSmithxyz
+https://www.youtube.com/@DavieFogarty
+https://www.youtube.com/@MovedByBeauty
+
+
+
