@@ -23,16 +23,17 @@ require('lazy').setup({
   -- modular approach: using `require 'path/name'` will
   -- include a plugin definition from file lua/path/name.lua
 
-  require 'kickstart/plugins/gitsigns',
-  require 'kickstart/plugins/which-key',
-  require 'kickstart/plugins/telescope',
+  require 'kickstart/plugins/which-key', -- perfect, !update spec
+  require 'kickstart/plugins/gitsigns', -- perfect
+  require 'kickstart/plugins/telescope', -- perfect, !remove hotkeys
   require 'kickstart/plugins/harpoon', -- perfect
   require 'kickstart/plugins/undotree', -- perfect
-  require 'kickstart/plugins/vim-fugitive',
-  require 'kickstart/plugins/treesitter',
-  -- require 'kickstart/plugins/lspconfig',
-  -- require 'kickstart/plugins/cmp',
-  require 'kickstart/plugins/onedark',
+  require 'kickstart/plugins/vim-fugitive', -- perfect, !update hotkeys
+  require 'kickstart/plugins/treesitter', -- perfect
+  require 'kickstart/plugins/lspconfig', -- perfect, !learn hotkeys
+  require 'kickstart/plugins/cmp', -- perfect, !confirm hotkey modification
+  require 'kickstart/plugins/blink-cmp', -- perfect
+  require 'kickstart/plugins/onedark', -- perfect
   -- require 'kickstart/plugins/conform',
   -- require 'kickstart/plugins/mini',
   --

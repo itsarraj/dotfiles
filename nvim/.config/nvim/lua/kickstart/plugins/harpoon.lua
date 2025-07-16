@@ -22,5 +22,10 @@ return {
             vim.keymap.set("n", "<C-p>", function() harpoon:list():prev() end)
             vim.keymap.set("n", "<C-n>", function() harpoon:list():next() end)
         end,
-    },
+        settings = {
+            save_on_toggle = true,
+            sync_on_ui_close = true,
+        },
+
+    }
 }
