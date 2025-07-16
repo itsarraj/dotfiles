@@ -139,6 +139,10 @@ return {
       vim.keymap.set('n', '<leader>sn', function()
         builtin.find_files { cwd = vim.fn.stdpath 'config' }
       end, { desc = '[S]earch [N]eovim files' })
+
+      vim.keymap.set('n', '<leader>gk', function()
+        builtin.grep_string({ search = vim.fn.input("Grep > ") })
+      end)
     end,
   },
 }
