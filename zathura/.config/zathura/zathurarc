@@ -1,4 +1,4 @@
-set recolor               true
+# set recolor               true
 set recolor-keephue       true
 
 set selection-clipboard clipboard
@@ -6,26 +6,26 @@ set window-title-basename true
 set statusbar-basename true
 set zoom-max 10000
 
-set recolor-lightcolor    "#1e1e1e"   # Page background (dark)
-set recolor-darkcolor     "#d4d4d4"   # Main text (light)
-
-# set default-bg            "#1e1e1e"   # Surrounding background
-set default-fg            "#d4d4d4"   # Default text color
-
-# set statusbar-bg          "#1e1e1e"
-# set statusbar-fg          "#569cd6"   # Accent (blue)
-
-set inputbar-bg           "#1e1e1e"
-set inputbar-fg           "#569cd6"
-
-set default-bg rgba(0,0,0,0.7)
-set recolor-lightcolor rgba(0,0,0,0)
-set adjust-open "width"
-
-set statusbar-bg          rgba(0,0,0,0.1)
-set statusbar-fg          rgba(212,212,212,0.7)
-
-
+# set recolor-lightcolor    "#1e1e1e"   # Page background (dark)
+# set recolor-darkcolor     "#d4d4d4"   # Main text (light)
+#
+# # set default-bg            "#1e1e1e"   # Surrounding background
+# set default-fg            "#d4d4d4"   # Default text color
+#
+# # set statusbar-bg          "#1e1e1e"
+# # set statusbar-fg          "#569cd6"   # Accent (blue)
+#
+# set inputbar-bg           "#1e1e1e"
+# set inputbar-fg           "#569cd6"
+#
+# set default-bg rgba(0,0,0,0.7)
+# set recolor-lightcolor rgba(0,0,0,0)
+# set adjust-open "width"
+#
+# set statusbar-bg          rgba(0,0,0,0.1)
+# set statusbar-fg          rgba(212,212,212,0.7)
+#
+# set recolor-darkcolor "#dcdccc"
 # -------------------------------------------
 # Rust Official Docs colors
 
@@ -44,15 +44,15 @@ set statusbar-fg          rgba(212,212,212,0.7)
 #
 # -------------------------------------------
 
-# set recolor-lightcolor     "#1e1e2e"
-# set recolor-darkcolor      "#cdd6f4"
-#
-# set default-bg             "#1e1e2e"
-# set default-fg             "#cdd6f4"
-#
-# set statusbar-bg           "#1e1e2e"
-# set statusbar-fg           "#cdd6f4"
-#
-# set inputbar-bg            "#1e1e2e"
-# set inputbar-fg            "#cdd6f4"
-#
+set recolor-lightcolor     "#1e1e2e"
+set recolor-darkcolor      "#cdd6f4"
+
+set default-bg             "#1e1e2e"
+set default-fg             "#cdd6f4"
+
+set statusbar-bg           "#1e1e2e"
+set statusbar-fg           "#cdd6f4"
+
+set inputbar-bg            "#1e1e2e"
+set inputbar-fg            "#cdd6f4"
+

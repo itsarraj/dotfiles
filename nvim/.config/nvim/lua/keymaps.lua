@@ -11,7 +11,8 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- Custom keymaps
 
 -- Key mappings
--- vim.keymap.set('n', '<Leader>f', ':Explore<CR>', { noremap = true, silent = true, desc = 'Open [E]xplore - NetRW file explorer' })
+-- vim.keymap.set('n', '<Leader>fe', ':Explore<CR>', { noremap = true, silent = true, desc = 'Open [E]xplore - NetRW file explorer' })
+vim.keymap.set('n', '<Leader>fe', vim.cmd.Ex, { noremap = true, silent = true, desc = 'Open [E]xplore - NetRW file explorer' })
 vim.keymap.set('n', '<Leader>w', ':w!<CR>', { noremap = true, silent = true, desc = '[W]rite the current buffer' })
 vim.keymap.set('n', '<Leader>a', ':wa!<CR>', { noremap = true, silent = true, desc = '[W]rite [A]ll buffers' })
 -- vim.keymap.set('n', '<Leader>q!', ':q!<CR>', { noremap = true, silent = true, desc = 'Force [Q]uit and discard changes to the buffer' })
