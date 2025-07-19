@@ -1,24 +1,13 @@
-http://blog.rust-lang.org/feed.xml "rust"
-https://this-week-in-rust.org/rss.xml "rust"
-https://increment.com/feed.xml
-https://martin.kleppmann.com/atom.xml
-https://jepsen.io/atom.xml
-https://colinbreck.com/feed/
-https://peter.bourgon.org/index.xml
-https://bravenewgeek.com/feed.xml
-https://danluu.com/atom.xml
-https://andrewkelley.me/rss.xml
-https://matklad.github.io/feed.xml
-https://lobste.rs/t/distributed.rss
-https://hnrss.org/newest?q=distributed+systems
-
-https://www.youtube.com/@NoBoilerplate
-https://www.youtube.com/@LukeSmithxyz
-https://www.youtube.com/@DavieFogarty
-https://www.youtube.com/@MovedByBeauty
-https://www.youtube.com/@CataBits
-https://www.youtube.com/@MentalOutlaw
-https://www.youtube.com/@MindPumpTV
-https://www.youtube.com/@alekseykladov1144/videos
-https://www.youtube.com/@ycombinator
-
+http://blog.rust-lang.org/feed.xml                  "rust"
+https://this-week-in-rust.org/rss.xml               "rust"
+https://increment.com/feed.xml                      "engineering"
+https://martin.kleppmann.com/atom.xml               "distributed-systems"
+https://jepsen.io/atom.xml                          "distributed-systems"
+https://colinbreck.com/feed/                        "distributed-systems"
+https://peter.bourgon.org/index.xml                 "systems"
+https://bravenewgeek.com/feed.xml                   "systems"
+https://danluu.com/atom.xml                         "engineering"
+https://andrewkelley.me/rss.xml                     "zig"
+https://matklad.github.io/feed.xml                  "rust"
+https://lobste.rs/t/distributed.rss                 "distributed-systems"
+https://hnrss.org/newest?q=distributed+systems      "distributed-systems"

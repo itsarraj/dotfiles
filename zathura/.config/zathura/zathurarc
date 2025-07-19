@@ -6,14 +6,14 @@ set window-title-basename true
 set statusbar-basename true
 set zoom-max 10000
 
+############################################
+########## Transparent Background ##########
+
 # set recolor-lightcolor    "#1e1e1e"   # Page background (dark)
 # set recolor-darkcolor     "#d4d4d4"   # Main text (light)
 #
-# # set default-bg            "#1e1e1e"   # Surrounding background
+# set default-bg            "#1e1e1e"   # Surrounding background
 # set default-fg            "#d4d4d4"   # Default text color
-#
-# # set statusbar-bg          "#1e1e1e"
-# # set statusbar-fg          "#569cd6"   # Accent (blue)
 #
 # set inputbar-bg           "#1e1e1e"
 # set inputbar-fg           "#569cd6"
@@ -26,33 +26,102 @@ set zoom-max 10000
 # set statusbar-fg          rgba(212,212,212,0.7)
 #
 # set recolor-darkcolor "#dcdccc"
-# -------------------------------------------
-# Rust Official Docs colors
 
-# set recolor-lightcolor    "#13151f"   # Page background (Rust docs bg)
-# set recolor-darkcolor     "#bcbdd0"   # Main text (Rust docs font color)
+########## Transparent Background End ########## 
+################################################
+
+################################################
+########## Solarized Dark Transparent ########## 
+
+# # zathurarc-dark
+# set notification-error-bg       rgba(88,110,117,0.3)   # base01  # seem not work
+# set notification-error-fg       rgba(220,50,47,1)      # red
+# set notification-warning-bg     rgba(88,110,117,0.3)   # base01
+# set notification-warning-fg     rgba(220,50,47,1)      # red
+# set notification-bg             rgba(88,110,117,0.3)   # base01
+# set notification-fg             rgba(181,137,0,1)      # yellow
 #
-# set default-bg            "#13151f"   # Surrounding background
-# set default-fg            "#bcbdd0"   # Default text color
+# set completion-group-bg         rgba(0,43,54,0.3)      # base03
+# set completion-group-fg         rgba(131,148,150,1)    # base0
+# set completion-bg               rgba(7,54,66,0.3)      # base02
+# set completion-fg               rgba(147,161,161,1)    # base1
+# set completion-highlight-bg     rgba(88,110,117,0.3)   # base01
+# set completion-highlight-fg     rgba(238,232,213,1)    # base2
 #
-# # Using a slightly brighter blue for accent (similar to Rust's blue)
-# set statusbar-bg          "#13151f"
-# set statusbar-fg          "#5d8ac2"   # Accent (blue)
+# # Define the color in index mode
+# set index-bg                    rgba(7,54,66,0.3)      # base02
+# set index-fg                    rgba(147,161,161,1)    # base1
+# set index-active-bg             rgba(88,110,117,0.3)   # base01
+# set index-active-fg             rgba(238,232,213,1)    # base2
 #
-# set inputbar-bg           "#13151f"
-# set inputbar-fg           "#5d8ac2"
+# set inputbar-bg                 rgba(88,110,117,0.3)   # base01
+# set inputbar-fg                 rgba(238,232,213,1)    # base2
 #
-# -------------------------------------------
+# set statusbar-bg                rgba(7,54,66,0.3)      # base02
+# set statusbar-fg                rgba(147,161,161,1)    # base1
+#
+# set highlight-color             rgba(101,123,131,1)    # base00  # highlight match when search keyword (vim's /)
+# set highlight-active-color      rgba(38,139,210,1)     # blue
+#
+# set default-bg                  rgba(7,54,66,0.3)      # base02
+# set default-fg                  rgba(147,161,161,1)    # base1
+# # set render-loading              true
+# # set render-loading-fg           rgba(7,54,66,0.3)      # base02
+# # set render-loading-bg           rgba(7,54,66,0.3)      # base02
+#
+# # Recolor book content's color
+# set recolor                     true
+# set recolor-lightcolor          rgba(7,54,66,0.3)      # base02
+# set recolor-darkcolor           rgba(147,161,161,1)    # base1
+# # set recolor-keephue             true      # keep original color
 
-set recolor-lightcolor     "#1e1e2e"
-set recolor-darkcolor      "#cdd6f4"
+########## Solarized Dark Transparent End ########## 
+####################################################
 
-set default-bg             "#1e1e2e"
-set default-fg             "#cdd6f4"
+################################################
+########## Solarized Dark Normal ########## 
 
-set statusbar-bg           "#1e1e2e"
-set statusbar-fg           "#cdd6f4"
+# zathurarc-dark
+set notification-error-bg       "#586e75" # base01  # seem not work
+set notification-error-fg       "#dc322f" # red
+set notification-warning-bg     "#586e75" # base01
+set notification-warning-fg     "#dc322f" # red
+set notification-bg             "#586e75" # base01
+set notification-fg             "#b58900" # yellow
 
-set inputbar-bg            "#1e1e2e"
-set inputbar-fg            "#cdd6f4"
+set completion-group-bg         "#002b36" # base03
+set completion-group-fg         "#839496" # base0
+set completion-bg               "#073642" # base02
+set completion-fg               "#93a1a1" # base1
+set completion-highlight-bg     "#586e75" # base01
+set completion-highlight-fg     "#eee8d5" # base2
+
+# Define the color in index mode
+set index-bg                   "#073642" # base02
+set index-fg                   "#93a1a1" # base1
+set index-active-bg             "#586e75" # base01
+set index-active-fg             "#eee8d5" # base2
+
+set inputbar-bg                 "#586e75" # base01
+set inputbar-fg                 "#eee8d5" # base2
+
+set statusbar-bg                "#073642" # base02
+set statusbar-fg                "#93a1a1" # base1
+
+set highlight-color             "#657b83" # base00  # hightlight match when search keyword(vim's /)
+set highlight-active-color      "#268bd2" # blue
+
+set default-bg                  "#073642" # base02
+set default-fg                  "#93a1a1" # base1
+# set render-loading              true
+# set render-loading-fg           "#073642" # base02
+# set render-loading-bg           "#073642" # base02
+
+# Recolor book content's color
+# set recolor                     true
+set recolor-lightcolor          "#073642" # base02
+set recolor-darkcolor           "#93a1a1" # base1
+# set recolor-keephue             true      # keep original color
+
+########## Solarized Dark Normal End ########## 
 
