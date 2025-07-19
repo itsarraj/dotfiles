@@ -33,12 +33,12 @@ require('lazy').setup({
   require 'kickstart/plugins/lspconfig', -- perfect, !learn hotkeys
   require 'kickstart/plugins/cmp', -- perfect, !confirm hotkey modification
   require 'kickstart/plugins/blink-cmp', -- perfect
-  require 'kickstart/plugins/onedark', -- perfect
+  -- require 'kickstart/plugins/onedark', -- perfect
+  require 'kickstart/plugins/solarized', -- perfect
   -- require 'kickstart/plugins/conform',
   -- require 'kickstart/plugins/mini',
   --
   -- require 'kickstart/plugins/telescope-file-browser',
-  -- require 'kickstart/plugins/solarized',
   -- require 'kickstart/plugins/todo-comments',
   -- require 'kickstart/plugins/vim-tmux-navigator';
   -- require 'kickstart/plugins/deoplete';

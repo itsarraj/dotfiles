@@ -1,0 +1,15 @@
+#!/bin/bash
+
+TOUCHPAD_NAME="Synaptics TM3053-009"
+
+# Get current enabled state (1 = enabled, 0 = disabled)
+ENABLED=$(xinput list-props "$TOUCHPAD_NAME" | grep "Device Enabled" | awk '{print $4}')
+
+if [ "$ENABLED" -eq 1 ]; then
+    xinput disable "$TOUCHPAD_NAME"
+    notify-send "Touchpad Disabled"
+else
+    xinput enable "$TOUCHPAD_NAME"
+    notify-send "Touchpad Enabled"
+fi
+

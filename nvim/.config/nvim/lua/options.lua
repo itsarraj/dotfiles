@@ -42,7 +42,7 @@ vim.opt.updatetime = 50  -- Faster (default 4000ms)
 --  and `:help 'listchars'`
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
-vim.opt.wrap = false -- No line wrapping
+vim.opt.wrap = true -- No line wrapping
 
 vim.keymap.set("i", "<C-c>", "<Esc>")  -- Use Ctrl-C like Escape
 vim.opt.isfname:append("@-@")          -- Consider @-@ as part of filenames
