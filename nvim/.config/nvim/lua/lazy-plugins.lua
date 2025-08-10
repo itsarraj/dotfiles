@@ -33,8 +33,10 @@ require('lazy').setup({
   require 'kickstart/plugins/lspconfig', -- perfect, !learn hotkeys
   require 'kickstart/plugins/cmp', -- perfect, !confirm hotkey modification
   require 'kickstart/plugins/blink-cmp', -- perfect
-  -- require 'kickstart/plugins/onedark', -- perfect
-  require 'kickstart/plugins/solarized', -- perfect
+  require 'kickstart/plugins/onedark', -- perfect
+  -- require 'kickstart/plugins/gruvbox', -- perfect
+  -- require 'kickstart/plugins/solarized', -- perfect
+  -- require 'kickstart/plugins/catppuccin', -- perfect
   -- require 'kickstart/plugins/conform',
   -- require 'kickstart/plugins/mini',
   --

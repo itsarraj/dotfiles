@@ -32,9 +32,9 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz", { desc = 'Previous location
 -- Custom keymaps
 vim.keymap.set('n', '<Leader>fe', vim.cmd.Ex, { noremap = true, silent = true, desc = 'Open [E]xplore - NetRW file explorer' })
 vim.keymap.set('n', '<Leader>w', ':w!<CR>', { noremap = true, silent = true, desc = '[W]rite the current buffer' })
-vim.keymap.set('n', '<Leader>a', ':wa!<CR>', { noremap = true, silent = true, desc = '[W]rite [A]ll buffers' })
+-- vim.keymap.set('n', '<Leader>a', ':wa!<CR>', { noremap = true, silent = true, desc = '[W]rite [A]ll buffers' })
 vim.keymap.set('n', '<Leader>q', ':q<CR>', { noremap = true, silent = true, desc = '[Q]uit the current buffer' })
-vim.keymap.set('n', '<Leader>x', ':x!<CR>', { noremap = true, silent = true, desc = '[W]rite and [Q]uit the current buffer' })
+-- vim.keymap.set('n', '<Leader>x', ':x!<CR>', { noremap = true, silent = true, desc = '[W]rite and [Q]uit the current buffer' })
 
 
 -- Insert current date and time
