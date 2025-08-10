@@ -24,7 +24,7 @@ color article            default   default
 # article format ----------------------------------------------------------------
 # articlelist-format "%4i  %D  %t %T"
 
-highlight-article "age > 5" red black dim
+# highlight-article "age > 5" red black dim
 # highlight article "^(Feed|Title|Author|Link|Date):.*" blue black
 
 highlight article "^Feed:.*" color5 color0
