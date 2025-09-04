@@ -1,0 +1,14 @@
+#!/bin/sh
+Dir="$HOME/mnt/"
+
+# Make the mount directory if it doesn't exist
+if [ ! -d "$Dir" ]; then
+  mkdir -p "$Dir"
+fi
+
+# Toggle mount/unmount with aft-mtp-mount
+if mountpoint -q "$Dir"; then
+  fusermount -u "$Dir" && notify-send "Android Mount" "Device Unmounted from $Dir"
+else
+  aft-mtp-mount "$Dir" && notify-send "Android Mount" "Device Mounted in $Dir"
+fi

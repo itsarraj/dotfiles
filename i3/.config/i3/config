@@ -19,17 +19,19 @@ bindsym Print exec --no-startup-id sh -c 'maim -o -u --format=png | tee >(xclip 
 # # Screenshot of a selected area
 bindsym Shift+Print exec --no-startup-id sh -c 'maim -s -o -u --format=png --select | tee >(xclip -selection clipboard -t image/png -i) > "/home/$USER/Pictures/screenshot-$(date -u +'%Y-%m-%d_%H-%M-%S')-selected.png"'
 
-# my keybaord layout for umlauts and eszet
-# Switch to US layout
-# bindsym $mod+Shift+u exec "setxkbmap us"
-# Switch to US International layout
-# bindsym $mod+Shift+i exec "setxkbmap us -variant altgr-intl"
-# Russian layout
-# bindsym $mod+Shift+p exec "setxkbmap ru"
+# # Remove redundant setxkbmap us (it is immediately overwritten)
+# Keyboard layout switching: US only
+# To enable US International and Russian layouts, uncomment the line below:
+# exec_always --no-startup-id setxkbmap -layout 'us,us,ru' -variant ',altgr-intl,' -option 'grp:win_space_toggle,grp_led:scroll' && notify-send "Keyboard Layout" "US/US-Intl/RU: Use Super+Space to switch. Scroll Lock LED = non-US."
+
+# Optional: Use a script for cycling layouts (uncomment if you want to use your script)
+# bindsym Mod1+Control+Shift+Caps_Lock exec "~/.local/scripts/cycle_kb_layout"
 
 # Makes Caps Lock work as Shift when held
 # exec --no-startup-id setxkbmap -option caps:shiftlock  
-# bindsym Mod1+Control+Shift+Caps_Lock exec "~/.local/scripts/cycle_kb_layout.sh"
+
+# Always force US English layout on i3 start
+exec_always --no-startup-id setxkbmap us -option ''
 
 font pango:monospace 12px
 # font pango:DejaVu Sans Mono 8
@@ -306,6 +308,9 @@ exec --no-startup-id ionice -c 3 i3
 #--------Custom keys Start--------
 #---------------------------------
 bindsym $mod+b exec --no-startup-id ~/.local/scripts/toggle-touchpad
+
+# Toggle Android MTP mount/unmount (use $mod+Shift+Control+a to avoid overlap)
+bindsym $mod+Shift+Control+a exec --no-startup-id ~/.local/scripts/dmtpfs
 
 #--------Custom Scripts Start--------
 
