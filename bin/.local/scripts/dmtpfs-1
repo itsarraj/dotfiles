@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# Prevent recursive invocation
+SCRIPT_NAME=$(basename "$0")
+if pgrep -f "/bin/sh.*$SCRIPT_NAME" | grep -v "^$$$" >/dev/null; then
+  notify-send "Android Mount" "Script is already running. Exiting to prevent recursion."
+  exit 1
+fi
+
+Dir="$HOME/mnt/"
+
+# Make the mount directory if it doesn't exist
+if [ ! -d "$Dir" ]; then
+  mkdir -p "$Dir"
+fi
+
+# Toggle mount/unmount with aft-mtp-mount
+if mountpoint -q "$Dir"; then
+  fusermount -u "$Dir" && notify-send "Android Mount" "Device Unmounted from $Dir"
+else
+  aft-mtp-mount "$Dir" && notify-send "Android Mount" "Device Mounted in $Dir"
+fi
