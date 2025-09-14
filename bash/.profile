@@ -36,10 +36,14 @@ PS1='\[\e[0;1;3$(($?==0?2:1))m\]›\[\e[0m\] '
 # PS1='\[\e[1;34m\]\W\[\e[0m\] \[\e[0;1;3$(($?==0?2:1))m\]\$\[\e[0m\] '
 # PS1='\[\e[1;34m\]\W\[\e[0m\] \[\e[0;1;3$(($?==0?2:1))m\]›\[\e[0m\] '
 
-
 export JAVA_HOME=/usr/lib/jvm/java-17-openjdk/
+export PATH=$JAVA_HOME/bin:$PATH
+export PATH=$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$PATH
 
 export ANDROID_HOME=$HOME/Android/Sdk
+export NDK_HOME="$ANDROID_HOME/ndk/29.0.14033849"
+export PATH="$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools"
+
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin

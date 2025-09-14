@@ -1,15 +1,25 @@
+
 #!/bin/bash
 
-TOUCHPAD_NAME="Synaptics TM3053-009"
+# Hardcoded touchpad names
+TOUCHPAD1="ELAN0718:01 04F3:30FD Touchpad"
+TOUCHPAD2="ETPS/2 Elantech Touchpad"
+TOUCHPAD3="Synaptics TM3053-009"
 
-# Get current enabled state (1 = enabled, 0 = disabled)
-ENABLED=$(xinput list-props "$TOUCHPAD_NAME" | grep "Device Enabled" | awk '{print $4}')
+# Get enabled state for all
+ENABLED1=$(xinput list-props "$TOUCHPAD1" | grep "Device Enabled" | awk '{print $4}')
+ENABLED2=$(xinput list-props "$TOUCHPAD2" | grep "Device Enabled" | awk '{print $4}')
+ENABLED3=$(xinput list-props "$TOUCHPAD3" | grep "Device Enabled" | awk '{print $4}')
 
-if [ "$ENABLED" -eq 1 ]; then
-    xinput disable "$TOUCHPAD_NAME"
-    notify-send "Touchpad Disabled"
+if [ "$ENABLED1" -eq 1 ] || [ "$ENABLED2" -eq 1 ] || [ "$ENABLED3" -eq 1 ]; then
+    xinput disable "$TOUCHPAD1"
+    xinput disable "$TOUCHPAD2"
+    xinput disable "$TOUCHPAD3"
+    notify-send "Touchpads Disabled"
 else
-    xinput enable "$TOUCHPAD_NAME"
-    notify-send "Touchpad Enabled"
+    xinput enable "$TOUCHPAD1"
+    xinput enable "$TOUCHPAD2"
+    xinput enable "$TOUCHPAD3"
+    notify-send "Touchpads Enabled"
 fi
 
