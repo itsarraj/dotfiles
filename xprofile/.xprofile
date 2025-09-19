@@ -4,4 +4,6 @@ xset -dpms
 xset s noblank
 # Faster key repeat and delay
 xset r rate 210 40
-    
+
+# this is only for hp 1080p reso scaling
+export QT_SCALE_FACTOR=1.25

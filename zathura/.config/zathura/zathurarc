@@ -1,4 +1,4 @@
-# set recolor               true
+set recolor               false
 set recolor-keephue       true
 
 set selection-clipboard clipboard
@@ -13,8 +13,8 @@ set zoom-max 10000
 # include ./themes/zathura-gruvbox-dark-hard
 # include ./themes/zathura-gruvbox-dark-soft
 # include ./themes/zathura-gruvbox-light
-include ./themes/zathura-gruvbox-light-hard
-# include ./themes/zathura-gruvbox-light-soft
+# include ./themes/zathura-gruvbox-light-hard
+include ./themes/zathura-gruvbox-light-soft
 # include ./themes/zathura-solarized-dark
 # include ./themes/zathura-solarized-light
 # include ./themes/zathura-transparent-bg

@@ -7,7 +7,23 @@
 export PATH="$HOME/.local/scripts:$PATH"
 
 # Where should I put you?
+# tmux shortcuts (interactive shells only):
+# - Ctrl-f: launch tmux-sessionizer to pick a project and jump to a session
+# - Ctrl-t: attach to last session or create 'default' in current directory
+if [[ $- == *i* ]]; then
 bind '"\C-f":"tmux-sessionizer\n"'
+# Helper used by Ctrl-t to quickly attach to tmux
+__tmux_quick_attach() {
+    # Already in tmux? Do nothing
+    [[ -n "$TMUX" ]] && return 0
+    # tmux not installed? Do nothing
+    command -v tmux >/dev/null 2>&1 || return 0
+    # Attach to existing session, else create 'default' in $PWD
+    tmux attach 2>/dev/null || tmux new -s default -c "$PWD"
+}
+# Bind Ctrl-t to quick attach
+bind -x '"\C-t":__tmux_quick_attach'
+fi
 
 
 alias yayfzf="yay -Slq | fzf -m --preview 'cat <(yay -Si {1}) <(yay -Fl {1} | awk \"{print \$2}\")' | xargs -ro  yay -S"
