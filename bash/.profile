@@ -18,8 +18,12 @@ __tmux_quick_attach() {
     [[ -n "$TMUX" ]] && return 0
     # tmux not installed? Do nothing
     command -v tmux >/dev/null 2>&1 || return 0
-    # Attach to existing session, else create 'default' in $PWD
-    tmux attach 2>/dev/null || tmux new -s default -c "$PWD"
+    # Attach to existing session; if none, just echo and return
+    if tmux list-sessions >/dev/null 2>&1; then
+        tmux attach
+    else
+        echo "No tmux sessions"
+    fi
 }
 # Bind Ctrl-t to quick attach
 bind -x '"\C-t":__tmux_quick_attach'
