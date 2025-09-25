@@ -31,7 +31,7 @@ require('lazy').setup({
   require 'kickstart/plugins/vim-fugitive', -- perfect, !update hotkeys
   require 'kickstart/plugins/treesitter', -- perfect
   require 'kickstart/plugins/lspconfig', -- perfect, !learn hotkeys
-  require 'kickstart/plugins/cmp', -- perfect, !confirm hotkey modification
+  -- require 'kickstart/plugins/cmp', -- perfect, !confirm hotkey modification
   require 'kickstart/plugins/blink-cmp', -- perfect
   require 'kickstart/plugins/onedark', -- perfect
   -- require 'kickstart/plugins/gruvbox', -- perfect

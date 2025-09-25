@@ -11,7 +11,7 @@ local function get_filename_id()
 end
 
 ls.add_snippets('markdown', {
-  s('zetmd', {
+  s('snip-zetmd', {
     t '---',
     t { '', 'id: ' },
     f(get_filename_id), -- Automatically inserts the extracted ID
