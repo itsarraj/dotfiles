@@ -28,6 +28,6 @@ set render-loading-bg           "rgba(29,32,33,1)"     # bg
 set render-loading-fg           "rgba(235,219,178,1)"  # fg
 set recolor-lightcolor          "rgba(40,40,40,1)"
 set recolor-darkcolor           "rgba(220,215,186,1)"
-set recolor                     "true"
-set recolor-keephue             "true"                 # keep original color
+# set recolor                     "true"
+# set recolor-keephue             "true"                 # keep original color
 ########## gruvbox-dark-hard-mutated end ##########

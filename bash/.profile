@@ -36,6 +36,7 @@ alias yayfzf="yay -Slq | fzf -m --preview 'cat <(yay -Si {1}) <(yay -Fl {1} | aw
 alias pacfzf="sudo pacman -Sy; sudo pacman -Slq | fzf -m --preview 'cat <(yay -Si {1}) <(yay -Fl {1} | awk \"{print \$2}\")' | xargs -ro  yay -S"
 
 export PATH="$HOME/.local/bin:$PATH"
+. ~/.xprofile
 source ~/.xprofile
 
 
@@ -58,7 +59,7 @@ PS1='\[\e[0;1;3$(($?==0?2:1))m\]›\[\e[0m\] '
 # PS1='\[\e[1;34m\]\W\[\e[0m\] \[\e[0;1;3$(($?==0?2:1))m\]\$\[\e[0m\] '
 # PS1='\[\e[1;34m\]\W\[\e[0m\] \[\e[0;1;3$(($?==0?2:1))m\]›\[\e[0m\] '
 
-export JAVA_HOME=/usr/lib/jvm/java-17-openjdk/
+export JAVA_HOME=/usr/lib/jvm/java-21-openjdk/
 export PATH=$JAVA_HOME/bin:$PATH
 export PATH=$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$PATH
 
@@ -70,7 +71,12 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+export GRADLE_HOME=/usr/share/gradle
+export PATH=$GRADLE_HOME/bin:$PATH
+
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
+
 . "$HOME/.cargo/env"
 
 export PATH="/home/plutonium/.local/share/solana/install/active_release/bin:$PATH"
