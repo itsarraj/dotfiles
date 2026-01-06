@@ -10,36 +10,33 @@ local function get_filename_id()
   return filename:match '^(%d%d%d%d%d%d%d%d%d%d%d%d%d%d)$' or os.date '%Y%m%d%H%M%S' or 'YYYYMMDDHHMMSS'
 end
 
+local function get_current_datetime()
+  return os.date '%Y-%m-%d %H:%M'
+end
+
 ls.add_snippets('markdown', {
-  s('snip-zetmd', {
+  s('zetmd', {
     t '---',
     t { '', 'id: ' },
     f(get_filename_id), -- Automatically inserts the extracted ID
     t { '', 'title: ' },
     i(1, 'Title'),
     t { '', 'date: ' },
-    f(function()
-      return os.date '%Y-%m-%d %H:%M'
-    end), -- Inserts the current date in YYYY-MM-DD format
-    t { '', 'tags: [' },
-    i(2, ''), -- Empty tags for customization
-    t ']',
-    t { '', 'links: [' },
-    i(3, ''), -- Empty links field for customization
-    t ']',
+    f(get_current_datetime),
+    t { '', 'type: ' },
+    i(2, 'note'),
+    t ' # note | concept | snippet | bug | journal | reference',
+    t { '', 'status: ' },
+    i(3, 'draft'),
+    t ' # draft | stable | evergreen',
+    t { '', 'tags: []' },
+    t { '', 'links: []' },
     t { '', '---' },
-    t { '', '' },
-    t { '', '- []() - ' },
-    i(4, 'Add link context: why notes are connected'),
-    t { '', '- []() - ' },
-    i(5, 'Add link context: why notes are connected'),
-    t { '', '' },
-    t { '', '---' },
-    t { '', '' },
-    t { '', '# ' },
-    i(6, 'ContentHeading'),
-    t { '', '' },
-    t { '', '' },
+    t { '', '# Log' },
+    t { '', '- ' },
+    f(get_current_datetime),
+    t ' - Created note.',
+    t { '', '', '# Notes', '', '' },
     i(0, 'Content'),
   }),
 })
