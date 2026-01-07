@@ -1,56 +1,12 @@
-# general ----------------------------------------------------------------
-
-auto-reload yes
-
-external-url-viewer "urlscan -dc -r 'linkhandler {}'"
-
 refresh-on-startup yes
+auto-reload no
 # prepopulate-query-feeds yes
 # show-read-articles no
 # show-read-feeds no
 # show-title-bar no
 # reload-threads 8
 
-# color ----------------------------------------------------------------
-
-color background         default   default
-color listnormal         default   default
-color listnormal_unread  default   default
-color listfocus          black     yellow
-color listfocus_unread   black     yellow
-color info               default   black
-color article            default   default
-
-# article format ----------------------------------------------------------------
-# articlelist-format "%4i  %D  %t %T"
-
-# highlight-article "age > 5" red black dim
-# highlight article "^(Feed|Title|Author|Link|Date):.*" blue black
-
-highlight article "^Feed:.*" color5 color0
-highlight article "^Title:.*" color3 color0 bold
-highlight article "^Author:.*" color2 color0
-highlight article "^Date:.*" color223 color0
-highlight article "^Link:.*" color4 color0
-highlight article "^Flags:.*" color9 color0
-
-highlight article     "^Podcast Download URL:.*"            color71  default
-highlight article     "^Links:"                             white    color240 underline
-highlight article     "\\[[0-9][0-9]*\\]"                   color72  default  bold
-highlight article     "\\[image [0-9][0-9]*\\]"             color72  default  bold
-highlight article     "\\[embedded flash: [0-9][0-9]*\\]"   color72  default  bold
-highlight article     ":.*\\(link\\)$"                      color74  default
-highlight article     ":.*\\(image\\)$"                     color74  default
-highlight article     ":.*\\(embedded flash\\)$"            color74  default
-
-# feedlist format ----------------------------------------------------------------
-# feedlist-format "%4i  %t (%c)"
-
-highlight feedlist "(World News|Local News|Local Events)" yellow black
-highlight feedlist "(Tech News|Linux News|Distro News|Subreddits)" green black
-highlight feedlist "(Real Estate|Other News)" blue black
-
-# binds ----------------------------------------------------------------
+external-url-viewer "urlscan -dc -r 'linkhandler {}'"
 
 bind-key j down
 bind-key k up
@@ -74,24 +30,44 @@ bind-key N prev-unread
 
 bind-key U show-urls
 
-# browser ---------------------------------------------
-# Primary browser (Brave)
-browser "/usr/bin/brave --new-tab %u"
+color background         default   default
+color listnormal         default   default
+color listnormal_unread  default   default
+color listfocus          black     yellow
+color listfocus_unread   black     yellow
+color info               default   black
+color article            default   default
 
+# articlelist-format "%4i  %D  %t %T"
+# highlight-article "age > 5" red black dim
+# highlight article "^(Feed|Title|Author|Link|Date):.*" blue black
+
+highlight article "^Feed:.*" color5 color0
+highlight article "^Title:.*" color3 color0 bold
+highlight article "^Author:.*" color2 color0
+highlight article "^Date:.*" color223 color0
+highlight article "^Link:.*" color4 color0
+highlight article "^Flags:.*" color9 color0
+
+highlight article     "^Podcast Download URL:.*"            color71  default
+highlight article     "^Links:"                             white    color240 underline
+highlight article     "\\[[0-9][0-9]*\\]"                   color72  default  bold
+highlight article     "\\[image [0-9][0-9]*\\]"             color72  default  bold
+highlight article     "\\[embedded flash: [0-9][0-9]*\\]"   color72  default  bold
+highlight article     ":.*\\(link\\)$"                      color74  default
+highlight article     ":.*\\(image\\)$"                     color74  default
+highlight article     ":.*\\(embedded flash\\)$"            color74  default
+
+# feedlist-format "%4i  %t (%c)"
+highlight feedlist "(World News|Local News|Local Events)" yellow black
+highlight feedlist "(Tech News|Linux News|Distro News|Subreddits)" green black
+highlight feedlist "(Real Estate|Other News)" blue black
+
+browser linkhandler
 macro , open-in-browser
-macro d set browser "dmenuhandler" ; open-in-browser ; set browser linkhandler
-
-# Default Brave opening
+macro p set browser "dmenuhandler" ; open-in-browser ; set browser linkhandler
 macro b set browser "/usr/bin/brave --new-tab %u"; open-in-browser
-
-# Private window
 macro B set browser "/usr/bin/brave --incognito %u"; open-in-browser
-
-# Tor window (if Brave Tor configured)
 macro T set browser "/usr/bin/brave --tor %u"; open-in-browser
-
-# hide articles matching: ---------------------------------------------
-
-# ignore-article "*" "title =~ \"Sponsor\""
-# ignore-article "*" "title =~ \"Advertisement\""
-# ignore-mode "display"
+macro W set browser "lynx %u" ; open-in-browser ; set browser linkhandler
+macro w set browser "w3m" ; open-in-browser ; set browser linkhandler
