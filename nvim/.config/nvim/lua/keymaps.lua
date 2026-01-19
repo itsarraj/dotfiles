@@ -36,6 +36,11 @@ vim.keymap.set('n', '<Leader>w', ':w!<CR>', { noremap = true, silent = true, des
 vim.keymap.set('n', '<Leader>q', ':q<CR>', { noremap = true, silent = true, desc = '[Q]uit the current buffer' })
 -- vim.keymap.set('n', '<Leader>x', ':x!<CR>', { noremap = true, silent = true, desc = '[W]rite and [Q]uit the current buffer' })
 
+-- File refresh keymaps
+-- vim.keymap.set('n', '<Leader>r', ':e!<CR>', { noremap = true, silent = true, desc = '[R]eload current buffer (discard changes)' })
+-- vim.keymap.set('n', '<Leader>R', ':bufdo e!<CR>', { noremap = true, silent = true, desc = '[R]eload all buffers (discard changes)' })
+-- vim.keymap.set('n', '<Leader>cr', ':checktime<CR>', { noremap = true, silent = true, desc = '[C]heck for external file changes' })
+
 
 -- Insert current date and time
 vim.keymap.set('n', '<F3>', 'i<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>', { noremap = true, silent = true })
@@ -100,5 +105,3 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 --     vim.highlight.on_yank()
 --   end,
 -- })
-
--- vim: ts=2 sts=2 sw=2 et

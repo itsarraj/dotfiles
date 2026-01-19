@@ -32,6 +32,7 @@ vim.opt.incsearch = true  -- Incremental search
 vim.opt.swapfile = false    -- Disable swap files
 vim.opt.backup = false      -- Disable backups
 vim.opt.undofile = true
+vim.opt.autoread = true     -- Automatically read file when changed outside of Vim
 
 -- Performance
 vim.opt.updatetime = 50  -- Faster (default 4000ms)
