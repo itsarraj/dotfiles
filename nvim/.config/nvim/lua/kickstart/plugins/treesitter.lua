@@ -7,6 +7,9 @@ return {
     opts = {
       -- A list of parser names, or "all"
       ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'java', "tsx", "toml", "fish", "php", "json", "yaml", "css", "html", "lua", "go", "rust"},
+      -- -- Only install essential parsers for performance
+      -- ensure_installed = { 'bash', 'c', 'lua', 'markdown', 'vim', 'rust' },
+
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
@@ -19,9 +22,9 @@ return {
       indent = { enable = true, disable = { 'ruby' } },
     },
   },
--- nvim-treesitter/playground
-  {
-    'nvim-treesitter/playground',
-  },
+-- nvim-treesitter/playground - disabled for performance
+  -- {
+  --   'nvim-treesitter/playground',
+  -- },
 }
 -- vim: ts=2 sts=2 sw=2 et
