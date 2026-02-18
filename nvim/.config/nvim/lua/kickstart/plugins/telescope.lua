@@ -8,7 +8,13 @@
 return {
   { -- Fuzzy Finder (files, lsp, etc)
     'nvim-telescope/telescope.nvim',
-    event = 'VimEnter',
+    -- event = 'VimEnter', -- Load on VimEnter (moderate lazy loading)
+    -- cmd = 'Telescope', -- Load only on :Telescope command (very lazy, breaks keybindings)
+    keys = { -- Load on specific key presses (optimal performance + functionality)
+      '<leader>sh', '<leader>sk', '<leader>sf', '<leader>ss',
+      '<leader>sw', '<leader>sg', '<leader>sd', '<leader>sr',
+      '<leader>s.', '<leader><leader>'
+    },
     dependencies = {
       'nvim-lua/plenary.nvim',
       { -- If encountering errors, see telescope-fzf-native README for installation instructions

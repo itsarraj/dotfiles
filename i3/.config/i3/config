@@ -211,13 +211,13 @@ bindsym $mod+r mode "resize"
 #-----Custom keys Status Bar------
 #---------------------------------
 
-# Status Bar
-
+# Status Bar - Optimized for performance
+# Mode 'invisible' = truly hidden until modifier pressed (better performance)
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    mode hide
+    mode hide  # Hide status bar, toggle with Alt+Super keybinding
     tray_output $mm
     tray_output $sm
     tray_output $tm
@@ -226,13 +226,12 @@ bar {
     output $tm
 
     hidden_state hide
-    modifier Mod1+Mod4
-    position top 
+    position top
 
     status_command i3status
 #    status_command SCRIPT_DIR=~/.config/i3blocks/scripts i3blocks
 #    separator_symbol ""
-      
+
       #   colors {
       # background #002b36
       # statusline #839496
@@ -304,11 +303,17 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%- && $re
 # Suspend
 # bindsym $mod+Shift+period exec systemctl suspend
 
-# Prevent UI blocking
+# Prevent UI blocking - I/O and CPU scheduling optimization
 exec --no-startup-id ionice -c 3 i3
+# Additional I/O scheduling for better responsiveness
+exec --no-startup-id chrt --idle 0 $(pidof i3)  # Run i3 with idle scheduling priority
 #---------------------------------
 #--------Custom keys Start--------
 #---------------------------------
+
+# Toggle status bar visibility with Alt+Super (Mod1+Mod4)
+bindsym Mod1+Mod4 bar mode toggle
+
 bindsym $mod+b exec --no-startup-id ~/.local/scripts/toggle-touchpad
 
 # Toggle Android MTP mount/unmount (use $mod+Shift+Control+a to avoid overlap)
@@ -322,8 +327,8 @@ bindsym $mod+Shift+Control+a exec --no-startup-id ~/.local/scripts/dmtpfs
 #exec --no-startup-id transmission-rss -f
 ##Wifi Applet
 #exec --no-startup-id nm-applet
-## Load Xresources
-#exec --no-startup-id xrdb ~/.Xresources
+## Load Xresources (moved to xprofile for proper loading)
+# exec --no-startup-id xrdb -merge ~/.Xresources
 ## Set wallpaper
 #exec --no-startup-id feh --bg-scale --no-fehbg ~/.config/wall.png
 ## Compositor
