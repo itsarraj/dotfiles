@@ -1,10 +1,10 @@
-refresh-on-startup yes
+refresh-on-startup no
 auto-reload no
-# prepopulate-query-feeds yes
+prepopulate-query-feeds yes
+cleanup-on-quit no
 # show-read-articles no
-# show-read-feeds no
+show-read-feeds no
 # show-title-bar no
-# reload-threads 8
 
 external-url-viewer "urlscan -dc -r 'linkhandler {}'"
 
@@ -63,11 +63,18 @@ highlight feedlist "(World News|Local News|Local Events)" yellow black
 highlight feedlist "(Tech News|Linux News|Distro News|Subreddits)" green black
 highlight feedlist "(Real Estate|Other News)" blue black
 
-browser linkhandler
+browser "/home/cesium/.local/bin/linkhandler"
 macro , open-in-browser
-macro p set browser "dmenuhandler" ; open-in-browser ; set browser linkhandler
+macro p set browser "dmenuhandler" ; open-in-browser ; set browser "/home/cesium/.local/bin/linkhandler"
 macro b set browser "/usr/bin/brave --new-tab %u"; open-in-browser
 macro B set browser "/usr/bin/brave --incognito %u"; open-in-browser
 macro T set browser "/usr/bin/brave --tor %u"; open-in-browser
-macro W set browser "lynx %u" ; open-in-browser ; set browser linkhandler
-macro w set browser "w3m" ; open-in-browser ; set browser linkhandler
+macro W set browser "lynx %u" ; open-in-browser ; set browser "/home/cesium/.local/bin/linkhandler"
+macro w set browser "w3m" ; open-in-browser ; set browser "/home/cesium/.local/bin/linkhandler"
+
+# YouTube helpers (selected entry URL = %u)
+
+# - Download video to ~/Downloads/youtube (foreground, shows progress)
+macro y set browser "/usr/bin/yt-dlp --add-metadata -ic -P \"$HOME/Downloads/youtube\" %u" ; open-in-browser ; set browser "/home/cesium/.local/bin/linkhandler"
+
+

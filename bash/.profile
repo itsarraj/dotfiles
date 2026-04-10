@@ -48,17 +48,15 @@ PS1='\[\e[0;1;3$(($?==0?2:1))m\]›\[\e[0m\] '
 export JAVA_HOME=/usr/lib/jvm/java-21-openjdk/
 # export JAVA_HOME=/usr/lib/jvm/java-17-openjdk/
 export PATH=$JAVA_HOME/bin:$PATH
-# export PATH=$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$PATH
-
-# Lazy-load Android SDK for faster startup
-android_sdk() {
+# Android SDK (eager-load for dev convenience)
 export ANDROID_HOME=$HOME/Android/Sdk
-    export PATH=$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
-    unset -f android_sdk
-}
-#
-# export GRADLE_HOME=/usr/share/gradle
-# export PATH=$GRADLE_HOME/bin:$PATH
+export PATH=$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools/latest/bin
+# Android NDK (use latest installed version; update when upgrading NDK)
+export ANDROID_NDK_HOME=$ANDROID_HOME/ndk/27.1.12297006
+# Android CMake (for NDK/native builds)
+export PATH=$PATH:$ANDROID_HOME/cmake/3.22.1/bin
+# Gradle (pacman -S gradle; conditional if not installed)
+[ -d /usr/share/gradle ] && export GRADLE_HOME=/usr/share/gradle && export PATH=$GRADLE_HOME/bin:$PATH
 
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
 
@@ -66,12 +64,12 @@ ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_V
 
 export PATH="/home/plutonium/.local/share/solana/install/active_release/bin:$PATH"
 
-# Lazy-load NVM for faster shell startup (50-70% improvement)
+# NVM (eager-load for dev convenience)
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-nvm() {
-    unset -f nvm
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use
-    nvm "$@"
-}
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use
 
 export PATH=$PATH:/usr/local/go/bin
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

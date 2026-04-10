@@ -438,3 +438,6 @@ bindsym $mod+Shift+Control+a exec --no-startup-id ~/.local/scripts/dmtpfs
 #exec --no-startup-id i3-msg 'workspace $ws2; exec brave'
 exec --no-startup-id i3-msg 'workspace $ws1'
 
+# Start gnome-keyring-daemon with all components
+exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gpg
+
