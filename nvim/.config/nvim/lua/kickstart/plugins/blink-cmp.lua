@@ -1,3 +1,5 @@
+---@module 'lazy'
+---@type LazySpec
 return {
   { -- Autocompletion
     'saghen/blink.cmp',
@@ -38,8 +40,8 @@ return {
       },
       'folke/lazydev.nvim',
     },
-    --- @module 'blink.cmp'
-    --- @type blink.cmp.Config
+    ---@module 'blink.cmp'
+    ---@type blink.cmp.Config
     opts = {
       keymap = {
         -- 'default' (recommended) for mappings similar to built-in completions
@@ -80,7 +82,7 @@ return {
         -- Optionally, set `auto_show = true` to show the documentation after a delay.
         documentation = { auto_show = true, auto_show_delay_ms = 0 },
 
-        -- Reduce completion popup frequency for better performance
+        -- Reduc>e completion popup frequency for better performance
         -- menu = { auto_show = false }, -- Don't auto-show completion menu
       },
 

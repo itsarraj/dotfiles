@@ -9,16 +9,21 @@
 -- which loads which-key before all the UI elements are loaded. Events can be
 -- normal autocommands events (`:help autocmd-events`).
 --
--- Then, because we use the `config` key, the configuration only runs
--- after the plugin has been loaded:
---  config = function() ... end
+-- Then, because we use the `opts` key (recommended), the configuration runs
+-- after the plugin has been loaded as `require(MODULE).setup(opts)`.
 
+---@module 'lazy'
+---@type LazySpec
 return {
   { -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
-    event = "VeryLazy",
+    event = 'VimEnter',
+    ---@module 'which-key'
+    ---@type wk.Opts
+    ---@diagnostic disable-next-line: missing-fields
     opts = {
       icons = {
+        delay = 0,
         -- set icon mappings to true if you have a Nerd Font
         mappings = vim.g.have_nerd_font,
         -- If you are using a Nerd Font: set icons.keys to an empty table which will use the

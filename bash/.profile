@@ -69,6 +69,17 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use
 
 export PATH=$PATH:/usr/local/go/bin
+# FNM 
+#
+FNM_PATH="/home/plutonium/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "$(fnm env --shell bash)"
+fi
+
+eval "$(fnm env --use-on-cd --shell bash)"
+
+
 
 # bun
 export BUN_INSTALL="$HOME/.bun"

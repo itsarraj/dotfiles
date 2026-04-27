@@ -1,4 +1,6 @@
 -- LSP Plugins
+---@module 'lazy'
+---@type LazySpec
 return {
   {
     -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
@@ -19,7 +21,14 @@ return {
       -- Automatically install LSPs and related tools to stdpath for Neovim
       -- Mason must be loaded before its dependents so we need to set it up here.
       -- NOTE: `opts = {}` is the same as calling `require('mason').setup({})`
-      { 'mason-org/mason.nvim', opts = {} },
+      {
+        'mason-org/mason.nvim',
+        ---@module 'mason.settings'
+        ---@type MasonSettings
+        ---@diagnostic disable-next-line: missing-fields
+        opts = {},
+      },
+      -- Maps LSP server names between nvim-lspconfig and Mason package names.
       'mason-org/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
@@ -129,7 +138,7 @@ return {
           --
           -- When you move your cursor, the highlights will be cleared (the second autocommand).
           local client = vim.lsp.get_client_by_id(event.data.client_id)
-          if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_documentHighlight, event.buf) then
+          if client and client:supports_method('textDocument/documentHighlight', event.buf) then
             local highlight_augroup = vim.api.nvim_create_augroup('kickstart-lsp-highlight', { clear = false })
             vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
               buffer = event.buf,
@@ -156,10 +165,8 @@ return {
           -- code, if the language server you are using supports them
           --
           -- This may be unwanted, since they displace some of your code
-          if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
-            map('<leader>th', function()
-              vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
-            end, '[T]oggle Inlay [H]ints')
+          if client and client:supports_method('textDocument/inlayHint', event.buf) then
+            map('<leader>th', function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf }) end, '[T]oggle Inlay [H]ints')
           end
         end,
       })
@@ -226,11 +233,14 @@ return {
       --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
+      --  See `:help lsp-config` for information about keys and how to configure
+      ---@type table<string, vim.lsp.Config>
+
       local servers = {
         -- clangd = {},
-        gopls = {},
+        -- gopls = {},
         -- pyright = {},
-        rust_analyzer = {},
+        -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
@@ -239,13 +249,44 @@ return {
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
         --
-
+        stylua = {}, -- Used to format Lua code
+        -- Special Lua Config, as recommended by neovim help docs
+        
         lua_ls = {
           -- cmd = { ... },
           -- filetypes = { ... },
           -- capabilities = {},
+          on_init = function(client)
+            client.server_capabilities.documentFormattingProvider = false -- Disable formatting (formatting is done by stylua)
+
+            if client.workspace_folders then
+              local path = client.workspace_folders[1].name
+              if path ~= vim.fn.stdpath 'config' and (vim.uv.fs_stat(path .. '/.luarc.json') or vim.uv.fs_stat(path .. '/.luarc.jsonc')) then return end
+            end
+
+            client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+              runtime = {
+                version = 'LuaJIT',
+                path = { 'lua/?.lua', 'lua/?/init.lua' },
+              },
+              workspace = {
+                checkThirdParty = false,
+                -- NOTE: this is a lot slower and will cause issues when working on your own configuration.
+                --  See https://github.com/neovim/nvim-lspconfig/issues/3189
+                library = vim.tbl_extend('force', vim.api.nvim_get_runtime_file('', true), {
+                  '${3rd}/luv/library',
+                  '${3rd}/busted/library',
+                }),
+              },
+            })
+          end,
+          ---@type lspconfig.settings.lua_ls
+          
+          
           settings = {
             Lua = {
+              format = { enable = false }, -- Disable formatting (formatting is done by stylua)
+
               completion = {
                 callSnippet = 'Replace',
               },
@@ -275,6 +316,10 @@ return {
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
+      for name, server in pairs(servers) do
+        vim.lsp.config(name, server)
+        vim.lsp.enable(name)
+      end
       require('mason-lspconfig').setup {
         ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
         automatic_installation = false,

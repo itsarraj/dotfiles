@@ -11,7 +11,8 @@
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
-  'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
+  -- 'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
+  { 'NMAC427/guess-indent.nvim', opts = {} },
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
@@ -23,37 +24,37 @@ require('lazy').setup({
   -- modular approach: using `require 'path/name'` will
   -- include a plugin definition from file lua/path/name.lua
 
-  require 'kickstart/plugins/which-key', -- perfect, !update spec
-  require 'kickstart/plugins/gitsigns', -- perfect
-  require 'kickstart/plugins/telescope', -- perfect, !remove hotkeys
-  require 'kickstart/plugins/harpoon', -- perfect
-  require 'kickstart/plugins/undotree', -- perfect
-  require 'kickstart/plugins/vim-fugitive', -- perfect, !update hotkeys
-  require 'kickstart/plugins/treesitter', -- perfect
-  require 'kickstart/plugins/lspconfig', -- perfect, !learn hotkeys
-  -- require 'kickstart/plugins/cmp', -- perfect, !confirm hotkey modification
-  require 'kickstart/plugins/blink-cmp', -- perfect
-  -- require 'kickstart/plugins/onedark', -- perfect
-  -- require 'kickstart/plugins/gruvbox', -- perfect
-  -- require 'kickstart/plugins/solarized', -- perfect
-  -- require 'kickstart/plugins/catppuccin', -- perfect
-  -- require 'kickstart/plugins/conform',
-  -- require 'kickstart/plugins/mini',
-  require 'kickstart/plugins/darkplus'
+  require 'kickstart.plugins.which-key', -- perfect, !update spec
+  require 'kickstart.plugins.gitsigns', -- perfect
+  require 'kickstart.plugins.telescope', -- perfect, !remove hotkeys
+  require 'kickstart.plugins.harpoon', -- perfect
+  require 'kickstart.plugins.undotree', -- perfect
+  require 'kickstart.plugins.vim-fugitive', -- perfect, !update hotkeys
+  require 'kickstart.plugins.treesitter', -- perfect
+  require 'kickstart.plugins.lspconfig', -- perfect, !learn hotkeys
+  -- require 'kickstart.plugins.cmp', -- perfect, !confirm hotkey modification
+  require 'kickstart.plugins.blink-cmp', -- perfect
+  -- require 'kickstart.plugins.onedark', -- perfect
+  -- require 'kickstart.plugins.gruvbox', -- perfect
+  -- require 'kickstart.plugins.solarized', -- perfect
+  -- require 'kickstart.plugins.catppuccin', -- perfect
+  -- require 'kickstart.plugins.conform',
+  -- require 'kickstart.plugins.mini',
+  require 'kickstart.plugins.darkplus',
   --
-  -- require 'kickstart/plugins/telescope-file-browser',
-  -- require 'kickstart/plugins/todo-comments',
-  -- require 'kickstart/plugins/vim-tmux-navigator';
-  -- require 'kickstart/plugins/deoplete';
-  -- require 'kickstart/plugins/markdown-preview';
-  -- require 'kickstart/plugins/comment';
-  -- require 'kickstart/plugins/autopairs';
-  -- require 'kickstart/plugins/indent_line';
-  -- require 'kickstart/plugins/lint',
-  -- require 'kickstart/plugins/debug';
-  -- require 'kickstart/plugins/neo-tree';
-  -- require 'kickstart/plugins/render-markdown',
-  -- require 'kickstart/plugins/rustaceanvim';
+  -- require 'kickstart.plugins.telescope-file-browser',
+  -- require 'kickstart.plugins.todo-comments',
+  -- require 'kickstart.plugins.vim-tmux-navigator',
+  -- require 'kickstart.plugins.deoplete',
+  -- require 'kickstart.plugins.markdown-preview',
+  -- require 'kickstart.plugins.comment',
+  -- require 'kickstart.plugins.autopairs',
+  -- require 'kickstart.plugins.indent_line',
+  -- require 'kickstart.plugins.lint',
+  -- require 'kickstart.plugins.debug',
+  -- require 'kickstart.plugins.neo-tree',
+  -- require 'kickstart.plugins.render-markdown',
+  -- require 'kickstart.plugins.rustaceanvim',
 
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
@@ -80,7 +81,7 @@ require('lazy').setup({
   -- Or use telescope!
   -- In normal mode type `<space>sh` then write `lazy.nvim-plugin`
   -- you can continue same window with `<space>sr` which resumes last telescope search
-}, {
+}, { ---@diagnostic disable-line: missing-fields
     ui = {
       -- If you are using a Nerd Font: set icons to an empty table which will use the
       -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
