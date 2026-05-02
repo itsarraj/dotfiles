@@ -43,9 +43,68 @@ if [[ $- == *i* ]]; then
   bind -x '"\C-t":__tmux_quick_attach'
 fi
 
-# ## 3: Aliases | pacman fzf helpers | ------------------------------------------
-alias parufzf="paru -Slq | fzf -m --preview 'cat <(paru -Si {1}) <(paru -Fl {1} | awk \"{print \$2}\")' | xargs -ro  paru -S"
-alias pacfzf="sudo pacman -Sy; sudo pacman -Slq | fzf -m --preview 'cat <(yay -Si {1}) <(yay -Fl {1} | awk \"{print \$2}\")' | xargs -ro  yay -S"
+# ## 3: Package pickers | pacman/paru skim popups | ------------------------------------------
+__pkg_skim_opts=(
+  --multi
+  --bind='ctrl-p:toggle-preview,ctrl-/:change-preview-window(right:65%:wrap|down:45%:wrap|hidden),alt-a:select-all,alt-d:deselect-all'
+  --preview-window='right:65%:wrap:hidden'
+)
+
+__pkg_preview() {
+  local manager=$1
+  local pkg=$2
+
+  printf '\033[1;36m%s\033[0m\n\n' "$pkg"
+  "$manager" -Si "$pkg" 2>/dev/null || true
+
+  printf '\n\033[1;33mFiles\033[0m\n'
+  "$manager" -Fl "$pkg" 2>/dev/null | awk '{print $2}' | sed -n '1,80p' || true
+}
+export -f __pkg_preview
+
+parufzf() {
+  command -v paru >/dev/null 2>&1 || {
+    printf 'parufzf: paru is not installed\n' >&2
+    return 1
+  }
+  command -v sk >/dev/null 2>&1 || {
+    printf 'parufzf: skim (sk) is not installed\n' >&2
+    return 1
+  }
+
+  local selected=()
+  mapfile -t selected < <(
+    paru -Slq | sk "${__pkg_skim_opts[@]}" \
+      --prompt='paru > ' \
+      --header='tab: toggle | alt-a/d: all/none | ctrl-p: preview | ctrl-/: layout | enter: install' \
+      --preview='bash -lc '\''__pkg_preview paru "$1"'\'' _ {}'
+  )
+
+  ((${#selected[@]})) || return 0
+  paru -S "${selected[@]}"
+}
+
+pacfzf() {
+  command -v pacman >/dev/null 2>&1 || {
+    printf 'pacfzf: pacman is not installed\n' >&2
+    return 1
+  }
+  command -v sk >/dev/null 2>&1 || {
+    printf 'pacfzf: skim (sk) is not installed\n' >&2
+    return 1
+  }
+
+  local selected=()
+  mapfile -t selected < <(
+    pacman -Slq | sk "${__pkg_skim_opts[@]}" \
+      --prompt='pacman > ' \
+      --header='tab: toggle | alt-a/d: all/none | ctrl-p: preview | ctrl-/: layout | enter: install' \
+      --preview='bash -lc '\''__pkg_preview pacman "$1"'\'' _ {}'
+  )
+
+  ((${#selected[@]})) || return 0
+  sudo pacman -S "${selected[@]}"
+}
 
 # ## 4: X11 | xprofile for display and X apps | ------------------------------------------
 . ~/.xprofile
