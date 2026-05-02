@@ -1,0 +1,20 @@
+
+local timestamps = require 'custom.timestamps'
+local files = require 'custom.files'
+local tools = require 'custom.tools'
+local search = require 'custom.search'
+local scratch = require 'custom.scratch'
+local buffers = require 'custom.buffers'
+local harpoon_menu = require 'custom.harpoon'
+local git = require 'custom.git'
+local diagnostics = require 'custom.diagnostics'
+
+vim.keymap.set('n', '<leader>dd', timestamps.open, { desc = 'Insert date/time' })
+vim.keymap.set('n', '<leader>df', files.new_file, { desc = 'Create empty file here' })
+vim.keymap.set('n', '<leader>nn', tools.open, { desc = 'Nvim tools menu' })
+vim.keymap.set('n', '<leader>sm', search.open, { desc = 'Search menu' })
+vim.keymap.set('n', '<leader>bs', scratch.open, { desc = 'Scratch buffer menu' })
+vim.keymap.set('n', '<leader>bb', buffers.open, { desc = 'Buffer menu' })
+vim.keymap.set('n', '<leader>hh', harpoon_menu.open, { desc = 'Harpoon menu' })
+vim.keymap.set('n', '<leader>gg', git.open, { desc = 'Git menu' })
+vim.keymap.set('n', '<leader>dm', diagnostics.open, { desc = 'Diagnostics menu' })

@@ -41,34 +41,26 @@ vim.keymap.set('n', '<Leader>q', ':q<CR>', { noremap = true, silent = true, desc
 -- vim.keymap.set('n', '<Leader>R', ':bufdo e!<CR>', { noremap = true, silent = true, desc = '[R]eload all buffers (discard changes)' })
 -- vim.keymap.set('n', '<Leader>cr', ':checktime<CR>', { noremap = true, silent = true, desc = '[C]heck for external file changes' })
 
+-- local timestamps = require 'custom.timestamps'
+-- local files = require 'custom.files'
+-- local tools = require 'custom.tools'
+-- local search = require 'custom.search'
+-- local scratch = require 'custom.scratch'
+-- local buffers = require 'custom.buffers'
+-- local harpoon_menu = require 'custom.harpoon'
+-- local git = require 'custom.git'
+-- local diagnostics = require 'custom.diagnostics'
 
--- Insert current date and time
-vim.keymap.set('n', '<F3>', 'i<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>', { noremap = true, silent = true })
-vim.keymap.set('i', '<F3>', '<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>', { noremap = true, silent = true })
+-- vim.keymap.set('n', '<leader>dd', timestamps.open, { desc = 'Insert date/time' })
+-- vim.keymap.set('n', '<leader>df', files.new_file, { desc = 'Create empty file here' })
+-- vim.keymap.set('n', '<leader>nn', tools.open, { desc = 'Nvim tools menu' })
+-- vim.keymap.set('n', '<leader>sm', search.open, { desc = 'Search menu' })
+-- vim.keymap.set('n', '<leader>bs', scratch.open, { desc = 'Scratch buffer menu' })
+-- vim.keymap.set('n', '<leader>bb', buffers.open, { desc = 'Buffer menu' })
+-- vim.keymap.set('n', '<leader>hh', harpoon_menu.open, { desc = 'Harpoon menu' })
+-- vim.keymap.set('n', '<leader>gg', git.open, { desc = 'Git menu' })
+-- vim.keymap.set('n', '<leader>dm', diagnostics.open, { desc = 'Diagnostics menu' })
 
--- Date/time insertion shortcuts
-vim.keymap.set('n', '<leader>dd', function() vim.api.nvim_put({ os.date '%Y-%m-%d' }, 'c', true, true) end, { desc = 'Insert current date' })
-vim.keymap.set('n', '<leader>tt', function() vim.api.nvim_put({ os.date '%H:%M' }, 'c', true, true) end, { desc = 'Insert current time' })
-vim.keymap.set('n', '<leader>dtt', function() vim.api.nvim_put({ os.date '%Y-%m-%d %H:%M' }, 'c', true, true) end, { desc = 'Insert date+time' })
-
--- File creation shortcuts
-local function create_file(filename)
-  local current_directory = vim.fn.expand '%:p:h'
-  vim.cmd('silent !touch ' .. current_directory .. '/' .. filename)
-  vim.cmd 'redraw'
-end
-
-vim.keymap.set('n', '<leader>df', function()
-  create_file(os.date '%Y%m%d.md')
-end, { desc = 'Create dated file (YYYYMMDD)' })
-
-vim.keymap.set('n', '<leader>dtf', function()
-  local filename = os.date '%Y%m%d%H%M%S.md'
-  create_file(filename)
-  print('Created file: ' .. filename)
-end, { desc = 'Create timestamped file' })
-
---
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })

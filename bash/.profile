@@ -59,6 +59,45 @@ export LDFLAGS="-fopenmp"
 # ## 6: Prompt | colored exit-status arrow | ------------------------------------------
 PS1='\[\e[0;1;3$(($?==0?2:1))m\]›\[\e[0m\] '
 
+# # ## 6: Prompt | colored exit-status arrow, cwd, git branch | ------------------------------------------
+# if [[ $- == *i* ]]; then
+#   __prompt_git() {
+#     command -v git >/dev/null 2>&1 || return
+#     git rev-parse --is-inside-work-tree >/dev/null 2>&1 || return
+
+#     local branch line marks staged=0 unstaged=0 untracked=0 ahead=0 behind=0
+#     branch=$(git symbolic-ref --quiet --short HEAD 2>/dev/null) ||
+#       branch=$(git rev-parse --short HEAD 2>/dev/null) ||
+#       return
+
+#     while IFS= read -r line; do
+#       case "$line" in
+#         '## '*)
+#           [[ $line =~ ahead[[:space:]]([0-9]+) ]] && ahead=${BASH_REMATCH[1]}
+#           [[ $line =~ behind[[:space:]]([0-9]+) ]] && behind=${BASH_REMATCH[1]}
+#           ;;
+#         '?? '*)
+#           ((untracked++))
+#           ;;
+#         *)
+#           [[ ${line:0:1} != ' ' ]] && ((staged++))
+#           [[ ${line:1:1} != ' ' ]] && ((unstaged++))
+#           ;;
+#       esac
+#     done < <(git status --porcelain=v1 --branch 2>/dev/null)
+
+#     ((staged)) && marks+=" +$staged"
+#     ((unstaged)) && marks+=" !$unstaged"
+#     ((untracked)) && marks+=" ?$untracked"
+#     ((ahead)) && marks+=" ⇡$ahead"
+#     ((behind)) && marks+=" ⇣$behind"
+
+#     printf '  %s%s' "$branch" "$marks"
+#   }
+
+#   PS1='\n\[\e[0;1;3$(($?==0?2:1))m\]❯\[\e[0m\] \[\e[0;34m\]󰉋 \w\[\e[0m\]\[\e[0;36m\]$(__prompt_git)\[\e[0m\] \[\e[0;90m\]\[\e[0m\] '
+# fi
+
 # ## 7: Java | JDK 21 if installed | ------------------------------------------
 if [ -d /usr/lib/jvm/java-21-openjdk ]; then
   export JAVA_HOME=/usr/lib/jvm/java-21-openjdk

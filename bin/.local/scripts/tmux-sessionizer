@@ -1,29 +1,126 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
+roots=("$HOME/work" "$HOME/personal" "$HOME")
+max_depth="${TMUX_SESSIONIZER_DEPTH:-2}"
+
+usage() {
+  printf 'Usage: tmux-sessionizer [directory]\n'
+}
+
+session_name() {
+  local name checksum
+  name=$(basename "$1")
+  name=${name//./_}
+  name=${name//[^A-Za-z0-9_-]/_}
+
+  # Avoid collisions for projects with the same basename in different roots.
+  read -r checksum _ < <(printf '%s' "$1" | cksum)
+  printf '%s_%s' "$name" "${checksum:0:5}"
+}
+
+list_dirs() {
+  local existing_roots=()
+
+  for root in "${roots[@]}"; do
+    [[ -d $root ]] && existing_roots+=("$root")
+  done
+
+  if ((${#existing_roots[@]} == 0)); then
+    return 0
+  fi
+
+  if command -v fd >/dev/null 2>&1; then
+    fd . "${existing_roots[@]}" \
+      --type d \
+      --max-depth "$max_depth" \
+      --hidden \
+      --exclude .git \
+      --exclude node_modules \
+      --exclude .cache
+  else
+    find "${existing_roots[@]}" \
+      -mindepth 0 \
+      -maxdepth "$max_depth" \
+      -type d \
+      -not -path '*/.git/*' \
+      -not -path '*/node_modules/*' \
+      -not -path '*/.cache/*'
+  fi
+}
+
+preview_dir() {
+  local dir=$1
+
+  printf '\033[1;36m%s\033[0m\n\n' "$dir"
+
+  if git -C "$dir" rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    git -C "$dir" status --short --branch 2>/dev/null | sed -n '1,12p'
+    printf '\n'
+  fi
+
+  if command -v eza >/dev/null 2>&1; then
+    eza --tree --level=2 --icons=auto --git-ignore "$dir" 2>/dev/null | sed -n '1,40p'
+  elif command -v tree >/dev/null 2>&1; then
+    tree -L 2 -a -I '.git|node_modules|.cache' "$dir" 2>/dev/null | sed -n '1,40p'
+  else
+    ls -la "$dir" 2>/dev/null | sed -n '1,40p'
+  fi
+}
+
+if [[ ${1:-} == -h || ${1:-} == --help ]]; then
+  usage
+  exit 0
+fi
+
+if [[ ${1:-} == --preview ]]; then
+  preview_dir "${2:-}"
+  exit 0
+fi
+
 if [[ $# -eq 1 ]]; then
-    selected=$1
+  selected=$1
 else
-    selected=$(find ~/work ~/personal ~/ -mindepth 0 -maxdepth 2 -type d | fzf)
+  if ! command -v fzf >/dev/null 2>&1; then
+    printf 'tmux-sessionizer: fzf is required for interactive mode\n' >&2
+    exit 1
+  fi
+
+  selected=$(
+    list_dirs | fzf \
+      --prompt='session > ' \
+      --height=80% \
+      --layout=reverse \
+      --border \
+      --preview="$0 --preview {}" \
+      --preview-window='right:60%:wrap'
+  ) || true
 fi
 
 if [[ -z $selected ]]; then
-    exit 0
+  exit 0
 fi
 
-selected_name=$(basename "$selected" | tr . _)
-tmux_running=$(pgrep tmux)
-
-if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-    tmux new-session -s $selected_name -c $selected
-    exit 0
+selected=$(realpath "$selected")
+if [[ ! -d $selected ]]; then
+  printf 'tmux-sessionizer: not a directory: %s\n' "$selected" >&2
+  exit 1
 fi
 
-if ! tmux has-session -t=$selected_name 2> /dev/null; then
-    tmux new-session -ds $selected_name -c $selected
+selected_name=$(session_name "$selected")
+
+if [[ -z ${TMUX:-} ]] && ! tmux info >/dev/null 2>&1; then
+  tmux new-session -s "$selected_name" -c "$selected"
+  exit 0
 fi
 
-if [[ -n $TMUX ]]; then
-    tmux switch-client -t $selected_name
+if ! tmux has-session -t="$selected_name" 2>/dev/null; then
+  tmux new-session -ds "$selected_name" -c "$selected"
+fi
+
+if [[ -n ${TMUX:-} ]]; then
+  tmux switch-client -t "$selected_name"
 else
-    tmux attach-session -t $selected_name
+  tmux attach-session -t "$selected_name"
 fi

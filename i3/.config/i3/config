@@ -1,5 +1,5 @@
 # set $mm primary
-set $mm "eDP-1" 
+set $mm "eDP" 
 set $pm "eDP-1" 
 set $sm "HDMI-1"
 set $tm "HDMI-0"

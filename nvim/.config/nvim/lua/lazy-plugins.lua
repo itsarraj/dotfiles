@@ -8,99 +8,26 @@
 --  To update plugins you can run
 --    :Lazy update
 --
--- NOTE: Here is where you install your plugins.
-require('lazy').setup({
-  -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
-  -- 'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
+-- Plugin specs live in `lua/plugins/<name>.lua`. List basenames below (no `.lua`).
+-- Add or remove names here instead of repeating `require 'plugins.<name>'`.
+
+local specs = {
   { 'NMAC427/guess-indent.nvim', opts = {} },
+}
 
-  -- NOTE: Plugins can also be added by using a table,
-  -- with the first argument being the link and the following
-  -- keys can be used to configure plugin behavior/loading/etc.
-  --
-  -- Use `opts = {}` to automatically pass options to a plugin's `setup()` function, forcing the plugin to be loaded.
-  --
+-- Basename matches lua/plugins/<name>.lua — uncomment a line to load that plugin.
+local plugins = {
+  'darkplus', -- Colorscheme (Dark+ / VS-style)
+  'telescope', -- Fuzzy finder (files, grep, buffers, LSP pickers)
+  'harpoon', -- Pin files and jump with few keys (Harpoon 2)
+  'blink-cmp', -- Completion (LSP, path, snippets)
+  'mini', -- mini.nvim: textobjects, surround, statusline, …
+}
 
-  -- modular approach: using `require 'path/name'` will
-  -- include a plugin definition from file lua/path/name.lua
+for _, name in ipairs(plugins) do
+  specs[#specs + 1] = require('plugins.' .. name)
+end
 
-  require 'kickstart.plugins.which-key', -- perfect, !update spec
-  require 'kickstart.plugins.gitsigns', -- perfect
-  require 'kickstart.plugins.telescope', -- perfect, !remove hotkeys
-  require 'kickstart.plugins.harpoon', -- perfect
-  require 'kickstart.plugins.undotree', -- perfect
-  require 'kickstart.plugins.vim-fugitive', -- perfect, !update hotkeys
-  require 'kickstart.plugins.treesitter', -- perfect
-  require 'kickstart.plugins.lspconfig', -- perfect, !learn hotkeys
-  -- require 'kickstart.plugins.cmp', -- perfect, !confirm hotkey modification
-  require 'kickstart.plugins.blink-cmp', -- perfect
-  -- require 'kickstart.plugins.onedark', -- perfect
-  -- require 'kickstart.plugins.gruvbox', -- perfect
-  -- require 'kickstart.plugins.solarized', -- perfect
-  -- require 'kickstart.plugins.catppuccin', -- perfect
-  -- require 'kickstart.plugins.conform',
-  -- require 'kickstart.plugins.mini',
-  require 'kickstart.plugins.darkplus',
-  --
-  -- require 'kickstart.plugins.telescope-file-browser',
-  -- require 'kickstart.plugins.todo-comments',
-  -- require 'kickstart.plugins.vim-tmux-navigator',
-  -- require 'kickstart.plugins.deoplete',
-  -- require 'kickstart.plugins.markdown-preview',
-  -- require 'kickstart.plugins.comment',
-  -- require 'kickstart.plugins.autopairs',
-  -- require 'kickstart.plugins.indent_line',
-  -- require 'kickstart.plugins.lint',
-  -- require 'kickstart.plugins.debug',
-  -- require 'kickstart.plugins.neo-tree',
-  -- require 'kickstart.plugins.render-markdown',
-  -- require 'kickstart.plugins.rustaceanvim',
-
-  -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
-  -- init.lua. If you want these files, they are in the repository, so you can just download them and
-  -- place them in the correct locations.
-
-  -- NOTE: Next step on your Neovim journey: Add/Configure additional plugins for Kickstart
-  --
-  --  Here are some example plugins that I've included in the Kickstart repository.
-  --  Uncomment any of the lines below to enable them (you will need to restart nvim).
-  --
-  -- require 'kickstart.plugins.debug',
-  -- require 'kickstart.plugins.indent_line',
-  -- require 'kickstart.plugins.lint',
-  -- require 'kickstart.plugins.autopairs',
-  -- require 'kickstart.plugins.neo-tree',
-
-  -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
-  --    This is the easiest way to modularize your config.
-  --
-  --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-  -- { import = 'custom.plugins' },
-  --
-  -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
-  -- Or use telescope!
-  -- In normal mode type `<space>sh` then write `lazy.nvim-plugin`
-  -- you can continue same window with `<space>sr` which resumes last telescope search
-}, { ---@diagnostic disable-line: missing-fields
-    ui = {
-      -- If you are using a Nerd Font: set icons to an empty table which will use the
-      -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
-      icons = vim.g.have_nerd_font and {} or {
-        cmd = '⌘',
-        config = '🛠',
-        event = '📅',
-        ft = '📂',
-        init = '⚙',
-        keys = '🗝',
-        plugin = '🔌',
-        runtime = '💻',
-        require = '🌙',
-        source = '📄',
-        start = '🚀',
-        task = '📌',
-        lazy = '💤 ',
-      },
-    },
-  })
+require('lazy').setup(specs)
 
 -- vim: ts=2 sts=2 sw=2 et
