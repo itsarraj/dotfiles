@@ -44,20 +44,24 @@ if [[ $- == *i* ]]; then
 fi
 
 # ## 3: Package pickers | pacman/paru skim popups | ------------------------------------------
+__pkg_skim_preview_window='right:65%:wrap:hidden'
+__pkg_skim_preview_bind='ctrl-p:toggle-preview,ctrl-/:change-preview-window(right:65%:wrap|down:45%:wrap|hidden),alt-a:select-all,alt-d:deselect-all'
+__pkg_skim_header='tab: toggle | alt-a/d: all/none | ctrl-p: preview | ctrl-/: layout | enter: install'
+
 __pkg_skim_opts=(
   --multi
-  --bind='ctrl-p:toggle-preview,ctrl-/:change-preview-window(right:65%:wrap|down:45%:wrap|hidden),alt-a:select-all,alt-d:deselect-all'
-  --preview-window='right:65%:wrap:hidden'
+  --bind="$__pkg_skim_preview_bind"
+  --preview-window="$__pkg_skim_preview_window"
 )
 
 __pkg_preview() {
   local manager=$1
   local pkg=$2
 
-  printf '\033[1;36m%s\033[0m\n\n' "$pkg"
+  printf '%s\n\n' "$pkg"
   "$manager" -Si "$pkg" 2>/dev/null || true
 
-  printf '\n\033[1;33mFiles\033[0m\n'
+  printf '\nFiles\n'
   "$manager" -Fl "$pkg" 2>/dev/null | awk '{print $2}' | sed -n '1,80p' || true
 }
 export -f __pkg_preview
@@ -76,7 +80,7 @@ parufzf() {
   mapfile -t selected < <(
     paru -Slq | sk "${__pkg_skim_opts[@]}" \
       --prompt='paru > ' \
-      --header='tab: toggle | alt-a/d: all/none | ctrl-p: preview | ctrl-/: layout | enter: install' \
+      --header="$__pkg_skim_header" \
       --preview='bash -lc '\''__pkg_preview paru "$1"'\'' _ {}'
   )
 
@@ -98,7 +102,7 @@ pacfzf() {
   mapfile -t selected < <(
     pacman -Slq | sk "${__pkg_skim_opts[@]}" \
       --prompt='pacman > ' \
-      --header='tab: toggle | alt-a/d: all/none | ctrl-p: preview | ctrl-/: layout | enter: install' \
+      --header="$__pkg_skim_header" \
       --preview='bash -lc '\''__pkg_preview pacman "$1"'\'' _ {}'
   )
 
