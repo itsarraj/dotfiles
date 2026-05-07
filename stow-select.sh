@@ -55,13 +55,8 @@ fi
 cd "$DOTFILES_DIR"
 
 # List your dotfile "packages" (directories) in one array for easy selection.
-# packages=(
-#   alacritty bash bin BrodieRobertson conda gtk-3.0 gtk-4.0 i3 johnsonjh
-#   kwalletrc lf newsboat nvim picom thelinuxcast ThePrimeagen tjdevries
-#   tmux xinput-touchpad xprofile xresources zathura
-# )
 packages=(
-  alacritty bash bin conda gtk-3.0 gtk-4.0 i3 kwalletrc lf newsboat nvim picom tmux xinput-touchpad xprofile xresources zathura 
+  alacritty bash bin conda gtk-2.0 gtk-3.0 gtk-4.0 i3 kwalletrc lf newsboat nvim picom tmux xprofile xresources zathura
 )
 
 selected=()

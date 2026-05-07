@@ -3,4 +3,4 @@ nvim/.local/share/applications/freedownloadmanager*
 nvim/.local/share/applications/wine*
 nvim/.local/share/applications/mimeinfo.cache
 docs/*
-!docs/clone.sh
+# !docs/clone.sh
