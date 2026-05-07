@@ -37,18 +37,30 @@ export LDFLAGS="-fopenmp"
 # ## 6: Prompt | colored exit-status arrow | ------------------------------------------
 PS1='\[\e[0;1;3$(($?==0?2:1))m\]›\[\e[0m\] '
 
-# ## 7: Java | JDK 21 if installed | ------------------------------------------
-if [ -d /usr/lib/jvm/java-21-openjdk ]; then
+# ## 7: Java | prefer system default JDK | ------------------------------------------
+if [ -d /usr/lib/jvm/default ]; then
+  export JAVA_HOME=/usr/lib/jvm/default
+elif [ -d /usr/lib/jvm/default-runtime ]; then
+  export JAVA_HOME=/usr/lib/jvm/default-runtime
+elif [ -d /usr/lib/jvm/java-26-openjdk ]; then
+  export JAVA_HOME=/usr/lib/jvm/java-26-openjdk
+elif [ -d /usr/lib/jvm/java-21-openjdk ]; then
   export JAVA_HOME=/usr/lib/jvm/java-21-openjdk
+elif [ -d /usr/lib/jvm/java-17-openjdk ]; then
+  export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
+fi
+
+if [ -n "${JAVA_HOME:-}" ] && [ -d "$JAVA_HOME/bin" ]; then
   export PATH="$JAVA_HOME/bin:$PATH"
 fi
-# export JAVA_HOME=/usr/lib/jvm/java-17-openjdk/
 
 # ## 8: Android | SDK NDK CMake Gradle paths | ------------------------------------------
-export ANDROID_HOME=$HOME/Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools/latest/bin
+export ANDROID_HOME="$HOME/Android/Sdk"
+[ -d "$ANDROID_HOME/emulator" ] && export PATH="$PATH:$ANDROID_HOME/emulator"
+[ -d "$ANDROID_HOME/platform-tools" ] && export PATH="$PATH:$ANDROID_HOME/platform-tools"
+[ -d "$ANDROID_HOME/cmdline-tools/latest/bin" ] && export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin"
 export ANDROID_NDK_HOME=$ANDROID_HOME/ndk/27.1.12297006
-export PATH=$PATH:$ANDROID_HOME/cmake/3.22.1/bin
+[ -d "$ANDROID_HOME/cmake/3.22.1/bin" ] && export PATH="$PATH:$ANDROID_HOME/cmake/3.22.1/bin"
 [ -d /usr/share/gradle ] && export GRADLE_HOME=/usr/share/gradle && export PATH=$GRADLE_HOME/bin:$PATH
 
 # ## 9: Rust | cargo env | ------------------------------------------
