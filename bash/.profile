@@ -88,3 +88,10 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 export PATH="/home/cesium/.local/share/solana/install/active_release/bin:$PATH"
+
+
+# ---
+export OLLAMA_NUM_PARALLEL=1
+export OLLAMA_MAX_LOADED_MODELS=1
+export OLLAMA_KEEP_ALIVE=30m
+export OLLAMA_FLASH_ATTENTION=1
