@@ -20,8 +20,11 @@ local plugins = {
   'darkplus', -- Colorscheme (Dark+ / VS-style)
   'telescope', -- Fuzzy finder (files, grep, buffers, LSP pickers)
   'harpoon', -- Pin files and jump with few keys (Harpoon 2)
-  'blink-cmp', -- Completion (LSP, path, snippets)
-  'mini', -- mini.nvim: textobjects, surround, statusline, …
+  'blink-cmp', -- Completion (LSP, path, snippets); load before AI plugins that register blink sources
+  -- 'mini', -- mini.nvim: textobjects, surround, statusline, …
+  -- 'codecompanion', -- CodeCompanion.nvim (depends on blink.cmp in plugins/codecompanion.lua)
+  -- 'minuet', -- minuet
+  -- 'avante', -- Avante.nvim
 }
 
 for _, name in ipairs(plugins) do
