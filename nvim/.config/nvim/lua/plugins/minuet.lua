@@ -18,7 +18,7 @@ return {
         context_window = 512,
 
         -- Timeout in seconds
-        request_timeout = 3,
+        request_timeout = 10,
 
         -- Show warnings and errors
         notify = "warn",
@@ -35,7 +35,7 @@ return {
             end_point = "http://127.0.0.1:11434/v1/completions",
 
             -- Must exist in `ollama list`
-            model = "qwen2.5-coder:7b-instruct-q4_K_M",
+            model = "qwen2.5-coder:0.5b",
             optional = {
               max_tokens = 64,
               top_p = 0.9,
