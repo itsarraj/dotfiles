@@ -25,7 +25,7 @@ local plugins = {
   -- 'codecompanion', -- CodeCompanion.nvim (depends on blink.cmp in plugins/codecompanion.lua)
   -- 'minuet', -- minuet
   -- 'avante', -- Avante.nvim
- 'treesitter'
+ -- 'treesitter'
 }
 
 for _, name in ipairs(plugins) do
