@@ -129,3 +129,144 @@ https://lobste.rs/t/distributed.rss distributed-systems
 https://hnrss.org/newest?q=distributed+systems distributed-systems
 
 https://andrewkelley.me/rss.xml zig
+
+# ===== LEARNING =====
+https://thedecisionlab.com/feed/ decision-making
+https://nesslabs.com/feed learning
+https://fs.blog/feed/ farnam-street
+https://coffeeandjunk.substack.com/feed sunday-wisdom
+https://commoncog.com/blog/rss/ commoncog
+https://feeds.feedburner.com/scotthyoung/HAHx scott-h-young
+https://feeds.feedburner.com/bigthink/main big-think
+
+# ===== STARTUP =====
+http://steveblank.com/feed/ steve-blank
+https://geohot.github.io/blog/feed.xml geohot
+http://news.ycombinator.com/rss hacker-news
+http://guykawasaki.com/feed/ guy-kawasaki
+http://ben-evans.com/benedictevans?format=rss benedict-evans
+http://firstround.com/review/feed.xml first-round-review
+http://blog.samaltman.com/posts.atom sam-altman
+http://andrewchen.co/feed/ andrew-chen
+https://bothsidesofthetable.com/feed both-sides-table
+http://feeds.feedburner.com/BothSidesOfTheTable both-sides-table
+http://feed.onstartups.com/onstartups onstartups
+https://medium.com/feed/the-black-box-of-product-management black-box-pm
+https://productlife.to/feed product-life
+https://lethain.com/feeds/ irrational-exuberance
+
+# ===== TECH NEWS =====
+http://feeds.slashgear.com/slashgear slashgear
+http://venturebeat.com/feed/ venturebeat
+http://www.theverge.com/rss/full.xml the-verge
+http://www.engadget.com/rss-full.xml engadget
+https://feeds2.feedburner.com/PennOlson tech-in-asia
+https://techcrunch.com/feed/ techcrunch
+http://feeds.feedburner.com/fastcompany/headlines fast-company
+https://www.forbes.com/leadership/feed/ forbes-leadership
+http://www.forbes.com/entrepreneurs/index.xml forbes-entrepreneurs
+
+# ===== PRODUCTS & IDEAS =====
+http://www.producthunt.com/feed product-hunt
+http://hnrss.org/show hn-show
+https://hnrss.org/launches hn-launches
+http://feeds.feedburner.com/sachinrekhiblog sachin-rekhi
+
+# ===== ENGINEERING BLOGS =====
+https://medium.com/feed/airtable-eng airtable-eng
+https://medium.com/feed/medium-eng medium-eng
+https://medium.com/feed/paypal-engineering paypal-eng
+https://medium.com/feed/pinterest-engineering pinterest-eng
+http://engineering.grab.com/feed.xml grab-tech
+https://slack.engineering/feed slack-eng
+http://githubengineering.com/atom.xml github-eng
+https://developer.atlassian.com/blog/feed.xml atlassian
+https://engineering.fb.com/feed/ meta-eng
+https://blog.cloudflare.com/rss/ cloudflare
+https://blog.asana.com/category/eng/feed/ asana-eng
+https://engineering.canva.com/rss canva-eng
+https://medium.com/feed/airbnb-engineering airbnb-eng
+https://dropbox.tech/feed dropbox-tech
+https://browser.engineering/rss.xml browser-engineering
+https://engineering.atspotify.com/feed/ spotify-eng
+https://jvns.ca/atom.xml julia-evans
+https://feeds.feedburner.com/martinkl?format=xml martin-kleppmann
+https://overreacted.io/rss.xml dan-abramov
+https://danluu.com/atom.xml dan-luu
+https://shopifyengineering.myshopify.com/blogs/engineering.atom shopify-eng
+https://joshwcomeau.com/rss.xml josh-comeau
+https://eng.uber.com/feed/ uber-eng
+https://blog.singleton.io/index.xml stripe-cto
+https://sophiebits.com/atom.xml sophie-alpert
+https://amasad.me/rss amjad-masad
+https://signal.org/blog/rss.xml signal
+https://www.joelonsoftware.com/feed/ joel-on-software
+https://blog.pragmaticengineer.com/rss/ pragmatic-engineer
+https://developer.nvidia.com/blog/feed nvidia-dev
+
+# ===== MACHINE LEARNING =====
+https://blog.ml.cmu.edu/feed/ cmu-ml
+https://deepmind.com/blog/feed/basic/ deepmind
+https://jalammar.github.io/feed.xml jay-alammar
+http://distill.pub/rss.xml distill
+https://lilianweng.github.io/lil-log/feed.xml lilian-weng
+http://news.mit.edu/rss/topic/artificial-intelligence2 mit-ai
+http://ruder.io/rss/index.rss sebastian-ruder
+http://bair.berkeley.edu/blog/feed.xml bair
+https://www.youtube.com/feeds/videos.xml?channel_id=UCcIXc5mJsHVYTZR1maL5l9w deeplearning-ai
+https://openai.com/news/engineering/rss.xml openai
+https://thegradient.pub/rss/ the-gradient
+http://googleresearch.blogspot.com/atom.xml google-ai
+https://towardsdatascience.com/feed tds
+https://www.unite.ai/feed/ unite-ai
+https://www.amazon.science/index.rss amazon-science
+http://www.reddit.com/r/MachineLearning/.rss reddit-ml
+https://pytorch.org/feed pytorch
+
+# ===== DESIGN =====
+https://uxplanet.org/feed ux-planet
+https://www.nngroup.com/feed/rss/ nngroup
+http://feeds.feedburner.com/uxmovement ux-movement
+http://blog.invisionapp.com/feed/ invision
+https://uxmatters.com/index.xml uxmatters
+https://www.smashingmagazine.com/feed/ smashing-magazine
+https://uxdesign.cc/feed ux-collective
+http://airbnb.design/feed/ airbnb-design
+https://web.dev/feed.xml webdev
+https://slack.design/feed/ slack-design
+https://feeds.feedburner.com/CssTricks css-tricks
+
+# ===== PSYCHOLOGY =====
+http://feeds.feedburner.com/PsychologyBlog psyblog
+http://www.all-about-psychology.com/psychology.xml all-about-psychology
+http://www.socialpsychology.org/headlines.rss psychology-headlines
+https://nautil.us/rss/all nautilus
+http://freakonomics.blogs.nytimes.com/feed/ freakonomics
+https://www.psychologytoday.com/intl/rss.xml psychology-today
+
+# ===== NEUROSCIENCE =====
+http://neurosciencenews.com/feed/ neuroscience-news
+https://sciencedaily.com/rss/mind_brain/neuroscience.xml sciencedaily-neuro
+http://www.sharpbrains.com/feed/ sharpbrains
+
+# ===== SCIENCE =====
+https://nautil.us/rss/all nautilus
+http://www.quantamagazine.org/feed/ quanta
+http://www.nature.com/nature/current_issue/rss nature
+https://news.mit.edu/rss/research mit-news
+https://www.sciencealert.com/rss sciencealert
+https://singularityhub.com/feed/ singularity-hub
+
+# ===== MARKETING =====
+http://feeds.feedburner.com/seomoz moz
+http://feeds.feedburner.com/cmi-content-marketing content-marketing
+http://feeds.feedburner.com/KISSmetrics neil-patel
+http://rss.marketingprofs.com/marketingprofs/daily marketingprofs
+http://www.quicksprout.com/feed/ quick-sprout
+http://www.socialmediaexaminer.com/feed/ social-media-examiner
+http://sethgodin.typepad.com/seths_blog/atom.xml seth-godin
+http://backlinko.com/feed backlinko
+
+# ===== OTHERS =====
+http://feeds.feedburner.com/tedtalks_video ted-talks
+http://feeds.harvardbusiness.org/harvardbusiness/ hbr
