@@ -1,0 +1,312 @@
+{
+  // Font and Editor Basics
+  "editor.fontFamily": "'JetBrainsMono Nerd Font Mono', Consolas, 'Courier New', monospace", // Primary editor font stack
+  "editor.fontSize": 16, // Editor font size
+  "editor.cursorStyle": "block", // Default cursor style
+  "editor.cursorWidth": 3, // Cursor width in pixels
+  "editor.cursorBlinking": "solid", // Cursor blinking style
+
+  // UI/UX Settings (Matches Neovim)
+  "editor.lineNumbers": "relative", // Relative line numbering
+  "editor.renderLineHighlight": "", // Disable line highlight
+  "editor.rulers": [], // No ruler guides
+  "editor.cursorSurroundingLines": 3, // Keep context around cursor
+  "editor.minimap.enabled": false, // Sidebar on the right
+  "workbench.iconTheme": "material-icon-theme", // Icon theme
+  "breadcrumbs.enabled": false, // Disable breadcrumbs
+
+  // Editing Behavior (Matches Neovim)
+  "editor.tabSize": 4,                        // tabstop=4
+  "editor.insertSpaces": true,                // expandtab=true
+  "editor.autoIndent": "keep",                // lighter than full; still indents new lines sensibly
+  "editor.wordWrap": "off",                   // much cheaper on long lines / big files
+  "editor.renderWhitespace": "none",           // list=true
+  "editor.find.autoFindInSelection": true,    // visual search
+  "editor.suggest.insertMode": "replace",     // Better for Vim workflow
+
+  // Search Settings (Matches Neovim)
+  "search.caseSensitive": false,              // ignorecase=true
+  "search.smartCase": true,                   // smartcase=true
+  "search.highlightFind": false,              // hlsearch=false
+
+  // File Handling (Matches Neovim)
+  "files.autoSave": "off", // Disable auto-save
+  "files.enableTrash": false, // Disable trash for delete operations
+
+  // Terminal Settings
+  "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font Mono', monospace", // Terminal font stack
+  "terminal.integrated.fontSize": 16, // Terminal font size
+  "terminal.integrated.lineHeight": 1.25, // Terminal line height
+
+  // Vim Configuration
+  "vim.leader": "<Space>", // Vim leader key mapping
+  "vim.hlsearch": true, // Highlight search results
+  "vim.highlightedyank.enable": false, // Disable visual yank highlight
+  "vim.smartcase": true, // Smartcase search behavior
+  "vim.useSystemClipboard": true,             // clipboard=unnamedplus
+  "vim.cursorStylePerMode": { 
+    "normal": "block",
+    "visual": "block",
+    "insert": "block",
+    "command": "block"
+  }, // Set cursor style per mode
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // Navigation
+    { "before": ["<C-d>"], "after": ["<C-d>", "z", "z"] }, // Half-page down centered
+    { "before": ["<C-u>"], "after": ["<C-u>", "z", "z"] }, // Half-page up centered
+    { "before": ["n"], "after": ["n", "z", "z", "z", "v"] }, // Next search result centered
+    { "before": ["N"], "after": ["N", "z", "z", "z", "v"] }, // Previous search result centered
+
+    // File operations
+    { "before": ["<leader>", "w"], "commands": ["workbench.action.files.save"] }, // Save file
+    // { "before": ["<leader>", "a"], "commands": ["workbench.action.files.saveAll"] },
+    { "before": ["<leader>", "q"], "commands": ["workbench.action.closeActiveEditor"] }, // Close active editor
+    { "before": ["<leader>", "w", "q"], "commands": ["workbench.action.files.save", "workbench.action.closeActiveEditor"] }, // Write and quit
+    { "before": ["<leader>", "f", "e"], "commands": ["workbench.view.explorer"] }, // Open file explorer
+    { "before": ["<leader>", "f", "r"], "commands": ["renameFile"] }, // Rename file
+    { "before": ["<leader>", "f", "n"], "commands": ["explorer.newFile"] }, // New file
+    { "before": ["<leader>", "f", "N"], "commands": ["explorer.newFolder"] }, // New folder
+
+    // Editor navigation
+    { "before": ["<S-h>"], "commands": [":bprevious"] }, // Previous buffer
+    { "before": ["<S-l>"], "commands": [":bnext"] }, // Next buffer
+
+    // Splits
+    { "before": ["<leader>", "v"], "commands": [":vsplit"] }, // Vertical split
+    { "before": ["<leader>", "s"], "commands": [":split"] }, // Horizontal split
+
+    // Panes navigation
+    { "before": ["<leader>", "h"], "commands": ["workbench.action.focusLeftGroup"] }, // Focus left pane
+    { "before": ["<leader>", "j"], "commands": ["workbench.action.focusBelowGroup"] }, // Focus below pane
+    { "before": ["<leader>", "k"], "commands": ["workbench.action.focusAboveGroup"] }, // Focus above pane
+    { "before": ["<leader>", "l"], "commands": ["workbench.action.focusRightGroup"] }, // Focus right pane
+
+    // Diagnostics
+    { "before": ["[", "d"], "commands": ["editor.action.marker.prev"] }, // Previous diagnostic
+    { "before": ["]", "d"], "commands": ["editor.action.marker.next"] }, // Next diagnostic
+    { "before": ["<leader>", "e"], "commands": ["editor.action.showHover"] }, // Show error/hover
+
+    // Harpoon
+    { "before": ["<leader>", "a"], "commands": ["vscode-harpoon.addEditor"] }, // Add to harpoon
+    { "before": ["<C-e>"], "commands": ["vscode-harpoon.editorQuickPick"] }, // Harpoon quick pick
+    { "before": ["<C-j>"], "commands": ["vscode-harpoon.gotoEditor1"] }, // Go to harpoon 1
+    { "before": ["<C-k>"], "commands": ["vscode-harpoon.gotoEditor2"] }, // Go to harpoon 2
+    { "before": ["<C-h>"], "commands": ["vscode-harpoon.gotoEditor3"] }, // Go to harpoon 3
+    { "before": ["<C-l>"], "commands": ["vscode-harpoon.gotoEditor4"] }, // Go to harpoon 4
+
+    // Buffer navigation
+    { "before": ["<leader>", "<leader>"], "commands": ["workbench.action.showAllEditors"] }, // Show all editors
+
+    // Disable arrow keys (encourage hjkl movement)
+    { "before": ["<left>"], "commands": [] }, // Disabled - use 'h' instead
+    { "before": ["<right>"], "commands": [] }, // Disabled - use 'l' instead
+    { "before": ["<up>"], "commands": [] }, // Disabled - use 'k' instead
+    { "before": ["<down>"], "commands": [] }, // Disabled - use 'j' instead
+  ],
+  "vim.insertModeKeyBindingsNonRecursive": [
+    { "before": ["<C-y>"], "commands": ["acceptSelectedSuggestion"] } // Accept autocomplete suggestion
+  ],
+  "vim.visualModeKeyBindings": [
+    { "before": ["K"], "commands": ["editor.action.moveLinesUpAction"] }, // Move selection up
+    { "before": ["J"], "commands": ["editor.action.moveLinesDownAction"] } // Move selection down
+  ],
+
+  // Language/Formatting Settings
+  "editor.defaultFormatter": "esbenp.prettier-vscode", // Use Prettier default formatter
+  "editor.formatOnSave": false, // Disable format on save
+  "typescript.format.semicolons": "insert", // Force semicolons in TS formatting
+  "javascript.format.semicolons": "insert", // Force semicolons in JS formatting
+  "prettier.singleQuote": true, // Prefer single quotes in Prettier
+  "editor.codeActionsOnSave": {}, // No code actions on save
+
+  // Extension-specific
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  }, // Prefer vscodevim for extension recommendations
+  "vscode-harpoon.addEditor": {}, // Placeholder for Harpoon add editor command
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+}, // Disable Copilot by default for all file types
+  "workbench.editor.empty.hint": "hidden", // Hide empty editor hint
+  "kilo-code.allowedCommands": [ // Allowed shell commands for Kilo Code
+    "npm test",
+    "npm install",
+    "tsc",
+    "git log",
+    "git diff",
+    "git show"
+  ],
+  "kilo-code.deniedCommands": [], // No denied Kilo Code commands
+  "github.copilot.nextEditSuggestions.enabled": false, // Disable Copilot next edit suggestions
+
+  "editor.quickSuggestions": {
+    "other": false, // Disable quick suggestions in normal code
+    "comments": false, // Disable quick suggestions in comments
+    "strings": false // Disable quick suggestions in strings
+  },
+  "editor.parameterHints.enabled": false, // Disable parameter hint popups
+  "editor.suggestOnTriggerCharacters": false, // Disable suggestions on trigger characters
+  "editor.hover.enabled": "off", // Disable hover tooltips
+  "typescript.suggest.completeFunctionCalls": false, // Disable TS function call completion
+  "javascript.suggest.completeFunctionCalls": false, // Disable JS function call completion
+
+  // Text-editor mode: no squiggles / no JS·TS checking in editor (use terminal CI instead)
+  "problems.decorations.enabled": false, // Disable problems decorations
+  "javascript.validate.enable": false, // Disable JS validation
+  "typescript.validate.enable": false, // Disable TS validation
+  "typescript.disableAutomaticTypeAcquisition": true, // Disable automatic type acquisition
+  "javascript.suggestionActions.enabled": false, // Disable JS suggestion actions
+  "typescript.suggestionActions.enabled": false, // Disable TS suggestion actions
+  "typescript.tsserver.enable": false, // Disable TS Server
+  "typescript.surveys.enabled": false, // Disable TS surveys
+  "typescript.tsserver.experimental.enableProjectDiagnostics": false, // Disable experimental TS project diagnostics
+  "javascript.updateImportsOnFileMove.enabled": "never", // Never update JS imports on file move
+  "typescript.updateImportsOnFileMove.enabled": "never", // Never update TS imports on file move
+  "html.validate.scripts": false, // Disable HTML script validation
+  "html.validate.styles": false, // Disable HTML style validation
+  "css.validate": false, // Disable CSS validation
+  "scss.validate": false, // Disable SCSS validation
+  "less.validate": false, // Disable LESS validation
+  "json.validate.enable": false, // Disable JSON validation
+  "json.schemaDownload.enable": false, // Disable JSON schema downloading
+  "php.validate.enable": false, // Disable PHP validation
+  "eslint.enable": false, // Disable ESLint
+  "python.languageServer": "None", // Disable Python language server
+  "emmet.showExpandedAbbreviation": "never", // Disable Emmet auto expansion
+  "merge-conflict.codeLens.enabled": false, // Disable merge conflict CodeLens
+  "npm.autoDetect": "off", // Disable npm auto detection
+
+  // Performance: maximum churn reduction (Vim + keybindings untouched)
+  "workbench.reduceMotion": "on", // Reduce motion effects
+  "editor.smoothScrolling": false, // Disable smooth scrolling
+  "editor.selectionHighlight": false, // Disable selection highlight
+  "editor.occurrencesHighlight": "off", // Disable occurrences highlight
+  "editor.semanticHighlighting.enabled": false, // Disable semantic highlighting
+  "editor.lightbulb.enabled": "off", // Disable lightbulb code actions
+  "editor.codeLens": false, // Disable code lens
+  "editor.inlayHints.enabled": "off", // Disable inlay hints
+  "editor.bracketPairColorization.enabled": false, // Disable bracket colorization
+  "editor.guides.bracketPairs": false, // Disable bracket pair guides
+  "editor.guides.indentation": false, // Disable indentation guides
+  "editor.linkedEditing": false, // Disable linked editing
+  "editor.stickyScroll.enabled": false, // Disable sticky scroll
+  "editor.inlineSuggest.enabled": true, // Disable inline suggestions
+  "editor.suggest.enabled": false, // Disable editor suggestions
+  "editor.tabCompletion": "off", // Disable tab completion
+  "editor.acceptSuggestionOnCommitCharacter": false, // Disable accept on commit characters
+  "editor.acceptSuggestionOnEnter": "off", // Disable accept on enter
+  "editor.wordBasedSuggestions": "off", // Disable word-based suggestions
+  "editor.snippetSuggestions": "none", // Disable snippet suggestions
+  "editor.gotoLocation.multipleDefinitions": "goto", // Single definition go-to behavior
+  "editor.gotoLocation.multipleReferences": "goto", // Single reference go-to behavior
+  "editor.gotoLocation.multipleImplementations": "goto", // Single implementation go-to behavior
+  "editor.cursorSmoothCaretAnimation": "off", // Disable smooth caret animation
+  "editor.scrollBeyondLastLine": false, // Disable scroll past end of file
+  "editor.folding": false, // Disable folding
+  "editor.glyphMargin": false, // Disable glyph margin
+  "editor.largeFileOptimizations": true, // Enable large file optimizations
+  "editor.accessibilitySupport": "off", // Disable accessibility mode
+  "editor.formatOnPaste": false, // Disable format on paste
+  "editor.formatOnType": false, // Disable format on type
+  "editor.renderControlCharacters": false, // Disable control character rendering
+  "editor.unusualLineTerminators": "off", // Disable unusual line terminator warnings
+  "editor.unicodeHighlight.ambiguousCharacters": false, // Disable ambiguous Unicode highlighting
+  "editor.unicodeHighlight.invisibleCharacters": false, // Disable invisible Unicode highlighting
+  "editor.unicodeHighlight.nonBasicASCII": false, // Disable non-basic ASCII highlighting
+  "editor.screenReaderAnnounceInlineSuggestion": false, // Disable screen reader inline suggestion announcements
+  "workbench.list.smoothScrolling": false, // Disable list smooth scrolling
+  "workbench.localHistory.enabled": false, // Disable local history
+  "workbench.startupEditor": "none", // Do not show startup editor
+  "window.restoreWindows": "none", // Do not restore windows on launch
+  "workbench.editor.enablePreview": false, // Disable preview editors
+  "workbench.editor.limit.enabled": true, // Enable editor limit
+  "workbench.editor.limit.value": 8, // Limit to 8 open editors
+  "workbench.editor.limit.perEditorGroup": true, // Limit editors per group
+  "explorer.autoReveal": true, // Disable explorer auto reveal
+  "explorer.decorations.badges": false, // Disable explorer badges
+  "explorer.decorations.colors": false, // Disable explorer colors
+  "explorer.fileNesting.enabled": false, // Disable file nesting
+  "scm.autoReveal": false, // Disable SCM auto reveal
+  "scm.diffDecorationsGutterVisibility": "never", // Hide SCM diff decorations
+  "git.autorefresh": false, // Disable Git auto refresh
+  "git.decorations.enabled": false, // Disable Git decorations
+  "search.followSymlinks": false, // Disable search following symlinks
+  "problems.showCurrentInStatus": false, // Hide problems from status bar
+  "telemetry.telemetryLevel": "off", // Disable telemetry collection
+  "update.mode": "manual", // Use manual updates only
+  "extensions.autoUpdate": "off", // Disable extension auto update
+  "extensions.autoCheckUpdates": false, // Disable extension update checks
+  "extensions.ignoreRecommendations": true, // Ignore extension recommendations
+  "workbench.settings.enableNaturalLanguageSearch": false, // Disable natural language settings search
+  "debug.javascript.autoAttachFilter": "disabled", // Disable JS debug auto attach
+  "terminal.integrated.smoothScrolling": false, // Disable terminal smooth scrolling
+  "files.hotExit": "off", // Disable hot exit
+  "files.autoGuessEncoding": false, // Disable auto encoding detection
+  "files.restoreUndoStack": false, // Disable undo stack restore
+  "editor.detectIndentation": false, // Disable indentation detection
+  "editor.trimAutoWhitespace": false, // Disable trimming auto whitespace
+  "editor.colorDecorators": false, // Disable color decorators
+  "editor.matchBrackets": "never", // Disable bracket matching
+  "editor.showFoldingControls": "never", // Disable folding controls
+  "editor.hideCursorInOverviewRuler": true, // Hide cursor in overview ruler
+  "editor.overviewRulerBorder": false, // Disable overview ruler border
+  "editor.dropIntoEditor.enabled": false, // Disable drop into editor
+  "editor.pasteAs.enabled": false, // Disable paste-as menu
+  "workbench.editor.revealIfOpen": false, // Do not reveal open editors automatically
+  "workbench.tree.renderIndentGuides": "none", // Disable tree indent guides
+  "workbench.editor.showTabs": "all", // Show tabs only when needed
+  "workbench.statusBar.visible": true,
+  "chat.editing.confirmEditRequestRemoval": false,
+  "workbench.sideBar.location": "right",
+  "chat.viewSessions.orientation": "stacked",
+  "workbench.colorTheme": "Dark Modern",
+  "markdown.validate.enabled": false, // Disable built-in Markdown validation
+  "workbench.editorAssociations": {
+    "*.md": "default" // Force .md files to open in the normal text editor, not the Markdown Preview Lite custom editor
+  },
+  "git.openRepositoryInParentFolders": "never", // Do not auto-open parent repos
+  "telemetry.enableCrashReporter": false, // Disable crash reporter
+  "telemetry.enableTelemetry": false, // Disable telemetry entirely
+  
+  // Watcher exclusions
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true,
+    "**/.hg/store/**": true,
+    "**/dist/**": true,
+    "**/build/**": true,
+    "**/.next/**": true,
+    "**/target/**": true,
+    "**/.venv/**": true,
+    "**/venv/**": true,
+    "**/__pycache__/**": true,
+    "**/.cache/**": true,
+    "**/.turbo/**": true,
+    "**/.parcel-cache/**": true,
+    "**/coverage/**": true,
+    "**/.nuxt/**": true,
+    "**/.output/**": true,
+    "**/.gradle/**": true,
+    "**/.idea/**": true,
+    "**/Pods/**": true,
+    "**/bazel-*/**": true,
+    "**/.svelte-kit/**": true,
+    "**/.angular/**": true,
+    "**/tmp/**": true,
+    "**/.tmp/**": true
+  },
+
+  // Live-only settings carried over from previous unstowed config
+  "terminal.integrated.commandsToSkipShell": [
+    "kilo-code.new.agentManagerOpen",
+    "kilo-code.new.agentManager.showTerminal"
+  ],
+  "kilo-code.new.agentWorkStyle": "skipped",
+  "kilo-code.new.autoApprove.enabled": true,
+"claudeCode.preferredLocation": "panel",
+"explorer.confirmDragAndDrop": false
+}

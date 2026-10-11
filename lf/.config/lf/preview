@@ -1,0 +1,74 @@
+#!/bin/sh
+
+file="$1"
+pv_w="${2:-80}"
+pv_h="${3:-$(( $(tput lines 2>/dev/null || echo 24) - 2 ))}"
+pv_x="${4:-}"
+pv_y="${5:-}"
+
+wrap() {
+	fold -s -w "$pv_w" | head -n "$pv_h"
+}
+
+# Clear the last preview (if any)
+$HOME/.config/lf/image clear
+
+# Fallback image placement when not invoked by lf (no x/y args)
+num=$(printf "%0.f\n" "$(echo "$(tput cols) / 2" | bc)")
+numb=$(printf "%0.f\n" "$(echo "$(tput cols) - $num - 1" | bc)")
+numc=$(printf "%0.f\n" "$(echo "$(tput lines) - 2" | bc)")
+
+image_draw() {
+	if [ -n "$pv_x" ] && [ -n "$pv_y" ]; then
+		$HOME/.config/lf/image draw "$1" "$pv_x" "$pv_y" "$pv_w" "$pv_h"
+	else
+		$HOME/.config/lf/image draw "$1" "$num" 1 "$numb" "$numc"
+	fi
+}
+
+case "$file" in
+	*.tgz|*.tar.gz) tar tzf "$file" | wrap ;;
+	*.tar.bz2|*.tbz2) tar tjf "$file" | wrap ;;
+	*.tar.txz|*.txz) xz --list "$file" | wrap ;;
+	*.tar) tar tf "$file" | wrap ;;
+	*.zip|*.jar|*.war|*.ear|*.oxt) unzip -l "$file" | wrap ;;
+	*.rar) unrar l "$file" | wrap ;;
+	*.7z) 7z l "$file" | wrap ;;
+	*.[1-8]) man "$file" | col -b | wrap ;;
+	*.o) nm "$file" | wrap ;;
+	*.torrent) transmission-show "$file" | wrap ;;
+	*.iso) iso-info --no-header -l "$file" | wrap ;;
+	*odt|*.ods|*.odp|*.sxw) odt2txt "$file" | wrap ;;
+	*.doc) catdoc "$file" | wrap ;;
+	*.docx) docx2txt "$file" - | wrap ;;
+	*.csv) sed 's/,/\n/g' "$file" | wrap ;;
+	*.pdf)
+		CACHE=$(mktemp /tmp/thumbcache.XXXXX)
+		pdftoppm -png -f 1 -singlefile "$file" "$CACHE"
+		image_draw "$CACHE.png"
+		;;
+	*.epub)
+		CACHE=$(mktemp /tmp/thumbcache.XXXXX)
+		epub-thumbnailer "$file" "$CACHE" 1024
+		image_draw "$CACHE"
+		;;
+	*.bmp|*.jpg|*.jpeg|*.png|*.xpm)
+		image_draw "$file"
+		;;
+	*.wav|*.mp3|*.flac|*.m4a|*.wma|*.ape|*.ac3|*.og[agx]|*.spx|*.opus|*.as[fx]|*.flac)
+		exiftool "$file" | wrap
+		;;
+	*.avi|*.mp4|*.wmv|*.dat|*.3gp|*.ogv|*.mkv|*.mpg|*.mpeg|*.vob|*.fl[icv]|*.m2v|*.mov|*.webm|*.ts|*.mts|*.m4v|*.r[am]|*.qt|*.divx)
+		CACHE=$(mktemp /tmp/thumbcache.XXXXX)
+		ffmpegthumbnailer -i "$file" -o "$CACHE" -s 0
+		image_draw "$CACHE"
+		;;
+	*)
+		if command -v bat >/dev/null 2>&1; then
+			bat --color=always --wrap=character --terminal-width="$pv_w" \
+				--line-range=1:"$pv_h" --paging=never "$file"
+		else
+			highlight --out-format=ansi "$file" 2>/dev/null | wrap || cat "$file" | wrap
+		fi
+		;;
+esac

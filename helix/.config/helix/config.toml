@@ -1,0 +1,27 @@
+theme = "darkplus"  # see themes section below
+
+[editor]
+line-number = "relative"
+cursorline = true
+scrolloff = 10
+mouse = true                    # you had this on in nvim; helix currently has false
+text-width = 80                 # your colorcolumn=80
+clipboard-provider = "wayland"  # or "x-clip" / "x-sel" on X11 — matches unnamedplus
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.soft-wrap]
+enable = true                   # your wrap + breakindent
+
+[editor.whitespace]
+render = { tab = "all", space = "all" }
+characters = { tab = "»", tabpad = " ", space = "·", nbsp = "␣" }
+
+[editor.file-picker]
+hidden = false                  # you already have this
+
+[editor.search]
+smart-case = true               # ignorecase + smartcase

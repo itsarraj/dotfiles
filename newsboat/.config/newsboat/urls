@@ -1,0 +1,272 @@
+# ===== OFFICIAL RUST PROJECT =====
+http://blog.rust-lang.org/feed.xml rust official
+
+# ===== RUST NEWS & COMMUNITY =====
+https://this-week-in-rust.org/rss.xml rust news community
+http://guillaumegomez.github.io/this-week-in-rust-docs/feed.xml rust docs
+https://rustwasm.github.io/feed.xml rust wasm
+https://rust-leipzig.github.io/feed.xml rust community
+
+# ===== RUST PODCASTS =====
+https://request-for-explanation.github.io/podcast/rss.xml rust podcast
+http://www.newrustacean.com/feed.xml rust podcast
+
+# ===== RUST PROJECTS & FRAMEWORKS =====
+http://blog.piston.rs/atom.xml rust gamedev
+https://tokio.rs/blog/index.xml rust async
+https://gotham.rs/feed.xml rust web framework
+http://gtk-rs.org/blog/feed.xml rust gui gtk
+http://www.redox-os.org/news/index.xml rust os
+https://sywtwaosir.wordpress.com/feed/ rust os
+http://blog.servo.org/feed.xml rust browser
+# http://www.arewewebyet.org/atom.xml rust web ecosystem  # 2026-02: endpoint returns 404 (site is up, feed link is broken)
+https://intellij-rust.github.io/feed.xml rust tools ide
+
+# ===== MOZILLA + RUST =====
+https://hacks.mozilla.org/category/rust-2/feed/ rust mozilla
+https://blog.mozilla.org/nnethercote/category/rust/feed/ rust mozilla
+https://blog.mozilla.org/firefox/tag/rust/feed/ rust mozilla firefox
+# http://createfeed.fivefilters.org/extract.php?url=https%3A%2F%2Fblog.mozilla.org%2Fblog%2Ftag%2Frust%2F&in_id_or_class=entry-header&url_contains=%2Fblog%2F20 rust mozilla generated  # 2026-02: "Inactive feed"
+# https://air.mozilla.org/feed/rust/public rust mozilla video  # 2026-02: endpoint returns 403
+
+# ===== INDIVIDUAL RUST BLOGGERS (Alphabetical) =====
+http://aturon.github.io/atom.xml rust blog
+https://bheisler.github.io/tags/rust/index.xml rust blog
+https://blog.dbrgn.ch/tags/rust.atom rust blog
+https://blog.guillaume-gomez.fr/rss rust blog
+https://blog.x5ff.xyz/categories/rust/index.xml rust blog
+https://blog.zhpass.com/atom.xml rust blog
+http://bluejekyll.github.io/blog/feed.xml rust blog
+https://boats.gitlab.io/blog/index.xml rust blog
+https://brandonio21.com/category/rust/feed/ rust blog
+https://branan.github.io/teensy/feed.xml rust blog
+http://blog.japaric.io/index.xml rust blog
+http://blog.kylehuey.com/tagged/rust/rss rust blog
+http://cglab.ca/~abeinges/blah/rss.xml rust blog
+http://calculist.org/feed.xml rust blog
+http://carol-nichols.com/feed.xml rust blog
+https://cetra3.github.io/rss.xml rust blog
+http://www.chriskrycho.com/feeds/rust.xml rust blog
+http://createfeed.fivefilters.org/mergefeeds.php?url=createfeed.fivefilters.org%2Fextract.php%3Furl%3Dhttps%253A%252F%252Fchrismorgan.info%252Fblog%252Ftags%252Frust.html%26in_id_or_class%3Dpost%26url_contains%3D%252Fblog%252F&t=Chris+Morgan&strip_if_url=%2Ftags%2F&description=0 rust blog generated
+https://cliffle.com/rss.xml rust blog
+https://coaxion.net/blog/category/rust/feed/ rust blog
+http://createfeed.fivefilters.org/extract.php?url=lucumr.pocoo.org%2Ftags%2Frust%2F&in_id_or_class=&url_contains=%2F20 rust blog generated
+http://createfeed.fivefilters.org/extract.php?url=https://changelog.com/topic/rust&in_id_or_class=news_item-title&url_contains= rust news generated
+https://deterministic.space/feed.xml rust blog
+http://createfeed.fivefilters.org/extract.php?url=https%3A%2F%2Fdev.to%2Ft%2Frust&in_id_or_class=index-article-link&url_contains= rust blog generated
+https://dirkjan.ochtman.nl/writing/feeds/rust.atom.xml rust blog
+https://dwrensha.github.io/capnproto-rust/feed.xml rust blog
+http://embed.rs/atom.xml rust blog
+http://erickt.github.io/atom.xml rust blog
+https://fasterthanli.me/index.xml rust blog
+http://fitzgeraldnick.com/weblog/feeds/latest-atom/ rust blog
+http://www.codeofview.com/fix-rs/feed.xml rust blog
+https://gergo.erdi.hu/blog/tags/rust/feed.xml rust blog
+http://hermanradtke.com/atom.xml rust blog
+http://huonw.github.io/blog/rss.xml rust blog
+https://insanitybit.github.io/rss.xml rust blog
+http://www.integer32.com/feed.xml rust blog
+http://intorust.com/feed.xml rust blog
+http://softwaremaniacs.org/blog/category/rust/feed/en/ rust blog
+http://jadpole.github.io/feed.xml rust blog
+https://jbp.io/atom.xml rust blog
+http://createfeed.fivefilters.org/extract.php?url=https://www.jimmycuadra.com/posts/tags/rust/&in_id_or_class=&url_contains=/posts/ rust blog generated
+https://jim.turner.link/index.xml rust blog
+http://www.jonathanturner.org/feed.xml rust blog
+https://jvns.ca/categories/rust/atom.xml rust blog
+https://kasma1990.gitlab.io/index.xml rust blog
+http://llogiq.github.io/feed.xml rust blog
+https://blogs.gentoo.org/lu_zero/category/rust/feed/ rust blog
+https://lukaskalbertodt.github.io/feed.xml rust blog
+https://manishearth.github.io/blog/categories/rust/atom.xml rust blog
+https://marwes.github.io/feed.xml rust blog
+https://matklad.github.io/feed.xml rust blog
+https://matthewkmayer.github.io/blag/public/index.xml rust blog
+https://mht.technology/index.xml rust blog
+http://michaelwoerister.github.io/feed.xml rust blog
+https://mobiarch.wordpress.com/category/rust/feed/ rust blog
+https://morestina.net/blog/tag/rust/feed rust blog
+https://mortoray.com/tag/rust/feed/ rust blog
+http://m4rw3r.github.io/atom.xml rust blog
+http://www.mmrath.com/tags/rust/index.xml rust blog
+http://nercury.github.io/feed.xml rust blog
+http://www.ncameron.org/blog/rss/ rust blog
+http://feeds.feedburner.com/NikitaBaksalyar rust blog
+https://os.phil-opp.com/rss.xml rust blog
+http://phildawes.net/blog/feed.xml rust blog
+http://piston-tutorial.logdown.com/posts.atom rust blog
+https://pliniker.github.io/feed.xml rust blog
+http://pramode.in/feed.xml rust blog
+https://quietmisdreavus.net/feed.xml rust blog
+http://sasheldon.com/blog/atom.xml rust blog
+http://seanmonstar.com/tagged/rust/rss rust blog
+https://siliconislandblog.wordpress.com/category/rust/feed/ rust blog
+http://smallcultfollowing.com/babysteps/atom.xml rust blog
+http://feeds.feedburner.com/steveklabnik/words rust blog
+http://www.suspectsemantics.com/atom.xml rust blog
+https://thesquareplanet.com/feed.xml rust blog
+https://v4.chriskrycho.com/feeds/rust.xml rust blog
+https://levans.fr/feeds/rust.atom.xml rust blog
+https://vitiral.github.io/feed.xml rust blog
+https://vorner.github.io/feed.xml rust blog
+https://without.boats/index.xml rust blog
+http://zackmdavis.net/blog/tag/rust/feed/ rust blog
+https://mtak-blog.github.io/atom.xml rust blog
+https://dpc.pw/atom.xml rust blog
+http://createfeed.fivefilters.org/extract.php?url=xion.io/tag/rust.html&item=h2&url_contains=post rust blog generated
+https://ricardomartins.cc/atom.xml rust blog
+http://www.platymuus.com/feed.xml rust blog
+https://www.ralfj.de/blog/feed.xml rust blog
+https://nitschinger.at/index.xml rust blog
+https://xania.org/feed/Rust rust blog
+https://bluss.github.io/feed.xml rust blog
+http://alwayscoding.ca/tags/rust/index.xml rust blog
+
+# ===== OTHER PROGRAMMING TOPICS =====
+https://increment.com/feed.xml engineering
+https://danluu.com/atom.xml engineering
+https://lobste.rs/t/distributed.rss distributed-systems
+https://hnrss.org/newest?q=distributed+systems distributed-systems
+
+https://andrewkelley.me/rss.xml zig
+
+# ===== LEARNING =====
+https://thedecisionlab.com/feed/ decision-making
+https://nesslabs.com/feed learning
+https://fs.blog/feed/ farnam-street
+https://coffeeandjunk.substack.com/feed sunday-wisdom
+https://commoncog.com/blog/rss/ commoncog
+https://feeds.feedburner.com/scotthyoung/HAHx scott-h-young
+https://feeds.feedburner.com/bigthink/main big-think
+
+# ===== STARTUP =====
+http://steveblank.com/feed/ steve-blank
+https://geohot.github.io/blog/feed.xml geohot
+http://news.ycombinator.com/rss hacker-news
+http://guykawasaki.com/feed/ guy-kawasaki
+http://ben-evans.com/benedictevans?format=rss benedict-evans
+http://firstround.com/review/feed.xml first-round-review
+http://blog.samaltman.com/posts.atom sam-altman
+http://andrewchen.co/feed/ andrew-chen
+https://bothsidesofthetable.com/feed both-sides-table
+http://feeds.feedburner.com/BothSidesOfTheTable both-sides-table
+http://feed.onstartups.com/onstartups onstartups
+https://medium.com/feed/the-black-box-of-product-management black-box-pm
+https://productlife.to/feed product-life
+https://lethain.com/feeds/ irrational-exuberance
+
+# ===== TECH NEWS =====
+http://feeds.slashgear.com/slashgear slashgear
+http://venturebeat.com/feed/ venturebeat
+http://www.theverge.com/rss/full.xml the-verge
+http://www.engadget.com/rss-full.xml engadget
+https://feeds2.feedburner.com/PennOlson tech-in-asia
+https://techcrunch.com/feed/ techcrunch
+http://feeds.feedburner.com/fastcompany/headlines fast-company
+https://www.forbes.com/leadership/feed/ forbes-leadership
+http://www.forbes.com/entrepreneurs/index.xml forbes-entrepreneurs
+
+# ===== PRODUCTS & IDEAS =====
+http://www.producthunt.com/feed product-hunt
+http://hnrss.org/show hn-show
+https://hnrss.org/launches hn-launches
+http://feeds.feedburner.com/sachinrekhiblog sachin-rekhi
+
+# ===== ENGINEERING BLOGS =====
+https://medium.com/feed/airtable-eng airtable-eng
+https://medium.com/feed/medium-eng medium-eng
+https://medium.com/feed/paypal-engineering paypal-eng
+https://medium.com/feed/pinterest-engineering pinterest-eng
+http://engineering.grab.com/feed.xml grab-tech
+https://slack.engineering/feed slack-eng
+http://githubengineering.com/atom.xml github-eng
+https://developer.atlassian.com/blog/feed.xml atlassian
+https://engineering.fb.com/feed/ meta-eng
+https://blog.cloudflare.com/rss/ cloudflare
+https://blog.asana.com/category/eng/feed/ asana-eng
+https://engineering.canva.com/rss canva-eng
+https://medium.com/feed/airbnb-engineering airbnb-eng
+https://dropbox.tech/feed dropbox-tech
+https://browser.engineering/rss.xml browser-engineering
+https://engineering.atspotify.com/feed/ spotify-eng
+https://jvns.ca/atom.xml julia-evans
+https://feeds.feedburner.com/martinkl?format=xml martin-kleppmann
+https://overreacted.io/rss.xml dan-abramov
+https://danluu.com/atom.xml dan-luu
+https://shopifyengineering.myshopify.com/blogs/engineering.atom shopify-eng
+https://joshwcomeau.com/rss.xml josh-comeau
+https://eng.uber.com/feed/ uber-eng
+https://blog.singleton.io/index.xml stripe-cto
+https://sophiebits.com/atom.xml sophie-alpert
+https://amasad.me/rss amjad-masad
+https://signal.org/blog/rss.xml signal
+https://www.joelonsoftware.com/feed/ joel-on-software
+https://blog.pragmaticengineer.com/rss/ pragmatic-engineer
+https://developer.nvidia.com/blog/feed nvidia-dev
+
+# ===== MACHINE LEARNING =====
+https://blog.ml.cmu.edu/feed/ cmu-ml
+https://deepmind.com/blog/feed/basic/ deepmind
+https://jalammar.github.io/feed.xml jay-alammar
+http://distill.pub/rss.xml distill
+https://lilianweng.github.io/lil-log/feed.xml lilian-weng
+http://news.mit.edu/rss/topic/artificial-intelligence2 mit-ai
+http://ruder.io/rss/index.rss sebastian-ruder
+http://bair.berkeley.edu/blog/feed.xml bair
+https://www.youtube.com/feeds/videos.xml?channel_id=UCcIXc5mJsHVYTZR1maL5l9w deeplearning-ai
+https://openai.com/news/engineering/rss.xml openai
+https://thegradient.pub/rss/ the-gradient
+http://googleresearch.blogspot.com/atom.xml google-ai
+https://towardsdatascience.com/feed tds
+https://www.unite.ai/feed/ unite-ai
+https://www.amazon.science/index.rss amazon-science
+http://www.reddit.com/r/MachineLearning/.rss reddit-ml
+https://pytorch.org/feed pytorch
+
+# ===== DESIGN =====
+https://uxplanet.org/feed ux-planet
+https://www.nngroup.com/feed/rss/ nngroup
+http://feeds.feedburner.com/uxmovement ux-movement
+http://blog.invisionapp.com/feed/ invision
+https://uxmatters.com/index.xml uxmatters
+https://www.smashingmagazine.com/feed/ smashing-magazine
+https://uxdesign.cc/feed ux-collective
+http://airbnb.design/feed/ airbnb-design
+https://web.dev/feed.xml webdev
+https://slack.design/feed/ slack-design
+https://feeds.feedburner.com/CssTricks css-tricks
+
+# ===== PSYCHOLOGY =====
+http://feeds.feedburner.com/PsychologyBlog psyblog
+http://www.all-about-psychology.com/psychology.xml all-about-psychology
+http://www.socialpsychology.org/headlines.rss psychology-headlines
+https://nautil.us/rss/all nautilus
+http://freakonomics.blogs.nytimes.com/feed/ freakonomics
+https://www.psychologytoday.com/intl/rss.xml psychology-today
+
+# ===== NEUROSCIENCE =====
+http://neurosciencenews.com/feed/ neuroscience-news
+https://sciencedaily.com/rss/mind_brain/neuroscience.xml sciencedaily-neuro
+http://www.sharpbrains.com/feed/ sharpbrains
+
+# ===== SCIENCE =====
+https://nautil.us/rss/all nautilus
+http://www.quantamagazine.org/feed/ quanta
+http://www.nature.com/nature/current_issue/rss nature
+https://news.mit.edu/rss/research mit-news
+https://www.sciencealert.com/rss sciencealert
+https://singularityhub.com/feed/ singularity-hub
+
+# ===== MARKETING =====
+http://feeds.feedburner.com/seomoz moz
+http://feeds.feedburner.com/cmi-content-marketing content-marketing
+http://feeds.feedburner.com/KISSmetrics neil-patel
+http://rss.marketingprofs.com/marketingprofs/daily marketingprofs
+http://www.quicksprout.com/feed/ quick-sprout
+http://www.socialmediaexaminer.com/feed/ social-media-examiner
+http://sethgodin.typepad.com/seths_blog/atom.xml seth-godin
+http://backlinko.com/feed backlinko
+
+# ===== OTHERS =====
+http://feeds.feedburner.com/tedtalks_video ted-talks
+http://feeds.harvardbusiness.org/harvardbusiness/ hbr
