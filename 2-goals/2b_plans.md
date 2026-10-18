@@ -222,3 +222,47 @@ cargo install cargo-asm      # reads ASM for specific Rust functions
 cargo install cargo-expand   # expands macros, useful for Ch 7
 # objdump, nm, readelf -- already on your Linux install
 
+
+---
+
+## Video Resources: Ardan Labs Ultimate Rust (Herbert Wolverson)
+
+Course location: ~/Downloads/FDM/ArdanLabs - Ultimate Rust - Gerbert Wolverson/
+
+Do NOT watch sequentially. Pull sections when your RfR chapter needs them.
+
+### When to watch what
+
+| Your plan phase | Watch these sections |
+|---|---|
+| RfR Ch 1 -- Types | Skip Part 1 section 1.x -- you are past this |
+| RfR Ch 2 -- Traits | 4.6 Traits, 4.7 Generics -- second pass if RfR is too dense |
+| RfR Ch 8 -- Async | Start Part 1 section 3.x (all of it) -- watch alongside or after |
+| RfR Ch 9 -- Unsafe | 4.0, 4.1, 4.2, 4.3, 4.10 -- concrete before/after for unsafe |
+| RfR Ch 10 -- Concurrency | 2.8 (atomics), 2.9 (Mutex), 2.10 (RwLock), 2.12 (lock-free), 2.16 (thread pool) |
+| Phase B -- Tokio build | Part 1 section 3.x in order -- this IS Phase B |
+| Before first GitHub push | All of Part 3 Best Practices -- what makes projects look professional |
+| After Phase B capstone | Part 1 section 5.x + Part 2 -- model your portfolio capstone on this |
+
+### Section grades
+
+Part 1 -- Foundations:
+- 1.x (basics, enums, structs, CLI) -- Skip. You are past this.
+- 2.x (threads, atomics, Mutex, RwLock, channels, Rayon) -- High value. Watch with RfR Ch 10.
+- 3.x (async, Tokio, select!, pinning, tracing, Axum, thumbnail server) -- High value. This is Phase B.
+- 4.x (unsafe, RAII, Rc/Arc, lifetimes, traits, generics, arenas, FFI) -- Medium. Use when RfR is too abstract.
+- 5.x (capstone: collector daemon + server + web service) -- High value. Real multi-binary systems project.
+
+Part 2 -- Foundations Next Steps:
+- Continuation of 5.x capstone. Watch as extension of Part 1 section 5. Short and practical.
+
+Part 3 -- Best Practices:
+- 1.x (Clippy, docs, dependency audit) -- Skim before pushing any portfolio project.
+- 2.x (iterators, minimize clone, no OOP emulation, small functions) -- High value. Watch before first push.
+- 3.x (TANSTAAFL, YAGNI, domain boundaries, compile times) -- Watch once after capstone. Good for interviews.
+
+### How to use it vs RfR
+
+When RfR is too abstract -- watch the Wolverson section first to get a working mental model.
+When Wolverson code works but you do not understand why -- read the RfR chapter for the mechanism.
+They are not redundant. Wolverson = breadth + practical. RfR = depth + why.
