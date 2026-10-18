@@ -1,0 +1,15 @@
+android-studio
+antigravity
+arc-gtk-theme
+brave-bin
+cursor-bin
+downgrade
+figma-linux
+freedownloadmanager
+google-chrome
+gparted-git
+miniconda3
+paru
+postman-bin
+telegram-desktop-bin
+visual-studio-code-bin

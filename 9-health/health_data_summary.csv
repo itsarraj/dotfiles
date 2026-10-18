@@ -1,0 +1,75 @@
+Category,Test,Normal Range,2024-08-08,2026-03-08,2026-04-28,2026-09-10
+Info,Lab,-,MediBuddy/Nirnayan (TCS Wellness),Life Line Path Lab Bokaro + Thyrocare,Digital Diagnostics Centre Bokaro,Life Line Path Lab Bokaro + Thyrocare
+Info,Age at test (yrs),-,23,25,26,27
+Vitals,Height (cm),-,170,171,171,171
+Vitals,Weight (kg),-,80,91,91,91
+Vitals,BMI,18.5-24.9,27.68 (Overweight),31.12 (Obese),31.12 (Obese),31.12 (Obese)
+Vitals,Systolic BP (mmHg),-,130,,,
+Vitals,Diastolic BP (mmHg),-,66,,,
+ECG,Heart Rate (bpm),-,62,,,
+ECG,Rhythm,-,Sinus Rhythm Regular; Normal Axis,,,
+Hematology (CBC),Hemoglobin (g/dL),13-17 (M),15.0,14.1,,13.7
+Hematology (CBC),RBC Count (millions/µL),4.5-5.5,4.8,4.65,,4.59
+Hematology (CBC),Hematocrit/PCV (%),40-52,43.9,42.0,,41.7
+Hematology (CBC),MCV (fL),76-101,91.5,90.8,,90.9
+Hematology (CBC),MCH (pg),27-32,31.25,30.4,,29.8
+Hematology (CBC),MCHC (g/dL or g/L),31.5-36,34.2,334,,328
+Hematology (CBC),WBC Total (/µL),4000-11000,7100,8400,,8800
+Hematology (CBC),Neutrophils/Polymorph (%),40-80,53,36 (LOW),,42
+Hematology (CBC),Lymphocytes (%),20-50,42 (HIGH),56 (HIGH),,52 (HIGH)
+Hematology (CBC),Monocytes (%),2-10,2,2,,1 (LOW)
+Hematology (CBC),Eosinophils (%),1-7,3,6,,5
+Hematology (CBC),Basophils (%),0-2,0,0,,0
+Hematology (CBC),Platelet Count (/µL),150000-450000,218000,175000,,150000
+Hematology (CBC),ESR (mm/1hr),0-22,8,14,,9
+Hematology (CBC),MPV (fL),7.0-11.0,13.20 (HIGH),,,
+Hematology (CBC),RDW-SD (fL),39-46,38.7 (LOW),,,
+Biochemistry - Glucose,Fasting Blood Glucose (mg/dL),74-106,77,88,,88
+Biochemistry - Glucose,HbA1c (%),4-5.7,4.8,4.5,,
+Biochemistry - Glucose,Estimated Avg Glucose/eAG (mg/dL),90-120,91,82,,
+Biochemistry - Electrolytes,Sodium (mmol/L),136-146,135 (LOW),,,
+Biochemistry - Electrolytes,Potassium (mmol/L),3.5-5.1,3.8,,,
+Biochemistry - Electrolytes,Chloride (mmol/L),101-109,100 (LOW),,,
+Biochemistry - Kidney (RFT),Blood Urea (mg/dL),10-50,26.2,23,,22
+Biochemistry - Kidney (RFT),BUN (mg/dL),5-24,12.2,11,,10
+Biochemistry - Kidney (RFT),Creatinine (mg/dL),0.5-1.2 (M),1.01,0.7,,0.7
+Biochemistry - Kidney (RFT),Uric Acid (mg/dL),3.4-7.2 (M),7.9 (HIGH),7.4 (HIGH),,7.7 (HIGH)
+Biochemistry - Kidney (RFT),eGFR (mL/min/1.73m2),>=90 Normal,92.00,,,
+Biochemistry - Liver (LFT),Bilirubin Total (mg/dL),0.3-1.2,0.91,0.8,,0.8
+Biochemistry - Liver (LFT),Bilirubin Direct (mg/dL),<0.2-0.25,0.17,0.2,,0.3 (slightly HIGH)
+Biochemistry - Liver (LFT),Bilirubin Indirect (mg/dL),0.2-0.8,0.74,0.6,,0.5
+Biochemistry - Liver (LFT),SGPT/ALT (IU/L),0-48,24,69 (HIGH),,89 (HIGH)
+Biochemistry - Liver (LFT),SGOT/AST (IU/L),0-46/50,38,57 (HIGH),,72 (HIGH)
+Biochemistry - Liver (LFT),Alkaline Phosphatase (IU/L),53-270,77,188,,148
+Biochemistry - Liver (LFT),Protein Total (g/dL),6.6-8.3,8.1,,,
+Biochemistry - Liver (LFT),Albumin (g/dL),3.5-5.2,4.6,,,
+Biochemistry - Liver (LFT),Globulin (g/dL),2.3-3.9,3.5,,,
+Biochemistry - Liver (LFT),A/G Ratio,-,1.3,,,
+Biochemistry - Liver (LFT),GGT (U/L),Male <55,21.0,,,
+Lipid Profile,Total Cholesterol (mg/dL),<200,181,207,146,212
+Lipid Profile,HDL Cholesterol (mg/dL),>40 (M),48,46,36 (borderline low),47
+Lipid Profile,LDL Cholesterol (mg/dL),<130 optimal,123,103,84,130 (borderline)
+Lipid Profile,VLDL Cholesterol (mg/dL),7-30,10,58 (HIGH),26,35 (HIGH)
+Lipid Profile,Triglycerides (mg/dL),<150-165,49,291 (VERY HIGH),130,174 (HIGH)
+Lipid Profile,LDL/HDL Ratio,0-3.5,2.6,,2.3,
+Lipid Profile,Total Cholesterol/HDL Ratio,-,3.8,,4.0,
+Thyroid,TSH (uIU/mL),0.3-5.3 (method-dependent),1.91,4.65,,5.747 (HIGH)
+Thyroid,Total T3 (ng/dL),60-200,,144,,101
+Thyroid,Total T4 (µg/dL),4.5-12.7,,8.14,,8.3
+Serology,HBsAg (Hepatitis B),Negative,,Negative,,Negative
+Urine Routine,Colour,Straw/Pale Yellow,Straw,Straw Yellow,,Straw Yellow
+Urine Routine,Appearance,Clear,Clear,,,
+Urine Routine,Specific Gravity,1.005-1.030,1.015,,,
+Urine Routine,pH,4.5-8,6.2,,,
+Urine Routine,Protein/Albumin,Absent/Nil,Absent,Nil,,Nil
+Urine Routine,Sugar,Absent/Nil,Absent,Nil,,Nil
+Urine Routine,Pus Cells (/hpf),0-5,3-4,OCC,,OCC
+Urine Routine,RBC (/hpf),Absent/Nil,Absent,Nil,,Nil
+Urine Routine,Epithelial Cells (/hpf),Few,2-3,2-3,,2-3
+Urine Routine,Bacteria,Absent/Nil,Absent,Nil,,Nil
+Imaging - USG KUB,Right Kidney Size (cm),Normal,,,10.23 x 4.40 (Normal),
+Imaging - USG KUB,Left Kidney Size (cm),Normal,,,9.35 x 4.61 (Echogenic focus 0.43cm - possible calculus),
+Imaging - USG KUB,Urinary Bladder,Normal,,,Normal - no diverticulum,
+Imaging - USG KUB,Prostate Size (cm) / Volume (mL),Normal,,,3.20 x 2.54 x 4.46 / 18.98 mL (Normal),
+Imaging - USG KUB,PVRU (mL),Low,,,28.92,
+Imaging - USG KUB,Impression,-,,,Echogenic focus in mid pole of left kidney (? Calculus) - advised correlation & follow-up,

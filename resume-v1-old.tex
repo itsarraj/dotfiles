@@ -1,0 +1,442 @@
+    %-------------------------
+% Resume in Latex
+% Author
+% License : MIT
+%------------------------
+
+%---- Required Packages and Functions ----
+
+\documentclass[a4paper,11pt]{article}
+\usepackage{latexsym}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage[none]{hyphenat}
+\usepackage[empty]{fullpage}
+\usepackage{wrapfig}
+\usepackage{lipsum}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{marvosym}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{cfr-lm}
+\usepackage[T1]{fontenc}
+\setlength{\multicolsep}{0pt} 
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\geometry{left=1.4cm, top=0.8cm, right=1.2cm, bottom=1cm}
+% Adjust margins
+%\addtolength{\oddsidemargin}{-0.5in}
+%\addtolength{\evensidemargin}{-0.5in}
+%\addtolength{\textwidth}{1in}o
+\usepackage[most]{tcolorbox}
+\tcbset{
+	frame code={}
+	center title,
+	left=0pt,
+	right=0pt,
+	top=0pt,
+	bottom=0pt,
+	colback=gray!20,
+	colframe=white,
+	width=\dimexpr\textwidth\relax,
+	enlarge left by=-2mm,
+	boxsep=4pt,
+	arc=0pt,outer arc=0pt,
+}
+
+\urlstyle{same}
+
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item{
+    \textbf{#1}{\hspace{0.5mm}#2 \vspace{-0.5mm}}
+  }
+}
+
+\newcommand{\resumePOR}[3]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1}\hspace{0.3mm}#2 & \textit{\small{#3}} 
+    \end{tabular*}
+    \vspace{-2mm}
+}
+
+\newcommand{\resumeSubheading}[4]{
+\vspace{0.5mm}
+    \item[] 
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#4}} \\
+        \it{\footnotesize{#3}} & \footnotesize{#2} \\
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+% Project section command
+\newcommand{\resumeProjectHeading}[4]{
+\vspace{0.5mm}
+    \item[]
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#2}} \\
+        \textit{\footnotesize{#3}} & \footnotesize{#4}
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+% Project links command
+\newcommand{\resumeProjectLinks}[2]{
+    \footnotesize{
+        \href{#1}{\textcolor{blue}{\underline{\faExternalLink*{} Live}}} \hspace{1mm}
+        \href{#2}{\textcolor{blue}{\underline{\faCode{} Code}}}
+    }
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+% \renewcommand{\labelitemii}{$\circ$}
+\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=0mm, itemsep=0mm, label={}]}
+
+\newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=1.7mm, rightmargin=2ex]}
+\newcommand{\resumeItemListStart}{\begin{justify}\begin{itemize}[leftmargin=3ex, rightmargin=2ex, noitemsep,labelsep=1.2mm,itemsep=0mm]\small}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{2mm}}
+\newcommand{\resumeHeadingSkillEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\end{justify}\vspace{-2mm}}
+\newcommand{\cvsection}[1]{%
+\vspace{2mm}
+\begin{tcolorbox}
+    \textbf{\large #1}
+\end{tcolorbox}
+    \vspace{-4mm}
+}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}%
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}%
+\newcolumntype{C}{>{\centering\arraybackslash}X}%
+%---- End of Packages and Functions ------
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%
+%%%%%% DEFINE ELEMENTS HERE %%%%%%%
+\newcommand{\name}{Animesh Raj} % Your Name
+\newcommand{\course}{Electronics and Communication Engineering} % Your Program
+\newcommand{\location}{Bengalore, Karnataka} % Your Location.
+\newcommand{\phone}{+91-9102888850} % Your Phone Number
+\newcommand{\emaila}{animesh080808@gmail.com} %Email 1
+
+
+
+% \usepackage[sfdefault]{FiraSans}
+\usepackage[default]{lato}
+
+\begin{document}
+% \fontfamily{cmr}\selectfont
+
+%----------HEADING-----------------
+
+% {
+% \begin{tabularx}{\linewidth}{L r} \\
+%   \textbf{\Large Animesh Raj} & {\raisebox{0.0\height}{\footnotesize \faPhone}\ +91-9102888850}\\
+%   {Location: Bengalore, Karnataka} & \href{mailto:animesh080808@gmail.com}{\raisebox{0.0\height}{\footnotesize \faEnvelope}\ \textcolor{blue}{animesh080808@gmail.com}} \\
+%   Bachelor of Engineering in Electronics and Communication Engineering & \href{https://github.com/itsarraj}{\raisebox{0.0\height}{\footnotesize \faGithub}\ \textcolor{blue}{github.com/itsarraj}} \\  
+%   {University Institute of Technology, The University of Burdwan} & \href{https://linkedin.com/in/itsarraj-me}{\raisebox{0.0\height}{\footnotesize \faLinkedin}\ \textcolor{blue}{itsarraj-me}}
+% \end{tabularx}
+% }
+
+\begin{center}
+    \textbf{\Huge \scshape Animesh Raj} \\[0.4em]
+    \textit{Distributed Systems Engineer | Rust, Python, TypeScript | Full-Stack} \\[0.4em]
+    \small
+    \begin{tabularx}{\linewidth}{C} \\
+        {\raisebox{0.0\height}{\footnotesize \faPhone}\ \underline{+91-9102888850}} \hspace{4pt}
+        \href{mailto:animesh080808@gmail.com}{\raisebox{0.0\height}{\footnotesize \faEnvelope}\ \underline{animesh080808@gmail.com}} \hspace{4pt}
+        \href{https://github.com/itsarraj}{\raisebox{0.0\height}{\footnotesize \faGithub}\ \underline{github.com/itsarraj}} \hspace{4pt}
+        \href{https://linkedin.com/in/itsarraj}{\raisebox{0.0\height}{\footnotesize \faLinkedin}\ \underline{itsarraj}} \hspace{4pt}
+        %\href{https://itsarraj.xyz}{\raisebox{0.0\height}{\footnotesize \faGlobe}\ \underline{itsarraj.xyz}} \hspace{4pt}
+    \end{tabularx}
+\end{center}
+
+\vspace{-16pt}
+
+%-----------Summary-----------------
+\section{\textbf{Summary}}
+ \resumeSubHeadingListStart
+    \item{
+        \textbf{Distributed Systems Engineer} specializing in \textbf{Rust}, \textbf{Python}, and \textbf{TypeScript}, building high-performance, reliable, and fault-tolerant distributed systems. Experienced in \textbf{Actix-web services, microservices, event-driven architectures, and real-time financial systems}. Skilled in \textbf{TypeScript (Node.js, React)} for full-stack development and \textbf{Python} for AI-driven workflows and backend tooling. Strong foundation in \textbf{systems programming, concurrency, and DevOps}, with expertise in \textbf{PostgreSQL, Redis, and Docker}. Passionate about scaling distributed platforms and building backend infrastructure for modern applications.
+    }
+ \resumeSubHeadingListEnd
+\vspace{-16pt}
+
+%-----------Technical skills-----------------
+\section{\textbf{Technical Skills and Interests}}
+ \begin{itemize}[leftmargin=0.05in, label={}]
+    \small{\item{
+    \textbf{Languages:} Rust, Python, TypeScript, JavaScript, Bash \\
+    \textbf{Frameworks \& Tools:} Actix-web, Tokio, Node.js, Express.js, React.js, GraphQL, gRPC, WebSockets \\
+    \textbf{Databases:} PostgreSQL, Redis, MariaDB, MongoDB, SQLite \\
+    \textbf{Messaging \& Event Streaming:} NATS, RabbitMQ, Apache Kafka \\
+    \textbf{DevOps:} Docker, Kubernetes, Jenkins, AWS (EC2, S3, RDS), Nginx, systemd, CI/CD \\
+    \textbf{AI Infra:} MCP Server, AI Agent Tooling, REST/Streaming APIs, LLM Orchestration \\
+    \textbf{Developer Tools:} Git, VS Code, Vim, Postman, Ubuntu, Arch Linux, GNU/Linux Core Utils \\
+    }}
+ \end{itemize}
+ \vspace{-16pt}
+ 
+%-----------EXPERIENCE---------------
+\section{\textbf{Experience}}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {TinkerBloX}{Full Time - Coimbatore, Tamil Nadu}
+      {Rust Engineer}{July 2026 -- Present}
+      \vspace{-2.0mm}
+      \resumeItemListStart
+        \item Co-developing the company’s core execution infrastructure in \textbf{Rust}, a modular, high-efficiency runtime (\textbf{UltraEdge}) designed to optimize AI workload execution across CPUs, GPUs, VMs, and accelerators.
+        \item Reducing data center compute costs and operational expenditures (OPEX) by minimizing idle cycles and increasing model execution density per node.
+        \item Benchmarking runtime performance using \textbf{Netdata} and developing automated \textbf{Python} and \textbf{Bash} scripts to streamline multi-hour telemetry logging and performance analysis.
+      \resumeItemListEnd
+      
+    \vspace{-3.0mm}
+
+    \resumeSubheading
+      {Finkhoz Roboadvisory}{Full Time - Gurugram, Haryana}
+      {Senior Full Stack Engineer}{September 2025 -- May 2026}
+      \vspace{-2.0mm}
+      \resumeItemListStart
+        \item Led the end-to-end development of the company’s \textbf{React Native mobile application}, managing a cross-functional team to deliver scalable features, implementing \textbf{complex business algorithms}, and establishing robust \textbf{CI/CD, build automation, and infrastructure workflows} for reliable releases.
+        \item Led development of the company’s \textbf{React} web platform, including an internal \textbf{admin panel} for operations and the official \textbf{company website}, delivering role-based dashboards, content management, and production-ready releases.
+        \item Integrated \textbf{Razorpay} payments in the mobile app for subscription and advisory billing, with server-side order creation, signature verification, webhook reconciliation, and entitlement updates tied to portfolio and account access.
+        \item Built and customized a \textbf{high-scale notification platform} on top of \textbf{Novu}, enabling reliable multi-channel communication (email, SMS, push, in-app).
+        \item Implemented transactional email delivery via \textbf{Amazon SES} for verification, account alerts, and compliance notifications, with template-based messaging wired into onboarding, KYC, and trading workflows.
+        \item Modified core \textbf{open-source infrastructure} to fit internal systems, improving     \textbf{performance, extensibility, and system interoperability}.
+        \item Designed \textbf{event-driven, fault-tolerant delivery pipelines} with user-level preferences and compliance controls.
+        \item Designed an \textbf{ABAC authorization system} for broker operations, stock baskets, and trading workflows.
+        \item Developed \textbf{Rust (Actix-web) + PostgreSQL} services for creating, listing, buying, and selling stock baskets, optimizing latency-sensitive trading workflows for higher throughput.
+        \item Implemented \textbf{ledger and portfolio workflows}, ensuring \textbf{data consistency} and audit-safe operations across distributed services.
+        \item Built \textbf{KYC and onboarding services} with proper \textbf{RBAC controls} to securely manage user data, verification flows, and API access.
+        \item Developed an \textbf{MCP server} in \textbf{Rust (Actix-web)} with \textbf{analytics APIs} to provide \textbf{LLM-driven insights} and customized results for internal tools.
+        \item Architected and implemented \textbf{Internationalization (i18n) framework} with centralized locale management, translation loading, and runtime language switching across \textbf{distributed services}.
+        \item Implemented \textbf{user journey tracking system} with automatic event capture, attribution tracking, and \textbf{conversion analytics}.
+        \item Built \textbf{scalable multi-channel marketing communication platform} with campaign lifecycle management and \textbf{compliant user messaging controls}.
+        \item Improved system \textbf{scalability, reliability}, and \textbf{cross-service communication} across Rust, Python, and TypeScript-based components.
+      \resumeItemListEnd
+
+    
+    \vspace{-3.0mm}
+    
+    \resumeSubheading
+      {Tata Consultancy Services}{Full Time - Kolkata, West Bengal}
+      {Full Stack Engineer }{December 2023 - September 2025}
+      \vspace{-2.0mm}
+      \resumeItemListStart
+          \item Migrated critical distributed banking services from legacy \textbf{C++} to \textbf{Rust (Actix-web)}, ensuring memory safety and reducing crash incidents.
+          \item Designed and maintained \textbf{high-throughput}, \textbf{fault-tolerant backend services} for \textbf{real-time financial data processing} leveraging \textbf{gRPC} and \textbf{Tokio}.
+          \item Built distributed services implementing \textbf{leader election} and \textbf{consensus mechanisms}, improving service availability.
+
+          \item Built and deployed an \textbf{AI-powered chatbot platform} using \textbf{TypeScript}.
+          \item Developed \textbf{MCP server components} in \textbf{Rust} and \textbf{TypeScript} for model orchestration and prompt routing.
+          \item Enabled \textbf{secure, real-time interactions with LLMs} through \textbf{streaming APIs} and \textbf{tool-based agent architecture}.
+          \item Integrated \textbf{JWT-based authentication}, \textbf{Redis caching}, and \textbf{secure session handling}.
+      \resumeItemListEnd
+    
+    \vspace{-3.0mm}
+
+    \resumeSubheading
+      {Topstack}{Contractual - Remote}
+      {Full Stack Engineer}{Sept 2022 -- October 2023}
+      \vspace{-2.0mm}
+      \resumeItemListStart
+          \item Developed and maintained \textbf{Rust (Actix-web) microservices}, integrated with PostgreSQL and Redis for scalable, distributed workflows in \textbf{real-time trading applications}.
+          \item {Built dynamic and SEO-friendly web applications using \textbf{React.js} for \textbf{financial dashboards}.}
+          \item Implemented \textbf{GraphQL} and \textbf{WebSocket-based APIs} for \textbf{real-time financial data streaming}, ensuring fault-tolerance under concurrent loads.
+          \item Deployed and configured applications on a \textbf{Linux VPS}, including \textbf{Nginx reverse proxy}, \textbf{SSL}, and \textbf{Docker-based services} for \textbf{high-availability financial systems}.
+          \item Optimized \textbf{AWS cloud deployment workflows} with CI/CD pipelines, achieving improved reliability and reduced costs for \textbf{financial applications}.
+ 
+    \resumeItemListEnd
+    
+    \vspace{-3.0mm}
+
+    \resumeSubheading
+      {Optimum Wellness}{Contractual - Remote}
+      {Full Stack Engineer}{April 2022 -- July 2022}
+      \vspace{-2.0mm}
+      \resumeItemListStart
+          \item Designed and maintained \textbf{Rust (Actix-web) microservices} with \textbf{PostgreSQL} and \textbf{Redis}, enabling high-throughput, fault-tolerant distributed workflows for \textbf{financial transaction processing}.
+          \item Built and optimized \textbf{Node.js services} for complementary workloads, ensuring seamless interoperability with Rust-based systems in \textbf{payment processing pipelines}.
+          \item Implemented \textbf{GraphQL} and \textbf{WebSocket-based APIs} for \textbf{real-time financial data systems}, scaling reliably under concurrent loads.
+          \item Deployed and configured distributed applications on a \textbf{Linux VPS}, integrating \textbf{Nginx reverse proxy}, \textbf{SSL/TLS}, and \textbf{Docker-based services} for \textbf{secure financial transactions}.
+          \item Optimized \textbf{cloud deployment workflows} (\textbf{AWS}) with automated CI/CD pipelines, reducing latency and infrastructure costs for \textbf{financial applications}.
+          \item {Integrated multiple payment gateways with secure transaction processing and webhook implementations for \textbf{real-time payment verification}.} 
+    \resumeItemListEnd
+    
+    \vspace{-3.0mm}
+
+  \resumeSubHeadingListEnd
+\vspace{-5.5mm}
+
+%-----------OPEN SOURCE CONTRIBUTIONS-----------------
+\section{\textbf{Open Source Contributions}}
+\resumeSubHeadingListStart
+    \resumeProjectHeading
+        {time-rs/time}{Merged PR \#786}
+        {Widely used Rust date/time crate depended on by Actix-web, cookie, and other ecosystem libraries.}{
+        \href{https://github.com/time-rs/time/pull/786}{\textcolor{blue}{\underline{\faExternalLink*{} PR \#786}}}
+        }
+    \resumeItemListStart
+        \item {Fixed a \textbf{trait coherence error (E0119)} in rustc $\geq$ 1.95.0 by replacing associated type projections with concrete types via \texttt{target\_ty!()} in macro-generated \texttt{From} implementations in \texttt{format\_item.rs}.}
+        \item {Restored compilation for downstream crates affected by stricter blanket-impl overlap checks; fix confirmed by maintainers against a known rustc trait-solver issue (\texttt{rust-lang/rust\#85898}).}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+\vspace{-8.5mm}
+
+%-----------EDUCATION-----------
+\section{\textbf{Education}}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Bachelor of Engineering in Electronics and Communication Engineering}{CGPA: 7.96/10.0}
+      {University Institute of Technology, The University of Burdwan}{2019 - 2023}
+    \resumeSubheading
+      {AISSCE - Class 12 (Physics, Chemistry, Maths, and Computer Science)}{Percentage: 74.2/100}
+      {Jawahar Vidya Mandir Shyamali, Ranchi}{2016 - 2018}
+  \resumeSubHeadingListEnd
+\vspace{-5.5mm}
+
+%-----------Certifications-----------------
+\section{\textbf{Certifications}}
+ \begin{itemize}[leftmargin=0.05in, label={}]
+    \small{\item{
+     \textbf{Academind | Docker \& Kubernetes: The Practical Guide [2024 Edition]} \hfill \href{https://ude.my/UC-f43f277f-e127-4813-ab71-325f4945ebc2}{\underline{\faExternalLink* \textcolor{blue}{View Certificate}}} \\
+     \textbf{Academind | React, NodeJS, Express \& MongoDB - The MERN Fullstack Guide} \hfill \href{https://ude.my/UC-cd908c89-5436-42dd-bd10-1059cc3d04b9/}{\underline{\faExternalLink* \textcolor{blue}{View Certificate}}} \\
+     \textbf{Coding Ninja | Back End | Full Stack Web Development in Node.js} \hfill \href{https://certificate.codingNinjas.com/verify/4b825fbfe923e5dc}{\underline{\faExternalLink* \textcolor{blue}{View Certificate}}} \\
+     \textbf{Coding Ninja | Full Stack | Advance Front-End Web Development with React} \hfill \href{https://certificate.codingNinjas.com/verify/de3f76e500774984}{\underline{\faExternalLink* \textcolor{blue}{View Certificate}}} \\
+     \textbf{Coding Ninja | Front End | Full Stack Web Development} \hfill \href{https://certificate.codingNinjas.com/verify/4ef06b6c397be0a0}{\underline{\faExternalLink* \textcolor{blue}{View Certificate}}} \\
+     \textbf{Coding Ninja | Java | Data Structures in Java} \hfill \href{https://certificate.codingNinjas.com/verify/1d13d9c65ac1c550}{\underline{\faExternalLink* \textcolor{blue}{View Certificate}}} \\
+     \textbf{Coding Ninja | Java | Introduction to Java} \hfill \href{https://certificate.codingNinjas.com/verify/a4caa1b3f000159c}{\underline{\faExternalLink* \textcolor{blue}{View Certificate}}} \\
+     \textbf{Internshala | Python | Programming with Python} \hfill \href{https://trainings.internshala.com/s/v/1265006/72d53389}{\underline{\faExternalLink* \textcolor{blue}{View Certificate}}} \\
+     \textbf{University of Michigan | Python | Getting Started with Python} \hfill \href{https://coursera.org/verify/5YBKRX2THX8R}{\underline{\faExternalLink* \textcolor{blue}{View Certificate}}} \\
+     \textbf{IBM | Introduction to Web Development with HTML, CSS, JavaScript} \hfill \href{https://coursera.org/verify/N4LT8U7Y7TPC}{\underline{\faExternalLink* \textcolor{blue}{View Certificate}}} \\
+     \textbf{Johns Hopkins University | HTML, CSS, and Javascript for Web Developers} \hfill \href{https://coursera.org/verify/35T79558QRCF}{\underline{\faExternalLink* \textcolor{blue}{View Certificate}}} \\
+    }}
+ \end{itemize}
+ \vspace{-16pt}
+%-----------PROJECTS-----------------
+\section{\textbf{Personal Projects}}
+\resumeSubHeadingListStart
+    \resumeProjectHeading
+        {Kraftisium}{In Development} 
+    {\parbox[t]{0.7\linewidth}{An AI-powered job matching platform connecting job seekers and recruiters via resume storage and match-score based job suggestions.}}{
+        \resumeProjectLinks{https://kraftisium.xyz}{https://github.com/itsarraj/kraftisium}
+        }
+    \resumeItemListStart
+        \item {Built a production AI job-matching platform with \textbf{Rust (Actix-web)} BFF, \textbf{React TS} web SPA, and \textbf{Expo/React Native} Android app; \textbf{PostgreSQL} + \textbf{Redis}, \textbf{S3-compatible} resume storage, deployed via \textbf{Docker} with \textbf{Nginx} reverse proxy and TLS.}
+        \item {Implemented secure authentication: \textbf{JWT} + \textbf{RBAC} for candidates, recruiters, and admins; \textbf{bcrypt} password hashing, \textbf{Redis} login rate limiting, refresh-token rotation with revocation blacklist, and \textbf{Google OAuth} on web and mobile.}
+        \item {Integrated \textbf{Razorpay} Standard Checkout for yearly Premium subscriptions: server-side order creation with promo-code discounts, HMAC payment-signature verification, React checkout widget, and idempotent webhook handler that auto-grants Premium on successful payment.}
+        \item {Designed subscription monetization: founding-member promo slots with free Premium on email verify, promo-code validation at checkout, \textbf{referral credits} (earn on completed referrals, redeem for Premium months), and transactional emails via \textbf{Resend} (verification, password reset, Premium activation).}
+        \item {Built a hybrid AI matching pipeline: resume skill extraction $\rightarrow$ \textbf{Tantivy} job prefilter $\rightarrow$ \textbf{sentence-transformer} embeddings (cosine similarity) $\rightarrow$ ranked job suggestions persisted in PostgreSQL; BFF falls back to in-process keyword ranking when the matcher service is offline.}
+        \item {Implemented full-text job discovery with a \textbf{Tantivy} search index synced on every job write, paginated search APIs, and a background \textbf{Arbeitnow} ingestion worker that refreshes external listings every 6 hours.}
+        \item {Created resume lifecycle APIs: multipart PDF/text upload, CRUD, object-storage persistence with DB fallback, and automatic match refresh on upload or profile update.}
+        \item {Developed end-to-end job application workflow: candidates apply with resume snapshots; recruiters get inbox, per-job applicant lists with match scores, status updates, resume downloads, and dashboard overview/application counts.}
+        \item {Built recruiter portal: company profiles with usage limits, job post/create/duplicate/update, \textbf{AI suggested candidates} ranked by match score, bulk resume upload, \textbf{quick-match} scoring against a job description, and talent pools with custom candidate scoring.}
+        \item {Added separate \textbf{candidate} and \textbf{employer profile} modules; role-aware auth gates recruiter vs.\ job-seeker experiences consistently across web and mobile clients.}
+        \item {Exposed platform analytics via a background-refreshed stats cache and health checks covering database, cache, and object-storage readiness for production monitoring.}
+    \resumeItemListEnd
+    \vspace{-2mm}
+
+    \resumeProjectHeading
+        {SiliconBazaar}{} 
+        {Electronics e-commerce with cart/checkout, Razorpay payments, and admin inventory.}{
+        \resumeProjectLinks{https://siliconbazaar.vercel.app/}{https://github.com/itsarraj/siliconbazaar}
+        }
+    \resumeItemListStart
+        \item {Built with \textbf{React 18}, \textbf{TypeScript}, \textbf{Vite}, \textbf{Redux Toolkit}, \textbf{TanStack React Query}, and \textbf{Tailwind CSS} on the frontend; \textbf{Express 4} + \textbf{TypeScript} REST API wrapped for \textbf{Netlify Functions} via \textbf{serverless-http}.}
+        \item {Migrated persistence from \textbf{MongoDB} to \textbf{Neon PostgreSQL} using \textbf{Prisma 6}: dedicated \texttt{siliconbazaar} schema, CUID keys, and transactional order placement with server-side stock validation and inventory decrements.}
+        \item {Implemented authentication with \textbf{bcrypt} local signup/login, \textbf{Google OAuth 2.0} authorization-code flow, and \textbf{JWT} bearer sessions; role-based \textbf{user/admin} route guards for profile, orders, inventory, and product management.}
+        \item {Integrated \textbf{Razorpay} checkout end-to-end: server-side INR order creation in paise, Razorpay Checkout.js on the client, and \textbf{HMAC-SHA256} payment-signature verification before marking orders paid.}
+        \item {Built product image uploads with \textbf{multer} and \textbf{ImageKit} in production, plus local filesystem fallback for development; admin multipart create flow for new inventory listings.}
+        \item {Delivered ecommerce flows: paginated product catalog, \textbf{Redux} cart persisted in \textbf{localStorage}, checkout $\rightarrow$ order history $\rightarrow$ payment screen, and admin inventory with availability toggles and revenue overview.}
+        \item {Preserved legacy API compatibility via Prisma serializers mapping \texttt{id} $\rightarrow$ \texttt{\_id}, enabling the React client to stay stable through the database migration; deployed frontend to \textbf{Vercel} with API on \textbf{Netlify}.}
+    \resumeItemListEnd
+    \vspace{-2mm}
+
+    \resumeProjectHeading
+        {Atmos}{} 
+        {A real-time weather dashboard delivering current conditions, hourly, and 7-day forecasts via the Open-Meteo API.}{
+        \resumeProjectLinks{https://atmos-eta.vercel.app/}{https://github.com/itsarraj/atmos}
+        }
+    \resumeItemListStart
+        \item {Built with \textbf{React 18}, \textbf{TypeScript}, and \textbf{Vite}, integrating \textbf{Open-Meteo} forecast and geocoding APIs via \textbf{axios} for live weather data.}
+        \item {Implemented \textbf{dynamic backgrounds} that adapt to WMO weather codes and day/night state, with smooth gradient transitions across clear, fog, rain, snow, and thunderstorm conditions.}
+        \item {Designed a \textbf{glassmorphism UI} using \textbf{styled-components} with a centralized theme system, backdrop blur panels, and responsive breakpoints for mobile and desktop.}
+        \item {Added \textbf{debounced location search} (500ms) with animated dropdown results, click-outside dismissal, and city selection wired to automatic forecast refresh.}
+        \item {Delivered \textbf{current-conditions metrics} (feels-like, humidity, wind), a scrollable \textbf{24-hour hourly} timeline, and a \textbf{7-day daily} forecast with \textbf{framer-motion} micro-animations and \textbf{date-fns} formatting.}
+    \resumeItemListEnd
+    \vspace{-2mm}
+\resumeSubHeadingListEnd
+\vspace{-8.5mm}
+
+
+%-----------DESIGN PROJECTS-----------------
+\section{\textbf{Design Projects}}
+\resumeSubHeadingListStart
+    \resumeProjectHeading
+        {Job Portal Design - CodeCareerHub}{Dec 2022 - Present}
+        {A comprehensive job portal interface design with modern UI/UX principles and user-centric features.}
+        {\href{https://www.figma.com/design/ci5mGbL29ZWWrkgtEGMSq6/Job-Portal-Design-(CodeCareerHub)-BerufPlattf?node-id=0-1}{\textcolor{blue}{\underline{\faFigma{} View Design}}}}
+    \resumeItemListStart
+        \item {Created an intuitive and responsive design system incorporating \textbf{modern UI components}, \textbf{user flow diagrams}, and \textbf{interactive prototypes} for seamless job search and application process.}
+    \resumeItemListEnd
+    \vspace{-2mm}
+\resumeSubHeadingListEnd
+\vspace{-8.5mm}
+
+% %-----------Positions of Responsibility-----------------
+% \section{\textbf{Positions of Responsibility}}
+% \vspace{-0.4mm}
+% \resumeSubHeadingListStart
+% \resumePOR{Chapter Lead} % Position
+%     {TheCodeBird - Coding Club UIT-BU} %Club,Event
+%     {Nov 2020 - Jan 2022} %Tenure Period \\
+%     \resumeItemListStart
+%     \item {Led a \textbf{25-member team} to organize \textbf{10+ virtual events} with \textbf{2000+ participants}, including coding competitions, speaker sessions, and alumni meetups.}
+%     \item {Designed \textbf{technical challenges} and coding assessments to evaluate and enhance programming skills.}
+%     \resumeItemListEnd
+
+% \resumeSubHeadingListEnd
+% \vspace{-5mm}
+
+% %-----------Achievements-----------------
+% \section{\textbf{Achievements}}
+% \vspace{-0.4mm}
+% \resumeSubHeadingListStart
+% \resumePOR{Achievement } % Award
+%     {description} % Event
+%     {Event dates} %Event Year
+    
+% \resumePOR{Achievement } % Award
+%     {description} % Event
+%     {Event dates} %Event Year
+% \resumeSubHeadingListEnd
+% \vspace{-5mm}
+
+
+
+%-------------------------------------------
+\end{document}
+
+

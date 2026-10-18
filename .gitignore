@@ -1,0 +1,8 @@
+# .gitignore
+# Ignore cache and temporary files
+cache/
+*.tmp
+*.log
+node_modules/
+.obsidian/
+DELETE
