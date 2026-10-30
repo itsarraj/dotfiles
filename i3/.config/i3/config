@@ -289,9 +289,6 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%- && $re
 # Toggle status bar visibility with Alt+Super (Mod1+Mod4)
 bindsym Mod1+Mod4 bar mode toggle
 
-# Today's plan (2c_next-18-hours.md) in full terminal
-bindsym $mod+n exec --no-startup-id ~/.local/scripts/scratchpad-notes
-
 exec --no-startup-id i3-msg 'workspace 1'
 
 # Start gnome-keyring-daemon with all components
