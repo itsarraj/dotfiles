@@ -19,3 +19,6 @@ include ./themes/zathura-solarized-dark
 # include ./themes/zathura-solarized-light
 # include ./themes/zathura-transparent-bg
 # include ./themes/zathura-gruvbox-dark-hard-mutated
+
+set recolor               false
+set recolor-keephue       true

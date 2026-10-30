@@ -1,7 +1,7 @@
 # Monitor output names - differ per laptop (e.g. HDMI-1 vs HDMI-A-1). Edit these
 # to match `xrandr` on this machine; not pushed upstream.
-set $pm "HDMI-A-0"
-set $mm "HDMI-A-0"
+set $pm "HDMI-A-1"
+set $mm "HDMI-A-1"
 set $sm "DP-4"
 set $tm "HDMI-0"
 
@@ -9,6 +9,7 @@ set $mod Mod1
 # set $mod Mod4 #superkey
 
 exec --no-startup-id picom
+# exec --no-startup-id feh --bg-fill ~/backgrounds/athens.jpg
 exec --no-startup-id feh --bg-fill ~/backgrounds/bb.jpeg
 exec_always --no-startup-id autotiling
 exec_always --no-startup-id setxkbmap us -option ''
@@ -287,6 +288,9 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%- && $re
 
 # Toggle status bar visibility with Alt+Super (Mod1+Mod4)
 bindsym Mod1+Mod4 bar mode toggle
+
+# Today's plan (2c_next-18-hours.md) in full terminal
+bindsym $mod+n exec --no-startup-id ~/.local/scripts/scratchpad-notes
 
 exec --no-startup-id i3-msg 'workspace 1'
 

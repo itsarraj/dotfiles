@@ -30,3 +30,4 @@ kwalletrc, lf, newsboat, nvim, picom, tmux, xprofile, xresources, zathura.
 
 - `docs/` holds other people's dotfiles kept for reference only — it's gitignored and never pushed.
 - `bin/.local/scripts/` holds standalone scripts (e.g. `tmux-sessionizer`) meant to end up on `$PATH`.
+- Terminal beep is disabled in `/etc`, not via stow. See `disable-bell.md`.
