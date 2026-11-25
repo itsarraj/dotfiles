@@ -35,6 +35,7 @@ Do not start these until the active books above are completed.
 ### Wealth & Capitalism
 1. The Man Who Solved the Market — Gregory Zuckerman (Jim Simons / Renaissance Technologies)
 2. Americana: A 400-Year History of American Capitalism — Bhu Srinivasan
+3. Daniel Kahneman - In 2008, Jeff Bezos and Elon Musk attended a private behavioral economics masterclass and seminar in Napa Valley, organized by the Edge Foundation.
 
 ---
 
@@ -52,7 +53,7 @@ Long-term wishlist of books to read.
 - Peter Thiel was a student of philosopher René Girard at Stanford, whose mimetic theory (desire through imitation) and scapegoat mechanism profoundly shaped Thiel's worldview.
 - The Science of Rapid Skill Acquisition: Advanced Methods to Learn, Remember, and Master New Skills and Information [Second Edition]
 Book by Peter Hollins
-- ludwig wittgenstein
+- Philosophical Investigations , Ludwig Wittgenstein
 
 
 ## read them 

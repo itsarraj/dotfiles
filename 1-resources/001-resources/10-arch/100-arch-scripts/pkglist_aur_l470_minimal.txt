@@ -1,0 +1,14 @@
+android-studio
+antigravity
+arc-gtk-theme
+brave-bin
+cursor-bin
+figma-linux
+freedownloadmanager
+google-chrome
+gparted-git
+postman-bin
+telegram-desktop-bin
+visual-studio-code-bin
+void-bin
+watchman-bin

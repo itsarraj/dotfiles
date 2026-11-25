@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<opml version="1.0">
+  <head>
+    <title>Newsboat - Exported Feeds</title>
+  </head>
+  <body>
+    <outline type="rss" xmlUrl="http://blog.rust-lang.org/feed.xml" htmlUrl="https://blog.rust-lang.org/" title="Rust Blog" text="Rust Blog"/>
+    <outline type="rss" xmlUrl="https://this-week-in-rust.org/rss.xml" htmlUrl="https://this-week-in-rust.org/" title="This Week in Rust" text="This Week in Rust"/>
+    <outline type="rss" xmlUrl="http://guillaumegomez.github.io/this-week-in-rust-docs/feed.xml" htmlUrl="http://guillaumegomez.github.io/this-week-in-rust-docs" title="This week in Rust Docs - Posts" text="This week in Rust Docs - Posts"/>
+    <outline type="rss" xmlUrl="https://rustwasm.github.io/feed.xml" htmlUrl="https://rustwasm.github.io/" title="Rust and WebAssembly" text="Rust and WebAssembly"/>
+    <outline type="rss" xmlUrl="https://rust-leipzig.github.io/feed.xml" htmlUrl="https://rust-leipzig.github.io/" title="Rust Leipzig" text="Rust Leipzig"/>
+    <outline type="rss" xmlUrl="https://request-for-explanation.github.io/podcast/rss.xml" htmlUrl="https://request-for-explanation.github.io/podcast/" title="Request For Explanation" text="Request For Explanation"/>
+    <outline type="rss" xmlUrl="http://www.newrustacean.com/feed.xml" htmlUrl="https://newrustacean.com/" title="New Rustacean" text="New Rustacean"/>
+    <outline type="rss" xmlUrl="http://blog.piston.rs/atom.xml" htmlUrl="http://blog.piston.rs/atom.xml" title="Piston" text="Piston"/>
+    <outline type="rss" xmlUrl="https://tokio.rs/blog/index.xml" htmlUrl="https://tokio.rs/" title="Tokio" text="Tokio"/>
+    <outline type="rss" xmlUrl="https://gotham.rs/feed.xml" htmlUrl="https://gotham.rs/" title="Gotham web framework" text="Gotham web framework"/>
+    <outline type="rss" xmlUrl="http://gtk-rs.org/blog/feed.xml" htmlUrl="https://gtk-rs.org/" title="gtk-rs blog" text="gtk-rs blog"/>
+    <outline type="rss" xmlUrl="http://www.redox-os.org/news/index.xml" htmlUrl="https://www.redox-os.org/news/" title="News on Redox - Your Next(Gen) OS" text="News on Redox - Your Next(Gen) OS"/>
+    <outline type="rss" xmlUrl="https://sywtwaosir.wordpress.com/feed/" htmlUrl="https://sywtwaosir.wordpress.com/" title="So, you want to write an Operating System in Rust?" text="So, you want to write an Operating System in Rust?"/>
+    <outline type="rss" xmlUrl="http://blog.servo.org/feed.xml" htmlUrl="http://blog.servo.org/feed.xml" title="Servo Blog" text="Servo Blog"/>
+    <outline type="rss" xmlUrl="https://intellij-rust.github.io/feed.xml" htmlUrl="https://intellij-rust.github.io/" title="IntelliJ Rust" text="IntelliJ Rust"/>
+    <outline type="rss" xmlUrl="https://hacks.mozilla.org/category/rust-2/feed/" htmlUrl="https://hacks.mozilla.org/category/rust-2/feed/" title="Rust Archives - Mozilla Hacks - the Web developer blog" text="Rust Archives - Mozilla Hacks - the Web developer blog"/>
+    <outline type="rss" xmlUrl="https://blog.mozilla.org/nnethercote/category/rust/feed/" htmlUrl="https://blog.mozilla.org/nnethercote" title="Rust &#x2013; Nicholas Nethercote" text="Rust &#x2013; Nicholas Nethercote"/>
+    <outline type="rss" xmlUrl="https://blog.mozilla.org/firefox/tag/rust/feed/" htmlUrl="" title="" text=""/>
+    <outline type="rss" xmlUrl="http://aturon.github.io/atom.xml" htmlUrl="http://aturon.github.io/atom.xml" title="Aaron Turon" text="Aaron Turon"/>
+    <outline type="rss" xmlUrl="https://bheisler.github.io/tags/rust/index.xml" htmlUrl="https://bheisler.github.io/tags/rust/" title="Rust on bheisler.github.io" text="Rust on bheisler.github.io"/>
+    <outline type="rss" xmlUrl="https://blog.dbrgn.ch/tags/rust.atom" htmlUrl="https://blog.dbrgn.ch/" title="blog.dbrgn.ch - rust" text="blog.dbrgn.ch - rust"/>
+    <outline type="rss" xmlUrl="https://blog.guillaume-gomez.fr/rss" htmlUrl="https://blog.guillaume-gomez/" title="Guillaume Gomez's RSS (blog posts about IT and Rust)" text="Guillaume Gomez's RSS (blog posts about IT and Rust)"/>
+    <outline type="rss" xmlUrl="https://blog.x5ff.xyz/categories/rust/index.xml" htmlUrl="https://blog.x5ff.xyz/categories/rust/" title="Rust on x5ff" text="Rust on x5ff"/>
+    <outline type="rss" xmlUrl="https://blog.zhpass.com/atom.xml" htmlUrl="https://blog.zhpass.com/atom.xml" title="Xudong-Huang's Blog" text="Xudong-Huang's Blog"/>
+    <outline type="rss" xmlUrl="http://bluejekyll.github.io/blog/feed.xml" htmlUrl="" title="" text=""/>
+    <outline type="rss" xmlUrl="https://boats.gitlab.io/blog/index.xml" htmlUrl="https://boats.gitlab.io/blog/" title="withoutblogs" text="withoutblogs"/>
+    <outline type="rss" xmlUrl="https://brandonio21.com/category/rust/feed/" htmlUrl="https://brandonio21.com/" title="brandonio21" text="brandonio21"/>
+    <outline type="rss" xmlUrl="https://branan.github.io/teensy/feed.xml" htmlUrl="https://branan.github.io/teensy/" title="Exploring Rust on Teensy" text="Exploring Rust on Teensy"/>
+    <outline type="rss" xmlUrl="http://blog.japaric.io/index.xml" htmlUrl="https://blog.japaric.io/" title="Embedded in Rust" text="Embedded in Rust"/>
+    <outline type="rss" xmlUrl="http://blog.kylehuey.com/tagged/rust/rss" htmlUrl="https://blog.kylehuey.com/" title="about:khuey" text="about:khuey"/>
+    <outline type="rss" xmlUrl="http://cglab.ca/~abeinges/blah/rss.xml" htmlUrl="http://cglab.ca/~abeinges/" title="Alexis Beingessner's Notes on Programming" text="Alexis Beingessner's Notes on Programming"/>
+    <outline type="rss" xmlUrl="http://calculist.org/feed.xml" htmlUrl="http://localhost:4000/" title="The Little Calculist" text="The Little Calculist"/>
+    <outline type="rss" xmlUrl="http://carol-nichols.com/feed.xml" htmlUrl="http://carol-nichols.com/" title="Carol's 10 Cents" text="Carol's 10 Cents"/>
+    <outline type="rss" xmlUrl="https://cetra3.github.io/rss.xml" htmlUrl="https://cetra3.github.io/" title="Cetra's Thoughts" text="Cetra's Thoughts"/>
+    <outline type="rss" xmlUrl="http://www.chriskrycho.com/feeds/rust.xml" htmlUrl="http://v4.chriskrycho.com/" title="Chris Krycho - Rust" text="Chris Krycho - Rust"/>
+    <outline type="rss" xmlUrl="http://createfeed.fivefilters.org/mergefeeds.php?url=createfeed.fivefilters.org%2Fextract.php%3Furl%3Dhttps%253A%252F%252Fchrismorgan.info%252Fblog%252Ftags%252Frust.html%26in_id_or_class%3Dpost%26url_contains%3D%252Fblog%252F&amp;t=Chris+Morgan&amp;strip_if_url=%2Ftags%2F&amp;description=0" htmlUrl="http://createfeed.fivefilters.org/mergefeeds.php?url=createfeed.fivefilters.org%2Fextract.php%3Furl%3Dhttps%253A%252F%252Fchrismorgan.info%252Fblog%252Ftags%252Frust.html%26in_id_or_class%3Dpost%26url_contains%3D%252Fblog%252F&amp;t=Chris+Morgan&amp;strip_if_url=%2Ftags%2F&amp;description=0" title="Chris Morgan" text="Chris Morgan"/>
+    <outline type="rss" xmlUrl="https://cliffle.com/rss.xml" htmlUrl="https://cliffle.com/" title="Cliffle" text="Cliffle"/>
+    <outline type="rss" xmlUrl="https://coaxion.net/blog/category/rust/feed/" htmlUrl="https://coaxion.net/blog" title="Rust &#x2013; coaxion.net &#x2013; slomo's blog" text="Rust &#x2013; coaxion.net &#x2013; slomo's blog"/>
+    <outline type="rss" xmlUrl="http://createfeed.fivefilters.org/extract.php?url=lucumr.pocoo.org%2Ftags%2Frust%2F&amp;in_id_or_class=&amp;url_contains=%2F20" htmlUrl="http://createfeed.fivefilters.org/extract.php?url=lucumr.pocoo.org%2Ftags%2Frust%2F&amp;in_id_or_class=&amp;url_contains=%2F20" title="Inactive feed" text="Inactive feed"/>
+    <outline type="rss" xmlUrl="http://createfeed.fivefilters.org/extract.php?url=https://changelog.com/topic/rust&amp;in_id_or_class=news_item-title&amp;url_contains=" htmlUrl="http://createfeed.fivefilters.org/extract.php?url=https://changelog.com/topic/rust&amp;in_id_or_class=news_item-title&amp;url_contains=" title="Inactive feed" text="Inactive feed"/>
+    <outline type="rss" xmlUrl="https://deterministic.space/feed.xml" htmlUrl="https://deterministic.space/" title="Pascal's Scribbles" text="Pascal's Scribbles"/>
+    <outline type="rss" xmlUrl="http://createfeed.fivefilters.org/extract.php?url=https%3A%2F%2Fdev.to%2Ft%2Frust&amp;in_id_or_class=index-article-link&amp;url_contains=" htmlUrl="http://createfeed.fivefilters.org/extract.php?url=https%3A%2F%2Fdev.to%2Ft%2Frust&amp;in_id_or_class=index-article-link&amp;url_contains=" title="Inactive feed" text="Inactive feed"/>
+    <outline type="rss" xmlUrl="https://dirkjan.ochtman.nl/writing/feeds/rust.atom.xml" htmlUrl="https://dirkjan.ochtman.nl/writing/" title="Dirkjan Ochtman - rust" text="Dirkjan Ochtman - rust"/>
+    <outline type="rss" xmlUrl="https://dwrensha.github.io/capnproto-rust/feed.xml" htmlUrl="http://dwrensha.github.io/capnproto-rust" title="Cap'n Proto for Rust" text="Cap'n Proto for Rust"/>
+    <outline type="rss" xmlUrl="http://embed.rs/atom.xml" htmlUrl="http://embed.rs/atom.xml" title="embed.rs" text="embed.rs"/>
+    <outline type="rss" xmlUrl="http://erickt.github.io/atom.xml" htmlUrl="http://erickt.github.io/atom.xml" title="Chasing Rabbits" text="Chasing Rabbits"/>
+    <outline type="rss" xmlUrl="https://fasterthanli.me/index.xml" htmlUrl="https://fasterthanli.me/index.xml" title="fasterthanli.me" text="fasterthanli.me"/>
+    <outline type="rss" xmlUrl="http://fitzgeraldnick.com/weblog/feeds/latest-atom/" htmlUrl="http://fitzgeraldnick.com/" title="Nick Fitzgerald" text="Nick Fitzgerald"/>
+    <outline type="rss" xmlUrl="http://www.codeofview.com/fix-rs/feed.xml" htmlUrl="http://www.codeofview.com/fix-rs/" title="fix-rs" text="fix-rs"/>
+    <outline type="rss" xmlUrl="https://gergo.erdi.hu/blog/tags/rust/feed.xml" htmlUrl="https://gergo.erdi.hu/blog/tags/rust/feed.xml" title="Gerg&#x151;.&#xC9;rdi.hu &#x2014; rust" text="Gerg&#x151;.&#xC9;rdi.hu &#x2014; rust"/>
+    <outline type="rss" xmlUrl="http://hermanradtke.com/atom.xml" htmlUrl="http://hermanradtke.com/atom.xml" title="Herman J. Radtke III" text="Herman J. Radtke III"/>
+    <outline type="rss" xmlUrl="http://huonw.github.io/blog/rss.xml" htmlUrl="https://huonw.github.io/blog/" title="Huon on the internet" text="Huon on the internet"/>
+    <outline type="rss" xmlUrl="https://insanitybit.github.io/rss.xml" htmlUrl="http://insanitybit.github.io/" title="InsanityBit" text="InsanityBit"/>
+    <outline type="rss" xmlUrl="http://www.integer32.com/feed.xml" htmlUrl="http://www.integer32.com/" title="Integer 32" text="Integer 32"/>
+    <outline type="rss" xmlUrl="http://intorust.com/feed.xml" htmlUrl="http://intorust.com/" title="into_rust()" text="into_rust()"/>
+    <outline type="rss" xmlUrl="http://softwaremaniacs.org/blog/category/rust/feed/en/" htmlUrl="https://softwaremaniacs.org/blog/category/rust/en/" title="Software Maniacs blog &#xBB; Rust" text="Software Maniacs blog &#xBB; Rust"/>
+    <outline type="rss" xmlUrl="http://jadpole.github.io/feed.xml" htmlUrl="http://jadpole.github.io/" title="Rambling On Bytes" text="Rambling On Bytes"/>
+    <outline type="rss" xmlUrl="https://jbp.io/atom.xml" htmlUrl="https://jbp.io/atom.xml" title="jbp.io" text="jbp.io"/>
+    <outline type="rss" xmlUrl="http://createfeed.fivefilters.org/extract.php?url=https://www.jimmycuadra.com/posts/tags/rust/&amp;in_id_or_class=&amp;url_contains=/posts/" htmlUrl="http://createfeed.fivefilters.org/extract.php?url=https://www.jimmycuadra.com/posts/tags/rust/&amp;in_id_or_class=&amp;url_contains=/posts/" title="Inactive feed" text="Inactive feed"/>
+    <outline type="rss" xmlUrl="https://jim.turner.link/index.xml" htmlUrl="https://jim.turner.link/index.xml" title="About on Jim Turner" text="About on Jim Turner"/>
+    <outline type="rss" xmlUrl="http://www.jonathanturner.org/feed.xml" htmlUrl="" title="" text=""/>
+    <outline type="rss" xmlUrl="https://jvns.ca/categories/rust/atom.xml" htmlUrl="https://jvns.ca/categories/rust/" title="Rust on Julia Evans" text="Rust on Julia Evans"/>
+    <outline type="rss" xmlUrl="https://kasma1990.gitlab.io/index.xml" htmlUrl="https://kasma1990.gitlab.io/" title="Bloggedy blog" text="Bloggedy blog"/>
+    <outline type="rss" xmlUrl="http://llogiq.github.io/feed.xml" htmlUrl="https://llogiq.github.io/" title="Llogiq on stuff" text="Llogiq on stuff"/>
+    <outline type="rss" xmlUrl="https://blogs.gentoo.org/lu_zero/category/rust/feed/" htmlUrl="https://blogs.gentoo.org/lu_zero" title="rust &#x2013; Luca Barbato" text="rust &#x2013; Luca Barbato"/>
+    <outline type="rss" xmlUrl="https://lukaskalbertodt.github.io/feed.xml" htmlUrl="http://lukaskalbertodt.github.io/" title="Lukas&#x2BC; Blog" text="Lukas&#x2BC; Blog"/>
+    <outline type="rss" xmlUrl="https://manishearth.github.io/blog/categories/rust/atom.xml" htmlUrl="https://manishearth.github.io/blog/categories/rust/atom.xml" title="Category: Rust | In Pursuit of Laziness" text="Category: Rust | In Pursuit of Laziness"/>
+    <outline type="rss" xmlUrl="https://marwes.github.io/feed.xml" htmlUrl="http://marwes.github.io/" title="Collecting Rust" text="Collecting Rust"/>
+    <outline type="rss" xmlUrl="https://matklad.github.io/feed.xml" htmlUrl="https://matklad.github.io/" title="matklad" text="matklad"/>
+    <outline type="rss" xmlUrl="https://matthewkmayer.github.io/blag/public/index.xml" htmlUrl="https://matthewkmayer.github.io/blag/public/" title="Matthew Mayer's tech blog" text="Matthew Mayer's tech blog"/>
+    <outline type="rss" xmlUrl="https://mht.technology/index.xml" htmlUrl="" title="" text=""/>
+    <outline type="rss" xmlUrl="http://michaelwoerister.github.io/feed.xml" htmlUrl="http://michaelwoerister.github.io/" title="a bit of respite" text="a bit of respite"/>
+    <outline type="rss" xmlUrl="https://mobiarch.wordpress.com/category/rust/feed/" htmlUrl="https://mobiarch.wordpress.com/" title="Rust &#x2013; mobiarch" text="Rust &#x2013; mobiarch"/>
+    <outline type="rss" xmlUrl="https://morestina.net/blog/tag/rust/feed" htmlUrl="https://morestina.net/" title="rust &#x2013; More Stina Blog!" text="rust &#x2013; More Stina Blog!"/>
+    <outline type="rss" xmlUrl="https://mortoray.com/tag/rust/feed/" htmlUrl="https://mortoray.com/tag/rust/" title="rust Archives - Musing Mortoray" text="rust Archives - Musing Mortoray"/>
+    <outline type="rss" xmlUrl="http://m4rw3r.github.io/atom.xml" htmlUrl="http://m4rw3r.github.io/atom.xml" title="m4rw3r" text="m4rw3r"/>
+    <outline type="rss" xmlUrl="http://www.mmrath.com/tags/rust/index.xml" htmlUrl="" title="" text=""/>
+    <outline type="rss" xmlUrl="http://nercury.github.io/feed.xml" htmlUrl="http://nercury.github.io/" title="Ironic Blog" text="Ironic Blog"/>
+    <outline type="rss" xmlUrl="http://www.ncameron.org/blog/rss/" htmlUrl="https://www.ncameron.org/blog/" title="featherweight musings" text="featherweight musings"/>
+    <outline type="rss" xmlUrl="http://feeds.feedburner.com/NikitaBaksalyar" htmlUrl="http://nbaksalyar.github.io/" title="Nikita Baksalyar" text="Nikita Baksalyar"/>
+    <outline type="rss" xmlUrl="https://os.phil-opp.com/rss.xml" htmlUrl="https://os.phil-opp.com/" title="Writing an OS in Rust" text="Writing an OS in Rust"/>
+    <outline type="rss" xmlUrl="http://phildawes.net/blog/feed.xml" htmlUrl="http://phildawes.net/blog/" title="Phil Dawes Stuff" text="Phil Dawes Stuff"/>
+    <outline type="rss" xmlUrl="http://piston-tutorial.logdown.com/posts.atom" htmlUrl="" title="" text=""/>
+    <outline type="rss" xmlUrl="https://pliniker.github.io/feed.xml" htmlUrl="http://pliniker.github.io/" title="Peter Liniker" text="Peter Liniker"/>
+    <outline type="rss" xmlUrl="http://pramode.in/feed.xml" htmlUrl="" title="" text=""/>
+    <outline type="rss" xmlUrl="https://quietmisdreavus.net/feed.xml" htmlUrl="https://quietmisdreavus.net/" title="quiet misdreavus miniblog" text="quiet misdreavus miniblog"/>
+    <outline type="rss" xmlUrl="http://sasheldon.com/blog/atom.xml" htmlUrl="http://sasheldon.com/blog/atom.xml" title="sasheldon.com" text="sasheldon.com"/>
+    <outline type="rss" xmlUrl="http://seanmonstar.com/tagged/rust/rss" htmlUrl="" title="" text=""/>
+    <outline type="rss" xmlUrl="https://siliconislandblog.wordpress.com/category/rust/feed/" htmlUrl="https://siliconislandblog.wordpress.com/" title="Rust &#x2013; Silicon Island" text="Rust &#x2013; Silicon Island"/>
+    <outline type="rss" xmlUrl="http://smallcultfollowing.com/babysteps/atom.xml" htmlUrl="https://smallcultfollowing.com/babysteps/index.xml" title="baby steps" text="baby steps"/>
+    <outline type="rss" xmlUrl="http://feeds.feedburner.com/steveklabnik/words" htmlUrl="https://words.steveklabnik.com/" title="Steve Klabnik" text="Steve Klabnik"/>
+    <outline type="rss" xmlUrl="http://www.suspectsemantics.com/atom.xml" htmlUrl="" title="" text=""/>
+    <outline type="rss" xmlUrl="https://thesquareplanet.com/feed.xml" htmlUrl="https://thesquareplanet.com/" title="Jon Gjengset" text="Jon Gjengset"/>
+    <outline type="rss" xmlUrl="https://v4.chriskrycho.com/feeds/rust.xml" htmlUrl="http://v4.chriskrycho.com/" title="Chris Krycho - Rust" text="Chris Krycho - Rust"/>
+    <outline type="rss" xmlUrl="https://levans.fr/feeds/rust.atom.xml" htmlUrl="https://levans.fr/" title="Levans' workshop - Rust" text="Levans' workshop - Rust"/>
+    <outline type="rss" xmlUrl="https://vitiral.github.io/feed.xml" htmlUrl="http://vitiral.github.com/" title="Vitiral: vital literal trivial content, probably not viral." text="Vitiral: vital literal trivial content, probably not viral."/>
+    <outline type="rss" xmlUrl="https://vorner.github.io/feed.xml" htmlUrl="https://vorner.github.io/" title="Vorner&#x2019;s random stuff" text="Vorner&#x2019;s random stuff"/>
+    <outline type="rss" xmlUrl="https://without.boats/index.xml" htmlUrl="https://without.boats/" title="Without boats, dreams dry up" text="Without boats, dreams dry up"/>
+    <outline type="rss" xmlUrl="http://zackmdavis.net/blog/tag/rust/feed/" htmlUrl="http://zackmdavis.net/blog" title="Rust &#x2013; An Algorithmic Lucidity" text="Rust &#x2013; An Algorithmic Lucidity"/>
+    <outline type="rss" xmlUrl="https://mtak-blog.github.io/atom.xml" htmlUrl="" title="" text=""/>
+    <outline type="rss" xmlUrl="https://dpc.pw/atom.xml" htmlUrl="https://dpc.pw/atom.xml" title="dpc" text="dpc"/>
+    <outline type="rss" xmlUrl="http://createfeed.fivefilters.org/extract.php?url=xion.io/tag/rust.html&amp;item=h2&amp;url_contains=post" htmlUrl="http://createfeed.fivefilters.org/extract.php?url=xion.io/tag/rust.html&amp;item=h2&amp;url_contains=post" title="Inactive feed" text="Inactive feed"/>
+    <outline type="rss" xmlUrl="https://ricardomartins.cc/atom.xml" htmlUrl="https://ricardomartins.cc/atom.xml" title="Ricardo Martins" text="Ricardo Martins"/>
+    <outline type="rss" xmlUrl="http://www.platymuus.com/feed.xml" htmlUrl="https://www.platymuus.com/" title="Platymuus" text="Platymuus"/>
+    <outline type="rss" xmlUrl="https://www.ralfj.de/blog/feed.xml" htmlUrl="https://www.ralfj.de/blog/feed.xml" title="Ralf's Ramblings" text="Ralf's Ramblings"/>
+    <outline type="rss" xmlUrl="https://nitschinger.at/index.xml" htmlUrl="https://nitschinger.at/" title="daschl writes. sometimes." text="daschl writes. sometimes."/>
+    <outline type="rss" xmlUrl="https://xania.org/feed/Rust" htmlUrl="https://xania.org/feed/Rust" title="Rust &#x2014; Matt Godbolt&#x2019;s blog" text="Rust &#x2014; Matt Godbolt&#x2019;s blog"/>
+    <outline type="rss" xmlUrl="https://bluss.github.io/feed.xml" htmlUrl="https://bluss.github.io//" title="bluss' rust bursts" text="bluss' rust bursts"/>
+    <outline type="rss" xmlUrl="http://alwayscoding.ca/tags/rust/index.xml" htmlUrl="https://alwayscoding.ca/tags/rust/" title="rust on { always: 'coding' }" text="rust on { always: 'coding' }"/>
+    <outline type="rss" xmlUrl="https://increment.com/feed.xml" htmlUrl="https://increment.com/" title="Increment" text="Increment"/>
+    <outline type="rss" xmlUrl="https://danluu.com/atom.xml" htmlUrl="https://danluu.com/atom/index.xml" title="" text=""/>
+    <outline type="rss" xmlUrl="https://lobste.rs/t/distributed.rss" htmlUrl="https://lobste.rs/" title="Lobsters: distributed - Distributed systems" text="Lobsters: distributed - Distributed systems"/>
+    <outline type="rss" xmlUrl="https://hnrss.org/newest?q=distributed+systems" htmlUrl="https://news.ycombinator.com/newest" title="Hacker News - Newest: &quot;distributed systems&quot;" text="Hacker News - Newest: &quot;distributed systems&quot;"/>
+    <outline type="rss" xmlUrl="https://andrewkelley.me/rss.xml" htmlUrl="https://andrewkelley.me/" title="Andrew Kelley" text="Andrew Kelley"/>
+  </body>
+</opml>

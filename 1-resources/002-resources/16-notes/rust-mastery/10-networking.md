@@ -1,0 +1,59 @@
+# Networking Deep Dive: TCP/UDP, TLS/QUIC, HTTP/2-3, Zero-Copy, DPDK, eBPF/XDP, RDMA
+
+Prerequisite: handbook Ch 46 (the practical veth/bridge/netlink container-networking material) and §07 (io_uring/epoll). This file covers the protocol and kernel-bypass layers above that plumbing.
+
+## TCP
+
+**Three-way handshake**: `SYN` (client proposes an initial sequence number) → `SYN-ACK` (server acknowledges and proposes its own) → `ACK` (client acknowledges) -- establishes the connection and synchronizes both sides' sequence-number spaces before any data flows, which is exactly why a connection has one extra round-trip of latency before the first byte of application data can be sent (a real, unavoidable cost QUIC's design, below, specifically targets reducing).
+
+**Congestion control**: TCP starts conservatively (**slow start** -- exponentially growing the amount of unacknowledged data allowed in flight, the *congestion window*, until loss is detected or a threshold is reached) and then probes for available bandwidth without overwhelming the network path. Modern algorithms differ mainly in how they *react* to signals of congestion: **CUBIC** (Linux's long-standing default) treats packet loss as the primary congestion signal and grows the window along a cubic function of time since the last loss event; **BBR** (Google-originated, also available on Linux) instead models the network path's actual bottleneck bandwidth and round-trip time directly, reacting to measured throughput/latency changes rather than waiting for loss -- generally better on lossy-but-not-actually-congested links (satellite, some wireless) where loss-based algorithms mistake noise for congestion and needlessly throttle.
+
+**`TCP_NODELAY`**: disables **Nagle's algorithm** (which, by default, buffers small writes briefly to coalesce them into fewer, larger packets, trading a small latency cost for better bandwidth efficiency on bulk transfers) -- setting `TCP_NODELAY` is the standard, near-mandatory choice for latency-sensitive request/response protocols (an RPC framework, a database wire protocol) where Nagle's coalescing delay directly hurts round-trip latency for no bandwidth benefit, since such protocols are already sending discrete, meaningfully-sized messages rather than a stream of tiny writes.
+
+## UDP
+
+Connectionless, no handshake, no delivery/ordering guarantee, no congestion control built in -- chosen specifically when an application wants to implement its *own* reliability/ordering semantics (or explicitly wants none, as in real-time media where a late-arriving retransmission is worse than a dropped frame) rather than inheriting TCP's. This is exactly the foundation QUIC (below) builds its own, purpose-designed reliability layer on top of, instead of using TCP's.
+
+## TLS
+
+**Handshake**: TLS 1.2's handshake needs a full round trip of its own (in addition to TCP's) before any encrypted application data can flow -- client and server negotiate a cipher suite, exchange/verify certificates, and derive a shared symmetric key. **TLS 1.3** collapses this to effectively one round trip by default, and additionally supports **0-RTT** for *resumed* connections (a client that's connected before can send encrypted application data immediately, before the handshake completes) -- with a real, inherent tradeoff: 0-RTT data is replayable by an attacker who captures and resends it (since there's no live handshake exchange yet to bind it to a fresh, unique session), so 0-RTT is only safe for idempotent requests, and servers/applications need to explicitly account for that risk rather than treating it as a free latency win. The **record layer** is the part that actually encrypts/authenticates application data in fixed-size chunks once the handshake-derived keys are established.
+
+## QUIC
+
+A UDP-based transport (not a TCP replacement at the packet level -- it's built entirely on top of UDP specifically so it can be deployed without kernel/OS/middlebox changes, since UDP is already universally supported) that folds transport-layer reliability *and* TLS 1.3 encryption into a single integrated handshake, achieving effectively the "TCP handshake + TLS handshake" combined round-trip cost of one, not two, sequential negotiations. Two properties genuinely new relative to TCP+TLS:
+
+- **Stream multiplexing without head-of-line blocking**: QUIC natively supports multiple independent byte streams within one connection, and critically, a lost packet belonging to *one* stream only delays *that* stream -- unlike HTTP/2 over TCP (below), where TCP's single, ordered byte stream means a lost packet stalls *every* multiplexed HTTP/2 stream sharing that one TCP connection until it's retransmitted, regardless of which logical stream the lost data actually belonged to.
+- **Connection migration**: a QUIC connection is identified by a **connection ID**, not by the traditional 4-tuple (source/dest IP and port) -- so a client's connection can survive a network change (moving from WiFi to cellular, changing IP address) without a full reconnect, since the connection ID (not the now-changed IP/port) is what the server uses to recognize it as the same ongoing connection.
+
+## HTTP/2 and HTTP/3
+
+**HTTP/2** multiplexes many logical request/response streams over a *single* TCP connection (fixing HTTP/1.1's head-of-line blocking *at the application layer*, where a slow response used to block every subsequent request queued behind it on the same connection) and adds **HPACK** header compression (exploiting the fact that HTTP headers are extremely repetitive across requests on the same connection). It still suffers **transport-layer** head-of-line blocking, though: because all HTTP/2 streams share one ordered TCP byte stream, a single lost/delayed TCP segment stalls every multiplexed stream, even ones with no relationship to the lost data -- the exact problem QUIC's independent-stream design above was built to eliminate. **HTTP/3** is HTTP/2's semantics (multiplexed streams, header compression via the QUIC-specific QPACK) running over QUIC instead of TCP+TLS -- inheriting QUIC's per-stream loss isolation and faster handshake, which is the actual, concrete reason HTTP/3 exists rather than simply continuing to refine HTTP/2.
+
+## Zero-Copy Networking
+
+Ordinarily, sending file data over a socket means: read the file into a userspace buffer (kernel → userspace copy), then write that buffer to the socket (userspace → kernel copy) -- two copies and two context switches for data that never actually needed to be touched by userspace at all. **`sendfile`** and **`splice`** (Linux syscalls, handbook §36.3) let the kernel move data directly from a file descriptor to a socket (or between two arbitrary fds, for `splice`) without ever staging it through a userspace buffer -- eliminating both unnecessary copies, a real, substantial throughput win for any workload dominated by "read from disk/cache, write to network" (a static file server being the canonical example).
+
+**io_uring for networking** (building on §07's io_uring material): batches `recvmsg`/`sendmsg`-equivalent operations through the same submission/completion ring mechanism, extending the same syscall-count reduction that benefits disk I/O to network I/O -- genuinely relevant for very-high-connection-count, very-high-message-rate servers where per-syscall overhead (not bandwidth) is the actual bottleneck.
+
+## DPDK
+
+**Kernel-bypass** networking: DPDK maps a NIC's descriptor rings directly into a userspace process and disables the kernel's normal network stack involvement for that device entirely, using **poll-mode drivers** (the userspace process continuously polls the NIC for new packets rather than relying on interrupts) instead of the ordinary interrupt-driven model. This trades a dedicated CPU core (constantly spinning/polling, since there's no interrupt to wait on efficiently) for eliminating every layer of kernel networking-stack overhead (socket buffer allocation, protocol processing, context switches into/out of the kernel on every packet) -- justified specifically at extreme packet rates (tens of millions of packets per second) where kernel-stack overhead per packet, multiplied across that rate, dominates -- a niche, specialized choice (high-frequency trading infrastructure, telecom packet processing, some load balancers) rather than a general-purpose networking technique.
+
+## eBPF and XDP
+
+**XDP (eXpress Data Path)** runs a restricted, verified eBPF program at the *earliest possible point* in the NIC driver's receive path -- before the kernel has even allocated its normal packet-representation structure (`sk_buff`) for the incoming packet -- letting it drop, redirect, or forward packets at a cost far below what traversing the full normal networking stack would require. This is the mechanism behind line-rate DDoS mitigation (drop malicious traffic before it costs the kernel *any* further processing) and high-performance load balancing (some production load balancers redirect packets entirely in XDP, never handing them to a normal socket at all) -- a middle ground between "ordinary kernel networking" and DPDK's full kernel-bypass: XDP still runs *inside* the kernel's driver context (safer, verified, no dedicated spinning core required) while avoiding most of the per-packet overhead a DPDK-free approach would pay.
+
+## RDMA
+
+**Remote Direct Memory Access**: lets one machine's NIC read/write directly into another machine's application memory, with the *remote* CPU essentially uninvolved in servicing the request -- both machines' network stacks are bypassed on the data path (the NIC hardware itself handles the memory access, driven by pre-registered memory regions and hardware-managed queues), giving latency and CPU-overhead characteristics close to local memory access. Used in HPC interconnects and increasingly in some high-performance distributed databases/storage systems (replicating data or serving remote reads without paying a full network-stack-plus-remote-CPU round trip per operation) -- genuinely specialized hardware/infrastructure (InfiniBand, or RoCE -- RDMA over Converged Ethernet) rather than something available on arbitrary cloud/commodity networking without specific provisioning.
+
+## Key Takeaways
+
+- QUIC's two headline advantages over TCP+TLS (independent per-stream loss isolation, connection migration via connection ID) both follow directly from moving reliability and identity out of the IP/port-bound TCP layer into QUIC's own connection-ID-addressed, per-stream-aware design.
+- Zero-copy techniques (`sendfile`/`splice`, io_uring) and kernel-bypass techniques (DPDK, XDP, RDMA) are solving the same underlying problem (unnecessary copies/context-switches/kernel-stack overhead per unit of data) at progressively more specialized, more infrastructure-specific points on the cost/complexity spectrum.
+- HTTP/3 exists specifically to inherit QUIC's transport-layer fixes -- it isn't a new application-semantics design over HTTP/2, it's HTTP/2's semantics ported onto a transport that doesn't have HTTP/2's head-of-line-blocking weakness.
+
+## Interview Notes
+
+- "Why does HTTP/2 still suffer head-of-line blocking despite multiplexing streams, and how does HTTP/3 fix it?" -- HTTP/2's streams still share one ordered TCP byte stream, so a single lost TCP segment stalls every multiplexed stream regardless of which one it belonged to; HTTP/3 runs over QUIC, where each stream's loss recovery is independent, so a lost packet only stalls the one stream it actually affects.
+- "What's the actual mechanism that lets `sendfile` avoid a userspace copy?" -- it tells the kernel to move data directly from a file descriptor to a socket internally, without ever staging the data through a userspace buffer the calling process would otherwise have to allocate, read into, and write back out from.

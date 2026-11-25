@@ -1,0 +1,40 @@
+# Zettelkasten Rules
+
+- If Making Notes for Learning Something like Deutsch then 
+  - If I closed the notes for now and may start again on same topic later 
+  - then always create a new note and never edit old one
+  - but I can extend or continue a new note linking to old one.
+- Timestamp IDs vs hierarchical file naming:
+  - Use timestamp for unique IDs in frontmatter (applies to all notes).
+  - For 0-zettelkasten/: descriptive file names with timestamps in frontmatter.
+  - For 1-resources/: hierarchical numbering (10-, 11-, 111-) for file names, timestamps still in frontmatter.
+  - The old 1 1a 1a1 system was problematic because I didn't know where to place notes.
+  - The new hierarchical system (10-, 11-, 111-) solves this with clear categories.
+  - I will make a separate index for technical or workout plans and notes.
+- The Links in the heading section should contain the links of local zettelkasten notes.
+  - Keep the links of website and other things separately in the contents.
+- One idea per note.
+  - If a note becomes too long or covers multiple ideas, split it into separate notes and link them.
+- Use the frontmatter template with id, title, date, type, status, tags, and links.
+  - Always use timestamp for id to keep notes unique.
+  - Update the log section when making significant changes to track note evolution.
+  - Use reference.md as a template when creating each new markdown file.
+- Tags should be used sparingly and consistently.
+  - Only add tags that help with finding related notes later.
+  - Don't over-tag, keep it simple.
+- When in doubt about where a note belongs, create it and link it later.
+  - The index files will help organize related notes.
+  - Links between notes are more important than perfect categorization.
+- Clear separation of purposes:
+  - 0-zettelkasten/: ephemeral, evolving notes with descriptive titles
+  - 1-resources/: permanent, organized reference material with hierarchical numbering
+- Hierarchical numbering system:
+  - Top-level categories: 10-, 11-, 12- (tens)
+  - Subcategories: 111-, 112- (hundreds, first digit = parent)
+  - Files: 11a-, 11ab-, 11b- (alphanumeric variations within category)
+- Naming conventions:
+  - 0-zettelkasten/: Use descriptive titles (e.g., Arch_Linux_Install_Guide.md)
+  - 1-resources/: Use numbered prefixes for organization and sorting
+- Migration rule: When a note in 0-zettelkasten/ becomes stable/reference material, move it to 1-resources/ with appropriate numbering.
+- Immutability: Once moved to 1-resources/, treat as reference—create new versions rather than editing.
+

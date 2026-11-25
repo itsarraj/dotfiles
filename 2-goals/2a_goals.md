@@ -8,6 +8,7 @@
 - Don't deal with noise. 
 - Live in a box
 - read books, complete the book first. read again and then make notes.
+get friend with wealthy guys and read their books 
 
 # Priorities: Pi-Shaped Generalist
 - p1: Rust, Assembly, AI and Infrastructure Tools
