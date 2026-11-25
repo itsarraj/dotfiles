@@ -1,268 +1,170 @@
 # Plans
 
-**Updated**: 2026-10-18
+**Updated**: 2026-11-24
 
 ---
 
 ## Mission
 
-Get a Rust/low-level systems job in Bangalore. Move out. Decide what's next from there.
+Move to Bangalore. Execute day job well. Build real systems Rust on own time.  
+Find the right founder or become one. Eventually exit India.
 
 ---
 
-## Reality Check: What Bangalore Rust Jobs Actually Look Like
+## Reality: What I Have and What I Need
 
-Most Rust roles in Bangalore fall into these buckets:
+| Have | Need |
+|---|---|
+| Rust job (ITC/SAP, remote) | Bangalore move done |
+| Rust iced + AI tooling experience | Low-level systems Rust portfolio |
+| Full ownership on current project | Founder network in Bangalore |
+| Resume credibility starting | Savings buffer |
 
-| Tier | Type | Companies | Alignment |
-|---|---|---|---|
-| 🎯 Best fit | Security / networking systems | Zscaler, Fortanix | High — real low-level Rust |
-| 🎯 Best fit | Storage / distributed infra | Nutanix, Aerospike, Commvault, Druva | High — systems work |
-| ✅ Good fit | Database internals | MongoDB, Databricks | Medium — real engineering |
-| ✅ Good fit | AI infra / serving | deep-tech startups | Medium — growing space |
-| ⚠️ Fallback | Backend/fintech | Zerodha, fintechs | Lower — Rust but not systems |
-
-**What they all require:**
-- Rust ownership/borrowing/lifetimes — deep, not surface level
-- Tokio / async Rust — almost universal
-- Linux / Unix systems knowledge — processes, file descriptors, signals, sockets
-- Adjacent: C/C++ readable at minimum, some DS&A for interviews
+The day job is application-layer Rust. Real systems depth comes from own projects.  
+Both tracks run in parallel. Neither waits for the other.
 
 ---
 
-## The Two Tracks (run in parallel)
+## Track 1: Bangalore Move
 
-### Track 1: Rust Depth + Portfolio
+**Do this first. Everything else is easier from there.**
 
-**Phase A: Rust for Rustaceans (current)**
+- Find PG or room share — HSR Layout, Koramangala, Indiranagar, Whitefield
+- Budget: 3k–6k/month rent + food — easily covered on current salary
+- Target: moved within 4-6 weeks
 
-Read and build. One chapter, one project. In order.
+**Once there:**
+- Nasscom 10000 Startups hub — free coworking, founder events
+- HasGeek events — Bangalore's best tech community, systems/infra people here
+- Rust India community — Telegram + meetups
+- Dukaan, Setu, Hasura, Obvious — Bangalore startups worth watching
+- IndieBio, Antler, Surge — accelerators running cohorts
 
-| # | Chapter | Concept | Build |
+---
+
+## Track 2: Day Job — Execute Well
+
+**Project**: Screen recording + AI demo tool for SAP clients  
+**Stack**: Rust iced (GUI), LangChain/LangGraph (AI backend)  
+**Position**: Solo dev, full ownership, SAP seniors as stakeholders
+
+How to extract maximum value from this:
+
+- Ship clean, documented Rust — it's your portfolio code
+- Push to a private or public GitHub repo (check NDA carefully)
+- If public isn't possible, write about it — blog post, tweet thread, LinkedIn post
+- Ask SAP seniors for intro to anyone doing systems/infra work
+- Treat every deliverable as a demo of what you can build solo
+
+---
+
+## Track 3: Low-Level Rust Portfolio (own time)
+
+**The gap**: Day job is app-layer Rust. Systems jobs and serious startups want low-level.  
+**The fix**: Build the gap closed on your own time. 1-2 hours daily minimum.
+
+### Phase A: Rust for Rustaceans (finish this)
+
+One chapter, one build project, one ASM dissection. In order.
+
+| # | Chapter | Build | Dissect |
 |---|---|---|---|
-| 1 | Ch 1 — Types | memory layout, variance, PhantomData, ZST | typed newtype wrappers for file descriptors |
-| 2 | Ch 2 — Traits & Generics | dyn vs impl, vtables, monomorphization, orphan rule | trait-based Read/Write over custom types |
-| 3 | Ch 3 — Designing Interfaces | type-state, builder pattern, sealed traits, must-use | type-state file descriptor (Open/Closed) |
-| 4 | Ch 4 — Error Handling | thiserror, anyhow, error wrapping, context chains | syscall wrapper with typed errno enum |
-| 5 | Ch 5 — Project Structure | workspaces, feature flags, cfg, conditional compilation | multi-crate workspace: syscall-raw / syscall-safe / CLI |
-| 6 | Ch 6 — Testing | proptest, cargo-fuzz, test isolation | fuzz parser for /proc/self/status |
-| 7 | Ch 7 — Macros | macro_rules!, hygiene, tt-muncher | macro that generates typed syscall wrappers |
-| 8 | Ch 8 — Async | Future, Waker, Poll, Pin, state machine desugaring | minimal single-threaded async executor |
-| 9 | Ch 9 — Unsafe | raw pointers, invariants, soundness, safe abstractions | arena/bump allocator, no_std compatible |
-| 10 | Ch 10 — Concurrency | atomics, memory ordering, ABA, lock-free patterns | lock-free stack with AtomicPtr + compare_exchange |
+| 1 | Types — layout, variance, PhantomData | typed newtype fd wrappers | struct Fd(i32) vs i32 in ASM — zero cost |
+| 2 | Traits & Generics — dyn, vtables, monomorphization | trait Read/Write on custom types | dyn dispatch vs impl Trait in ASM |
+| 3 | Designing Interfaces — type-state, builder, sealed | type-state Fd (Open/Closed) | PhantomData in ASM — verify zero bytes |
+| 4 | Error Handling — thiserror, anyhow, context | syscall wrapper + typed errno enum | Result<i32,Errno> layout vs C int+errno |
+| 5 | Project Structure — workspaces, features, cfg | multi-crate: syscall-raw / syscall-safe / CLI | nm + readelf on final binary |
+| 6 | Testing — proptest, cargo-fuzz | /proc/self/status parser + fuzzer | compare to handwritten C parser output |
+| 7 | Macros — macro_rules!, tt-muncher | macro-generated syscall wrappers | do macro fns inline? cargo-asm |
+| 8 | Async — Future, Waker, Pin, state machine | minimal single-threaded async executor | Poll::Pending state machine in ASM |
+| 9 | Unsafe — raw pointers, invariants, soundness | arena/bump allocator, no_std | compare to C bump allocator — near-identical ASM |
+| 10 | Concurrency — atomics, ordering, lock-free | lock-free stack, AtomicPtr + compare_exchange | lock cmpxchg instruction directly |
 
-**Phase B: Async Rust (after RfR — non-negotiable for jobs)**
+### Phase B: Tokio (non-negotiable for jobs)
 
-Tokio is in almost every Bangalore Rust job description.
+After RfR. Every Bangalore systems job uses it.
 
-- Tokio tutorial — tasks, channels, select!, timeouts
-- Build: async TCP server that handles multiple clients
-- Build: async file watcher using inotify + Tokio
+- Tokio book — tasks, channels, select!, timeouts
+- Build: async TCP server, multiple clients
+- Build: async file watcher with inotify + Tokio
 
-**Phase C: Portfolio Projects (build alongside, don't wait)**
+### Phase C: Portfolio Projects (the proof)
 
-These go on GitHub with clean READMEs. This is what gets you interviews.
+These go on GitHub with clean READMEs. This is what gets you interviews and founder attention.
 
-| Project | What it shows | README must cover |
-|---|---|---|
-| `fd-safe` — type-safe Linux syscall wrappers | unsafe Rust, Linux API knowledge, type design | why type-state, what errors it prevents, code examples |
-| `bump-alloc` — arena allocator, no_std | unsafe Rust, memory model, allocator interface | benchmark vs system alloc, safety invariants documented |
-| `lockfree-stack` — AtomicPtr lock-free stack | concurrency, atomics, unsafe Rust | ABA discussion, memory ordering rationale, stress test results |
-| `mini-executor` — hand-rolled async executor | deep async understanding, Future/Waker internals | how it works diagram, comparison to Tokio's design |
-| `proc-parser` — /proc/self/maps parser + fuzzer | byte parsing, cargo-fuzz, Linux proc knowledge | fuzzing setup, bugs found, format documented |
+| Project | What it shows |
+|---|---|
+| `fd-safe` — type-safe Linux syscall wrappers | unsafe Rust, Linux API, type design |
+| `bump-alloc` — arena allocator, no_std | unsafe Rust, memory model |
+| `lockfree-stack` — AtomicPtr, compare_exchange | concurrency, atomics |
+| `mini-executor` — hand-rolled async executor | Future/Waker internals |
+| `proc-parser` — /proc/self/maps parser + fuzzer | byte parsing, cargo-fuzz, Linux knowledge |
 
-**What makes a project hireable vs toy:**
-- Handles error cases explicitly — not just `unwrap()` everywhere
-- Has tests — at minimum unit, ideally property or fuzz
+**What makes a project hireable:**
+- Error cases handled explicitly — no unwrap() everywhere
+- Tests — unit at minimum, fuzz or property ideally
 - README explains *why*, not just *what*
-- Commits are clean and tell a story (no "fix", "wip", "stuff")
+- Clean commits — tell a story
 
 ---
 
-### Track 2: Job Search (start now, don't wait for "ready")
+## Track 4: Founder Network + Startup Path
 
-**Role titles to search (use these exact strings on LinkedIn/Cutshort):**
-- `Rust Engineer` / `Rust Developer`
-- `Systems Engineer Rust`
-- `Software Engineer - Storage`
-- `Infrastructure Engineer`
-- `Platform Engineer Rust`
-- `Backend Engineer Systems`
+**The play**: Get to Bangalore → go to events → find what's being built → find the bet.
 
-**Companies to target (Bangalore):**
+You don't need to know the idea yet. You need to be in the room.
 
-Priority 1 — Systems/infra (best alignment):
-- Zscaler — networking/security systems in Rust+C++
-- Fortanix — cryptography, confidential compute, Rust-first
-- Nutanix — distributed storage, infra
-- Commvault — data protection, storage systems
-- Druva — cloud data management
-- Aerospike — high-performance database
+**What to look for in a co-founder or early team:**
+- Building something in infra, AI infra, developer tools, or data
+- Technical, early-stage, ideally pre-seed or just raised seed
+- Needs someone who can own engineering solo
 
-Priority 2 — Good engineering:
-- MongoDB — database internals
-- Databricks — data infra
-- Flipkart / Myntra infra teams
-- ThoughtSpot — analytics infra
+**When to make the move:**
+- If you find something worth betting on → join part-time first, then full
+- If nothing fits → build your own, once you have savings + depth
+- If a systems role abroad opens up → take it, startup follows later
 
-Priority 3 — Fallback, apply broadly:
-- Startups on Wellfound/Instahyre with Rust in stack
-- Any company using Tokio / async Rust in production
+---
 
-**Where to apply:**
-- LinkedIn (set open to work: Bangalore, Rust, systems)
-- Cutshort — best for Bangalore product startups
-- Instahyre — good for MNC tech centers
-- Wellfound — startups
-- Hirist — tech-focused
-- RustJobs.dev — Rust-specific board
-- Direct career pages: Zscaler, Fortanix, Nutanix
+## Job Search (keep this warm, don't stop)
 
-**Resume must-haves:**
-- Current role and what you built (be specific: language, scale, what it does)
-- Rust projects with links to GitHub
-- Linux / systems keywords: syscalls, file descriptors, async, concurrency
-- No fluff — every bullet = what you built + how + result
+Even with current job, keep one eye on the market.
 
-**Interview prep (do alongside, not after):**
-- Rust: ownership, borrowing, lifetimes, trait objects, async runtime model
-- Linux basics: processes, threads, file descriptors, epoll, signals, mmap
-- DS&A: arrays, linked lists, trees, hash maps, BFS/DFS — Rust impls preferred
-- System design: basic distributed systems (queues, caches, consistent hashing)
+**Titles to search:**
+- Rust Engineer / Rust Developer
+- Systems Engineer — Rust
+- Infrastructure Engineer
+- Platform Engineer
+- Storage Engineer
+
+**Companies (Bangalore priority):**
+- Zscaler, Fortanix — security/networking, real low-level Rust
+- Nutanix, Commvault, Druva, Aerospike — storage/infra
+- MongoDB, Databricks — database internals
+- Startups on Wellfound, Cutshort, Instahyre
+
+**Boards:**
+- RustJobs.dev, LinkedIn, Cutshort, Instahyre, Wellfound, Hirist
 
 ---
 
 ## Daily Execution
 
-One thing at a time. Finish it. Then next.
+One thing at a time. No context switching mid-session.
 
-No parallel tasks open at the same time.  
-No switching mid-session.
-
-Morning block → Rust reading + build  
-Spare time → job applications, resume, LinkedIn
+```
+Morning     → Day job (ship, build, document)
+Evening     → Rust portfolio work (RfR chapter or build project)
+Weekends    → Events, meetups, founder conversations
+```
 
 ---
 
 ## What's Parked
 
-Everything below is parked until after the move to Bangalore:
+- GATE — not relevant right now
+- MS Europe/USA — revisit after 1-2 years in Bangalore with savings
+- CUDA, SIMD, AVX-512, Assembly deep work — after Tokio + portfolio done
+- Digital Logic, COA — not relevant right now
 
-- GATE prep
-- MS applications
-- Assembly, CUDA, SIMD, AVX-512 deep work
-- COA, OS from scratch, Digital Logic
-- x86-64 / ARM / RISC-V architecture deep dives
-- GPU compute (CUDA, PTX, Tensor Cores)
-- Matrix extensions (AMX, SME, NEON)
-
-Not abandoned. Queued. Focus on the exit first.
-
----
-
-## North Star (post-Bangalore, post-job)
-
-Low-level systems mastery: modern architecture (x86-64, ARM, RISC-V), SIMD/matrix extensions (AVX-512, NEON, AMX, SME), GPU compute (CUDA, PTX, Tensor Cores), C/C++/Rust, Linux internals — inference runtimes, high-performance compute kernels, distributed infrastructure.
-
-The Rust job is step one on this path, not a detour from it.  
-Book → portfolio → job → Bangalore → then go deep.
-
----
-
-## Clarity Layer: C and ASM woven into Rust (not separate tracks)
-
-The goal is not three parallel tracks. It is one track -- Rust -- read through two lenses
-that make the machine-level behavior visible.
-
-### The method: Read, Build, Dissect
-
-For every RfR chapter + build project, add two dissection steps:
-
-1. Compile Rust to ASM and read it.
-   cargo rustc --release -- --emit=asm
-   cargo asm --lib <function_name>        # if cargo-asm is installed
-   Look at Compiler Explorer (godbolt.org) -- paste Rust, read x86-64 output.
-
-2. Write the equivalent in C (10-30 lines). Compile both. Compare the output.
-   gcc -O2 -S file.c -o file_c.s
-   The C is not a deliverable. It is a lens. You are not learning C -- you are using C
-   to see what Rust is doing underneath, because C maps to ASM almost 1:1.
-
-### Per-chapter dissection targets
-
-These are NOT extra projects. They are add-ons to existing build projects (15-30 min each).
-
-| RfR Ch | Rust build | What to dissect in ASM/C |
-|---|---|---|
-| Ch 1 -- Types | newtype fd wrapper | What does newtype cost? Compare `struct Fd(i32)` vs bare `i32` in ASM. Zero. |
-| Ch 2 -- Traits | trait Read/Write over types | What does dyn dispatch look like in ASM vs impl Trait? See the vtable call vs direct call. |
-| Ch 3 -- Interfaces | type-state Fd | Does PhantomData appear in ASM? No. Verify it. ZST = zero bytes in output. |
-| Ch 4 -- Error Handling | syscall errno wrapper | What does a Result<i32, Errno> look like in memory? Compare to C's int + errno. |
-| Ch 5 -- Project Structure | multi-crate workspace | How does static linking look? Use nm and readelf on the final binary. |
-| Ch 6 -- Testing | /proc parser + fuzzer | What does the parser compile to? Compare handwritten C parser output. |
-| Ch 7 -- Macros | macro syscall wrappers | Do macro-generated functions inline? Check with cargo-asm. |
-| Ch 8 -- Async | mini executor | What does Poll::Pending look like in ASM? Trace one state machine transition. |
-| Ch 9 -- Unsafe | arena allocator | Compare to a C bump allocator. The ASM should be nearly identical. |
-| Ch 10 -- Concurrency | lock-free stack | What does compare_exchange compile to? See the lock cmpxchg instruction directly. |
-
-### What to read when you need a concept explained
-
-When a concept in a chapter is unclear, look it up in your existing reference files -- not Google:
-
-- Rust ownership/borrowing mechanics at machine level: 1-resources/12-rust/01-ownership-internals.md
-- How the Rust compiler actually works (MIR, LLVM, drop flags): 1-resources/12-rust/08-mir-llvm-deep.md
-- x86-64 instruction reference when you read the ASM output: 1-resources/11-assembly/01-instruction-reference-deep.md
-- Inline asm syntax (asm! macro in Rust): 1-resources/11-assembly/08-inline-assembly-c-rust.md
-- Syscall mechanics (for Ch 4 errno work): 1-resources/11-assembly/04-syscalls-os-interface.md
-- Atomics at the instruction level (for Ch 10): 1-resources/11-assembly/05-interrupts-exceptions-privileged-atomics.md
-
-### Tools to install once
-
-cargo install cargo-asm      # reads ASM for specific Rust functions
-cargo install cargo-expand   # expands macros, useful for Ch 7
-# objdump, nm, readelf -- already on your Linux install
-
-
----
-
-## Video Resources: Ardan Labs Ultimate Rust (Herbert Wolverson)
-
-Course location: ~/Downloads/FDM/ArdanLabs - Ultimate Rust - Gerbert Wolverson/
-
-Do NOT watch sequentially. Pull sections when your RfR chapter needs them.
-
-### When to watch what
-
-| Your plan phase | Watch these sections |
-|---|---|
-| RfR Ch 1 -- Types | Skip Part 1 section 1.x -- you are past this |
-| RfR Ch 2 -- Traits | 4.6 Traits, 4.7 Generics -- second pass if RfR is too dense |
-| RfR Ch 8 -- Async | Start Part 1 section 3.x (all of it) -- watch alongside or after |
-| RfR Ch 9 -- Unsafe | 4.0, 4.1, 4.2, 4.3, 4.10 -- concrete before/after for unsafe |
-| RfR Ch 10 -- Concurrency | 2.8 (atomics), 2.9 (Mutex), 2.10 (RwLock), 2.12 (lock-free), 2.16 (thread pool) |
-| Phase B -- Tokio build | Part 1 section 3.x in order -- this IS Phase B |
-| Before first GitHub push | All of Part 3 Best Practices -- what makes projects look professional |
-| After Phase B capstone | Part 1 section 5.x + Part 2 -- model your portfolio capstone on this |
-
-### Section grades
-
-Part 1 -- Foundations:
-- 1.x (basics, enums, structs, CLI) -- Skip. You are past this.
-- 2.x (threads, atomics, Mutex, RwLock, channels, Rayon) -- High value. Watch with RfR Ch 10.
-- 3.x (async, Tokio, select!, pinning, tracing, Axum, thumbnail server) -- High value. This is Phase B.
-- 4.x (unsafe, RAII, Rc/Arc, lifetimes, traits, generics, arenas, FFI) -- Medium. Use when RfR is too abstract.
-- 5.x (capstone: collector daemon + server + web service) -- High value. Real multi-binary systems project.
-
-Part 2 -- Foundations Next Steps:
-- Continuation of 5.x capstone. Watch as extension of Part 1 section 5. Short and practical.
-
-Part 3 -- Best Practices:
-- 1.x (Clippy, docs, dependency audit) -- Skim before pushing any portfolio project.
-- 2.x (iterators, minimize clone, no OOP emulation, small functions) -- High value. Watch before first push.
-- 3.x (TANSTAAFL, YAGNI, domain boundaries, compile times) -- Watch once after capstone. Good for interviews.
-
-### How to use it vs RfR
-
-When RfR is too abstract -- watch the Wolverson section first to get a working mental model.
-When Wolverson code works but you do not understand why -- read the RfR chapter for the mechanism.
-They are not redundant. Wolverson = breadth + practical. RfR = depth + why.
+Not abandoned. Sequenced. Exit India first. Then go deep on the technical north star.

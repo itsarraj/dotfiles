@@ -12,6 +12,12 @@ Topic: memory layout, sized vs unsized, ZST, PhantomData, variance, lifetime var
 
 ---
 
+### 2026-11-23
+- handle the directory formatting of images
+- handle the external drives, i wont need these many course remove them for better 
+- handle the files , organise my documents correctly
+
+
 ### 2026-10-18
 
 - [ ] (p1)(est: 2h) RfR Ch 1 -- read the chapter, understand every concept

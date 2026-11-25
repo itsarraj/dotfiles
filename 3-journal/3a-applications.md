@@ -16,6 +16,18 @@ University Of Burdwan, Golapbag Campus
 Golapbag (North), Grand Trunk Rd, Bardhaman, West Bengal 713104
 
 ## Identity & Contact
+Bank Name – STATE BANK OF INDIA
+IFSC Code – SBIN0006076
+Account Number – 34344324182
+Type of Account – Savings 
+
+
+Aadhar: 754703927317
+7547 0392 7317
+754703927317
+
+EEZPR7181J
+
 - Passport Authority: The Ministry of External Affairs (MEA)
 - Passport Number: X9345626
 - Issue Date: 04/08/2023
@@ -31,7 +43,6 @@ X9345626
 +91 9102888850
 
 
-- Aadhar: 754703927317
 
 ## Academic References
 - Dr. Partha Pratim Sarkar

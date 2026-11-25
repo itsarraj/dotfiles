@@ -1,40 +1,31 @@
-# Goals
+# My Journey & Life Goals
+- Getting Rich is my primary goal.
+- I must be wealthy oligarch control of power and money.
+- No debt
+- preserve options in everything
+- Develop grit.
+- White girl
+- Don't deal with noise. 
+- Live in a box
+- read books, complete the book first. read again and then make notes.
 
-**Updated**: 2026-10-18
+# Priorities: Pi-Shaped Generalist
+- p1: Rust, Assembly, AI and Infrastructure Tools
+- p1: Build Production Level Products to build wealth.
 
----
+- p2: English, German, and Russian, trilingual at native level
+- p2: Calisthenics and weight training (resistance training)
 
-## The One Goal Right Now
+# Daily Targets
+- Early morning good reads: 30m (Philosophy and Business)
+- Calisthenics and weight training: 30m
 
-**Move out of parents' house. Move to Bangalore. Get a Rust job.**
+# how to aproach the goals
+- (p1) for building products: pick the task and use whichever is needed - rust,cpp,c,asm,typescript,python and build the product and learn tech along the way.
+- (p2) for deutch, russian & english: read books from my library and also refer grammer & vocabulary.
+- (p2) for calisthenics and training, start small & read library book for clarity and follow proper routine
 
-That's it. Everything else is on hold.
-
----
-
-## Why
-
-Current environment is actively hurting execution. The move unlocks everything else.  
-No environment control = no deep work = no progress on anything.  
-Get the job → get to the city → then decide what's next.
-
----
-
-## Target
-
-- **City**: Bangalore
-- **Role**: Rust / low-level systems engineering — same domain, same work, different city
-- **Timeline**: As fast as possible. No artificial deadline, just maximum speed.
-
----
-
-## What's On Hold
-
-GATE, MS applications, P1 systems work, everything else — all on hold.  
-Will revisit once in Bangalore and stable.
-
----
-
-## Signal Check
-
-> If it is not Rust job prep → it is noise. Cut it.
+# what not to do
+- no multitasking, kill the adhd, do deep work.
+- download the movies and documentaries like 'when nietzsche wept' and watch them offline.
+- do not watch youtube videos, reels, or anything online, its deep rabbit hole.
