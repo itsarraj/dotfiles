@@ -14,8 +14,7 @@
 
 ### Mindset & Philosophy (P2)
 - [ ] Meditations — Marcus Aurelius (Stoic foundation)
-  - Alternative: The Daily Stoic (Ryan Holiday)
-  - Progress: Morning routine read (5–10 pages daily)
+  - Progress: Active
 
 ---
 

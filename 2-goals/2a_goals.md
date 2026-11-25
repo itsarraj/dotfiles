@@ -16,6 +16,11 @@
 - p2: English, German, and Russian, trilingual at native level
 - p2: Calisthenics and weight training (resistance training)
 
+# Temp Priorities
+- p1:Apply for masters/phd scholarship in china. Offer to chinese professors that I am interested in researching the hardware gpu for ai research. and not just china offer across all ms phd in asia like taiwan, south korea and japan.
+- p1: similarly apply for ms & phd in russia & EU. I am looking for free & cheapest options.
+- Russia, Europe, China, Taiwan, Japan, South Korea, UAE, Qatar, Saudi,
+
 # Daily Targets
 - Early morning good reads: 30m (Philosophy and Business)
 - Calisthenics and weight training: 30m

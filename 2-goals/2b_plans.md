@@ -1,170 +1,84 @@
-# Plans
+# Plans : When & How
 
-**Updated**: 2026-11-24
+One 10-year focus to eliminate drift. Pivot only after 10000+ deep work hours on this path.
 
----
+## The One Thing
 
-## Mission
+Low-level systems and high-performance compute infrastructure.
+Modern computer architecture (x86-64, ARM, RISC-V), SIMD and matrix extensions (AVX-512, NEON, AMX, SME), GPU compute architectures (CUDA, PTX, Tensor Cores), ASM, C, C++, Rust, and Linux internals.
+Applied to high-throughput compute kernels, AI inference runtimes, and distributed infrastructure.
+Pivoting is locked until 10000+ deep work hours are logged on this single path.
 
-Move to Bangalore. Execute day job well. Build real systems Rust on own time.  
-Find the right founder or become one. Eventually exit India.
+# P1
+- Complete all core CSE subjects (COA, OS, Data Structures, Algorithms, Digital Logic, Networks, DBMS, Compilers, TOC, Discrete Maths) to build the CS foundations missed during ECE degree and prepare for GATE CSE.
 
----
+- Low-level systems engineering: Assembly (x86-64, ARM, RISC-V), SIMD/vector units (AVX-512, NEON, AMX, SME), GPU compute architectures (CUDA, PTX), C, C++, Rust, and Linux internals (CS:APP, OSTEP, TLPI).
 
-## Reality: What I Have and What I Need
+- Learn AI from first principles: understand tensors, neural network math, and model architectures using Python as a mathematical prototyping scratchpad, then implement high-performance execution kernels and inference runtimes in C, C++, SIMD, and CUDA.
 
-| Have | Need |
-|---|---|
-| Rust job (ITC/SAP, remote) | Bangalore move done |
-| Rust iced + AI tooling experience | Low-level systems Rust portfolio |
-| Full ownership on current project | Founder network in Bangalore |
-| Resume credibility starting | Savings buffer |
-
-The day job is application-layer Rust. Real systems depth comes from own projects.  
-Both tracks run in parallel. Neither waits for the other.
+- Build and benchmark high-performance compute kernels (CPU SIMD GEMM, GPU tensor kernels), AI inference runtimes, and distributed infrastructure.
 
 ---
 
-## Track 1: Bangalore Move
+## Reference Book Inventory
 
-**Do this first. Everything else is easier from there.**
+## Gate
 
-- Find PG or room share — HSR Layout, Koramangala, Indiranagar, Whitefield
-- Budget: 3k–6k/month rent + food — easily covered on current salary
-- Target: moved within 4-6 weeks
+made easy lectures order
+- C, DLD, DM, [DS]A, COA, DS[A], TOC, OS, DBMS, CN, CD, EM, Aptitude
 
-**Once there:**
-- Nasscom 10000 Startups hub — free coworking, founder events
-- HasGeek events — Bangalore's best tech community, systems/infra people here
-- Rust India community — Telegram + meetups
-- Dukaan, Setu, Hasura, Obvious — Bangalore startups worth watching
-- IndieBio, Antler, Surge — accelerators running cohorts
+One book per subject:
+1. C Programming — The C Programming Language (Kernighan & Ritchie) [p1-refer-previous-year-gate-questions]
+2. Digital Logic — Digital Design (Morris Mano & Ciletti)
+3. Discrete Mathematics — Discrete Mathematics and Its Applications (Rosen)
+4. Data Structures — Data Structures and Algorithms Made Easy (Karumanchi)
+5. COA — Computer System Architecture (Morris Mano)
+6. Algorithms — Introduction to Algorithms (CLRS)
+7. TOC — Introduction to Automata Theory (Ullman)
+8. OS — Operating System Concepts (Silberschatz)
+9. DBMS — Database System Concepts (Elmasri & Navathe {transaction, concurrency control , normal forms, sql} / Silberschatz, Korth, Sudarshan {er diagram})
+10. Computer Networks — Computer Networks (Tanenbaum & Wetherall / Forouzan)
+11. Compiler Design — Compilers: Principles, Techniques, and Tools (Aho, Lam, Sethi, Ullman) 
+12. Engineering Mathematics — Higher Engineering Mathematics (Grewal)[p1-refer-previous-year-gate-questions]
+13. Aptitude — MadeEasy Reasoning & Aptitude
 
----
+### GATE Curriculum
+- C Programming: The C Programming Language (Kernighan & Ritchie)
+- Digital Logic: Digital Design (Morris Mano & Ciletti)
+- Discrete Mathematics: Discrete Mathematics and Its Applications (Rosen)
+- Data Structures: Data Structures and Algorithms Made Easy (Karumanchi)
+- COA: Computer System Architecture (Morris Mano)
+- Algorithms: Introduction to Algorithms (CLRS)
+- TOC: Introduction to Automata Theory (Ullman)
+- OS: Operating System Concepts (Silberschatz)
+- DBMS: Database System Concepts (Elmasri & Navathe / Silberschatz)
+- Computer Networks: Computer Networks (Tanenbaum & Wetherall)
+- Compiler Design: Compilers: Principles, Techniques, and Tools (Aho, Lam, Sethi, Ullman)
+- Engineering Mathematics: Higher Engineering Mathematics (Grewal)
+- Aptitude: MadeEasy Reasoning & Aptitude
 
-## Track 2: Day Job — Execute Well
+### GATE DA Curriculum (7 Sections Complete Inventory)
+- Section 1 (Probability & Statistics): Introduction to Probability (Bertsekas & Tsitsiklis) / Higher Engineering Mathematics (Grewal)
+- Section 2 (Linear Algebra): Introduction to Linear Algebra (Gilbert Strang)
+- Section 3 (Calculus & Optimization): Higher Engineering Mathematics (Grewal)
+- Section 4 (Python, DSA): Data Structures and Algorithms in Python (Goodrich, Tamassia, Goldwasser) / CLRS
+- Section 5 (DBMS & Warehousing): Database System Concepts (Silberschatz) + Data Mining: Concepts and Techniques (Han & Kamber)
+- Section 6 (Machine Learning): Pattern Recognition and Machine Learning (Bishop) + Hands-On Machine Learning (Geron)
+- Section 7 (Artificial Intelligence): Artificial Intelligence: A Modern Approach (Russell & Norvig)
 
-**Project**: Screen recording + AI demo tool for SAP clients  
-**Stack**: Rust iced (GUI), LangChain/LangGraph (AI backend)  
-**Position**: Solo dev, full ownership, SAP seniors as stakeholders
+### Systems Core (ECE to CSE Bridge)
+- CS:APP: Computer Systems: A Programmer's Perspective (Bryant & O'Hallaron)
+  Bridge covering data representation, x86-64 assembly, processor architecture, cache memories, virtual memory, linking, and system I/O.
+- OSTEP: Operating Systems: Three Easy Pieces (Remzi & Andrea Arpaci-Dusseau)
+  Virtualization (CPU, memory), concurrency (threads, locks, semaphores), persistence (file systems, I/O).
+- TLPI: The Linux Programming Interface (Michael Kerrisk)
+  Linux kernel interfaces, POSIX system calls, process management, signals, IPC, and network sockets.
+  
+# Rust 
+0. The Rust Programming Language, 2nd Edition (2022)
+1. "Rust for Rustaceans" (Gjengset) P0 (Must Do)
+2. "Effective Rust" (Drysdale) P1 (Do After Rustaceans)
+3. "Programming Rust" (Blandy/Orendorff) P2 (Reference Only)
+4. Luca Palmieri - Zero To Production In Rust
+5. Podman in Action (or Docker Book)
 
-How to extract maximum value from this:
-
-- Ship clean, documented Rust — it's your portfolio code
-- Push to a private or public GitHub repo (check NDA carefully)
-- If public isn't possible, write about it — blog post, tweet thread, LinkedIn post
-- Ask SAP seniors for intro to anyone doing systems/infra work
-- Treat every deliverable as a demo of what you can build solo
-
----
-
-## Track 3: Low-Level Rust Portfolio (own time)
-
-**The gap**: Day job is app-layer Rust. Systems jobs and serious startups want low-level.  
-**The fix**: Build the gap closed on your own time. 1-2 hours daily minimum.
-
-### Phase A: Rust for Rustaceans (finish this)
-
-One chapter, one build project, one ASM dissection. In order.
-
-| # | Chapter | Build | Dissect |
-|---|---|---|---|
-| 1 | Types — layout, variance, PhantomData | typed newtype fd wrappers | struct Fd(i32) vs i32 in ASM — zero cost |
-| 2 | Traits & Generics — dyn, vtables, monomorphization | trait Read/Write on custom types | dyn dispatch vs impl Trait in ASM |
-| 3 | Designing Interfaces — type-state, builder, sealed | type-state Fd (Open/Closed) | PhantomData in ASM — verify zero bytes |
-| 4 | Error Handling — thiserror, anyhow, context | syscall wrapper + typed errno enum | Result<i32,Errno> layout vs C int+errno |
-| 5 | Project Structure — workspaces, features, cfg | multi-crate: syscall-raw / syscall-safe / CLI | nm + readelf on final binary |
-| 6 | Testing — proptest, cargo-fuzz | /proc/self/status parser + fuzzer | compare to handwritten C parser output |
-| 7 | Macros — macro_rules!, tt-muncher | macro-generated syscall wrappers | do macro fns inline? cargo-asm |
-| 8 | Async — Future, Waker, Pin, state machine | minimal single-threaded async executor | Poll::Pending state machine in ASM |
-| 9 | Unsafe — raw pointers, invariants, soundness | arena/bump allocator, no_std | compare to C bump allocator — near-identical ASM |
-| 10 | Concurrency — atomics, ordering, lock-free | lock-free stack, AtomicPtr + compare_exchange | lock cmpxchg instruction directly |
-
-### Phase B: Tokio (non-negotiable for jobs)
-
-After RfR. Every Bangalore systems job uses it.
-
-- Tokio book — tasks, channels, select!, timeouts
-- Build: async TCP server, multiple clients
-- Build: async file watcher with inotify + Tokio
-
-### Phase C: Portfolio Projects (the proof)
-
-These go on GitHub with clean READMEs. This is what gets you interviews and founder attention.
-
-| Project | What it shows |
-|---|---|
-| `fd-safe` — type-safe Linux syscall wrappers | unsafe Rust, Linux API, type design |
-| `bump-alloc` — arena allocator, no_std | unsafe Rust, memory model |
-| `lockfree-stack` — AtomicPtr, compare_exchange | concurrency, atomics |
-| `mini-executor` — hand-rolled async executor | Future/Waker internals |
-| `proc-parser` — /proc/self/maps parser + fuzzer | byte parsing, cargo-fuzz, Linux knowledge |
-
-**What makes a project hireable:**
-- Error cases handled explicitly — no unwrap() everywhere
-- Tests — unit at minimum, fuzz or property ideally
-- README explains *why*, not just *what*
-- Clean commits — tell a story
-
----
-
-## Track 4: Founder Network + Startup Path
-
-**The play**: Get to Bangalore → go to events → find what's being built → find the bet.
-
-You don't need to know the idea yet. You need to be in the room.
-
-**What to look for in a co-founder or early team:**
-- Building something in infra, AI infra, developer tools, or data
-- Technical, early-stage, ideally pre-seed or just raised seed
-- Needs someone who can own engineering solo
-
-**When to make the move:**
-- If you find something worth betting on → join part-time first, then full
-- If nothing fits → build your own, once you have savings + depth
-- If a systems role abroad opens up → take it, startup follows later
-
----
-
-## Job Search (keep this warm, don't stop)
-
-Even with current job, keep one eye on the market.
-
-**Titles to search:**
-- Rust Engineer / Rust Developer
-- Systems Engineer — Rust
-- Infrastructure Engineer
-- Platform Engineer
-- Storage Engineer
-
-**Companies (Bangalore priority):**
-- Zscaler, Fortanix — security/networking, real low-level Rust
-- Nutanix, Commvault, Druva, Aerospike — storage/infra
-- MongoDB, Databricks — database internals
-- Startups on Wellfound, Cutshort, Instahyre
-
-**Boards:**
-- RustJobs.dev, LinkedIn, Cutshort, Instahyre, Wellfound, Hirist
-
----
-
-## Daily Execution
-
-One thing at a time. No context switching mid-session.
-
-```
-Morning     → Day job (ship, build, document)
-Evening     → Rust portfolio work (RfR chapter or build project)
-Weekends    → Events, meetups, founder conversations
-```
-
----
-
-## What's Parked
-
-- GATE — not relevant right now
-- MS Europe/USA — revisit after 1-2 years in Bangalore with savings
-- CUDA, SIMD, AVX-512, Assembly deep work — after Tokio + portfolio done
-- Digital Logic, COA — not relevant right now
-
-Not abandoned. Sequenced. Exit India first. Then go deep on the technical north star.
