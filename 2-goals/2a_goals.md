@@ -1,4 +1,10 @@
 # My Journey & Life Goals
+- I can't not get obsessed with my goals.
+"There is a relationship between discipline, motivation, and obsession, right? So discipline is 'I will make myself do the thing.' Motivation is 'I want to do the thing.' And obsession is 'I can't not do the thing.'"
+
+You remember how you were obsessed with bodybuilding and loosing fat and gaining muscles. I was doijg 3-8 planks per day and I got abs. I was lifting mutiple time a day. I got results similarly i was obsessed with rust so read the whole book. 
+Like I was obsessed with getting into iit that in class 12 I studied 12-16 hr a day just to pass class 12 and you know you built that results in just 2 months. even qualified the jee mains. I will leave this conversation here because you know what you can do once obsessed. 
+
 - Getting Rich is my primary goal.
 - I must be wealthy oligarch control of power and money.
 - No debt
