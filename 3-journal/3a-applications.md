@@ -100,6 +100,21 @@ Email:
 nilsiitkgp@gmail.com
 
 ---
+how to find professor 
+"chemistry professor china" search on google
+
+email format
+
+"
+1st para - intro
+2nd para - show research interest match with professor, after i read your this paper, i want to do ms/phd under your supervision. i have this and this skill and this and this research paper.
+
+ATTACH only CV
+"
+DON'T BCC or CC
+
+---
+
 ## Applications 
 
 ### 1. Taiwan

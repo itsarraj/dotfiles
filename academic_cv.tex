@@ -1,0 +1,309 @@
+%
+% Academic CV (based on Dubasi Pavan Kumar Academic CV LaTeX Template)
+% Tailored for Master's Applications: GPU Software Stack & AI Execution Runtimes
+%
+
+\documentclass[a4paper,11pt]{article}
+
+% Package imports
+\usepackage{latexsym}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage[empty]{fullpage}
+\usepackage{wrapfig}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{marvosym}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{cfr-lm}
+\usepackage[T1]{fontenc}
+\usepackage{fontawesome5}
+
+% Color definitions
+\definecolor{darkblue}{RGB}{0,0,139}
+
+% Page layout
+\setlength{\multicolsep}{0pt}
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\geometry{left=1.4cm, top=0.8cm, right=1.2cm, bottom=1cm}
+\setlength{\footskip}{5pt}
+
+% Hyperlink setup
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=darkblue,
+    filecolor=darkblue,
+    urlcolor=darkblue,
+    pdftitle={Animesh Raj - Academic CV},
+    pdfauthor={Animesh Raj}
+}
+
+% Custom box settings
+\usepackage[most]{tcolorbox}
+\tcbset{
+    frame code={},
+    center title,
+    left=0pt,
+    right=0pt,
+    top=0pt,
+    bottom=0pt,
+    colback=gray!20,
+    colframe=white,
+    width=\dimexpr\textwidth\relax,
+    enlarge left by=-2mm,
+    boxsep=4pt,
+    arc=0pt,outer arc=0pt,
+}
+
+% URL style
+\urlstyle{same}
+
+% Text alignment
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
+
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item{
+    \textbf{#1}{\hspace{0.5mm}#2 \vspace{-0.5mm}}
+  }
+}
+
+\newcommand{\resumePOR}[3]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1}\hspace{0.3mm}#2 & \textit{\small{#3}}
+    \end{tabular*}
+    \vspace{-2mm}
+}
+
+\newcommand{\resumeSubheading}[4]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#4}} \\
+        \textit{\footnotesize{#3}} &  \footnotesize{#2}\\
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeProject}[4]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#3}} \\
+        \footnotesize{\textit{#2}} & \footnotesize{#4}
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand{\labelitemii}{$\vcenter{\hbox{\tiny$\circ$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=1mm,label={}]}
+\newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=1.7mm, rightmargin=2ex,label={}]}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=3ex,labelsep=1.2mm,itemsep=0.5mm]}
+
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{2mm}}
+\newcommand{\resumeHeadingSkillEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\cvsection}[1]{%
+\vspace{2mm}
+\begin{tcolorbox}
+    \textbf{\large #1}
+\end{tcolorbox}
+    \vspace{-4mm}
+}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}%
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}%
+\newcolumntype{C}{>{\centering\arraybackslash}X}%
+
+% Commands for icon sizing
+\newcommand{\socialicon}[1]{\raisebox{-0.05em}{\resizebox{!}{1em}{#1}}}
+
+% Font options
+\newcommand{\headerfontiii}{\fontfamily{ppl}\selectfont} % Palatino (elegant serif)
+
+\begin{document}
+\headerfontiii
+
+%---------- HEADER ----------
+\begin{center}
+    {\Huge\textbf{ANIMESH RAJ}}
+\end{center}
+\vspace{-5.5mm}
+
+\begin{center}
+    {\small
+    \socialicon{\faPhone}\ +91-9102888850 \textbar\ 
+    \socialicon{\faEnvelope}\ \href{mailto:animesh080808@gmail.com}{animesh080808@gmail.com} \textbar\ 
+    \socialicon{\faGithub}\ \href{https://github.com/itsarraj}{github.com/itsarraj}
+    % \textbar\ \socialicon{\faLinkedin}\ \href{https://www.linkedin.com/in/itsarraj}{linkedin.com/in/itsarraj}
+    % \textbar\ \socialicon{\faGlobe}\ \href{https://itsarraj.xyz}{itsarraj.xyz}
+    }
+\end{center}
+\vspace{-4mm}
+
+%---------- RESEARCH INTERESTS & OBJECTIVE ----------
+\section{\textbf{Research Interests \& Objective}}
+\vspace{1mm}
+{\small
+Prospective Master's applicant seeking graduate research and scholarship opportunities focused on the \textbf{software stack above GPU/accelerator hardware} and \textbf{AI model execution runtimes} to reduce computation costs and maximize hardware utilization. My primary research interests span:
+\begin{itemize}[leftmargin=3ex, itemsep=0.4mm, topsep=1mm]
+    \item \textbf{GPU \& Accelerator Software Stack:} Runtime abstractions, task/operator scheduling, and system software bridging AI workloads across CPUs, GPUs, VMs, and specialized accelerators.
+    \item \textbf{AI Execution \& Inference Runtimes:} Low-overhead execution engines, per-node model execution density optimization, and telemetry-driven profiling to cut data center compute costs.
+    \item \textbf{High-Performance \& Distributed Systems:} Memory-safe runtime engineering (\textbf{Rust}, legacy \textbf{C++} migration), asynchronous concurrency (\textbf{Tokio}, \textbf{gRPC}), fault-tolerant consensus, and compiler/type-system reliability.
+\end{itemize}
+}
+\vspace{-3mm}
+
+%---------- EDUCATION ----------
+\section{\textbf{Education}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+    {University Institute of Technology, The University of Burdwan}{West Bengal, India}
+    {Bachelor of Engineering in Electronics and Communication Engineering}{2019 -- 2023}
+    \resumeItemListStart
+        \item CGPA: \textbf{7.96 / 10.0}
+        % \item \textbf{Undergraduate Project / Thesis:} <Project Title> (Advisor: <Name>)
+        % \item \textbf{Relevant Coursework:} <Course 1, Course 2, Course 3>
+        % \item \textbf{Medium of Instruction:} English
+    \resumeItemListEnd
+
+\resumeSubheading
+    {Jawahar Vidya Mandir Shyamali}{Ranchi, India}
+    {AISSCE --- Class XII (Physics, Chemistry, Mathematics, and Computer Science)}{2016 -- 2018}
+    \resumeItemListStart
+        \item Percentage: \textbf{74.2\%}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+\vspace{-6mm}
+
+%---------- EXPERIENCE ----------
+\section{\textbf{Systems \& Software Engineering Experience}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+    {TinkerBloX}{Full Time --- Coimbatore, India}
+    {Rust Engineer}{July 2026 -- November 2026}
+    \resumeItemListStart
+        \item Co-developed \textbf{UltraEdge}, the company's core execution infrastructure in \textbf{Rust}---a modular, high-efficiency runtime engineered to optimize AI workload execution across \textbf{CPUs, GPUs, VMs, and accelerators}.
+        \item Contributed to reducing data center compute costs and operational expenditure (OPEX) by minimizing idle compute cycles and increasing model execution density per node.
+        \item Benchmarked multi-hour runtime performance using \textbf{Netdata} and developed automated \textbf{Python} and \textbf{Bash} pipelines for telemetry logging and performance analysis.
+    \resumeItemListEnd
+
+\resumeSubheading
+    {Finkhoz Roboadvisory}{Full Time --- Gurugram, India}
+    {Senior Full Stack Engineer}{September 2025 -- May 2026}
+    \resumeItemListStart
+        \item Engineered latency-sensitive \textbf{Rust (Actix-web)} and \textbf{PostgreSQL} services for stock basket trading, portfolio accounting, and ledger workflows, ensuring audit-safe data consistency across distributed services.
+        \item Built an \textbf{MCP server} in \textbf{Rust (Actix-web)} with analytics APIs to provide LLM-driven insights and customized outputs for internal tools.
+        \item Modified core open-source infrastructure (\textbf{Novu}) for extensibility/performance and designed event-driven delivery pipelines (\textbf{Amazon SES}), \textbf{ABAC/RBAC} access controls, centralized i18n, and user-journey analytics across Rust, Python, and TypeScript components.
+        \item Led cross-functional delivery of the \textbf{React Native} mobile app, \textbf{React} web/admin platforms, \textbf{Razorpay} billing/webhook reconciliation, and CI/CD automation.
+    \resumeItemListEnd
+
+\resumeSubheading
+    {Tata Consultancy Services (TCS)}{Full Time --- Kolkata, India}
+    {Full Stack Engineer}{December 2023 -- September 2025}
+    \resumeItemListStart
+        \item Migrated critical distributed banking services from legacy \textbf{C++} to \textbf{Rust (Actix-web)}, ensuring memory safety and reducing crash incidents.
+        \item Designed and maintained high-throughput, fault-tolerant real-time financial data processing services using \textbf{gRPC} and \textbf{Tokio}, implementing \textbf{leader election} and \textbf{consensus mechanisms} to improve availability.
+        \item Developed \textbf{MCP server} components in \textbf{Rust} and \textbf{TypeScript} for LLM orchestration, prompt routing, tool-based agent architecture, and streaming LLM APIs with \textbf{JWT} authentication and \textbf{Redis} caching.
+    \resumeItemListEnd
+
+\resumeSubheading
+    {Topstack}{Freelance --- Remote}
+    {Full Stack Engineer}{September 2022 -- October 2023}
+    \resumeItemListStart
+        \item Developed \textbf{Rust (Actix-web)} microservices backed by \textbf{PostgreSQL} and \textbf{Redis} alongside \textbf{GraphQL} and \textbf{WebSocket} APIs for real-time trading streams under concurrent loads, \textbf{React.js} dashboards, and Docker/Nginx/AWS CI/CD infrastructure.
+    \resumeItemListEnd
+
+\resumeSubheading
+    {Optimum Wellness}{Freelance --- Remote}
+    {Full Stack Engineer}{April 2022 -- July 2022}
+    \resumeItemListStart
+        \item Built \textbf{Rust (Actix-web)} and \textbf{Node.js} distributed services for payment pipelines backed by \textbf{PostgreSQL}, \textbf{Redis}, \textbf{GraphQL}, \textbf{WebSockets}, webhook verification, and containerized Docker/Nginx/AWS deployments.
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+\vspace{-6mm}
+
+%---------- OPEN SOURCE CONTRIBUTIONS ----------
+\section{\textbf{Open-Source \& Compiler Ecosystem Contributions}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+
+\resumeProject
+    {time-rs/time --- Merged PR \#786}
+    {Core Rust date/time crate depended on by Actix-web, cookie, and downstream libraries}
+    {Open Source}
+    {{}[\href{https://github.com/time-rs/time/pull/786}{\textcolor{darkblue}{\faGithub\ PR \#786}}]}
+    \resumeItemListStart
+        \item Resolved a compiler trait-coherence error (\texttt{E0119}) in \texttt{rustc} $\geq$ \texttt{1.95.0} by replacing associated type projections with concrete types via \texttt{target\_ty!()} in macro-generated \texttt{From} implementations in \texttt{format\_item.rs}.
+        \item Restored downstream crate compilation under stricter blanket-impl overlap checks; fix confirmed by maintainers against an upstream Rust compiler trait-solver issue (\texttt{rust-lang/rust\#85898}).
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+\vspace{-6mm}
+
+%---------- PROJECTS ----------
+\section{\textbf{Selected Technical Projects}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+
+\resumeProject
+    {Kraftisium: Hybrid AI Retrieval \& Job-Matching Platform}
+    {Tools: Rust (Actix-web), Tantivy, Sentence-Transformers, React (TS), React Native, PostgreSQL, Redis}
+    {In Development}
+    {{}[\href{https://kraftisium.xyz}{\textcolor{darkblue}{\faIcon{globe}}} \href{https://github.com/itsarraj/kraftisium}{\textcolor{darkblue}{\faGithub}}]}
+    \resumeItemListStart
+        \item Engineered a hybrid AI matching pipeline: resume skill extraction $\rightarrow$ \textbf{Tantivy} full-text search prefiltering $\rightarrow$ \textbf{sentence-transformer} embeddings (cosine similarity) $\rightarrow$ ranked job/candidate suggestions persisted in \textbf{PostgreSQL}, with an in-process keyword-ranking fallback when the matcher service is offline.
+        \item Built a \textbf{Rust (Actix-web)} BFF serving \textbf{React (TS)} web and \textbf{Expo/React Native} Android clients with \textbf{JWT/RBAC/Google OAuth}, \textbf{Redis} rate limiting and token revocation, S3-compatible object storage, a background \textbf{Arbeitnow} ingestion worker, \textbf{Razorpay} webhook billing, and \textbf{Docker/Nginx} TLS deployment.
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+\vspace{-5mm}
+
+%---------- SKILLS ----------
+\section{\textbf{Technical Skills}}
+\vspace{-0.4mm}
+\resumeHeadingSkillStart
+    \resumeSubItem{Programming Languages:}
+        {Rust, Python, TypeScript, JavaScript, Bash (plus legacy C++ service migration experience)}
+    \resumeSubItem{Systems, Runtimes \& Concurrency:}
+        {Tokio, Actix-web, gRPC, WebSockets, GraphQL, Leader Election \& Consensus, NATS, RabbitMQ, Apache Kafka}
+    \resumeSubItem{AI Infrastructure \& Retrieval:}
+        {Heterogeneous AI Execution Runtimes (UltraEdge), MCP Servers, LLM Orchestration \& Streaming APIs, Sentence-Transformer Embeddings, Tantivy}
+    \resumeSubItem{Databases \& Storage:}
+        {PostgreSQL, Redis, MariaDB, MongoDB, SQLite, S3-Compatible Object Storage}
+    \resumeSubItem{DevOps, Telemetry \& Tooling:}
+        {Docker, Kubernetes, Linux (Ubuntu, Arch Linux, systemd), Nginx, AWS (EC2, S3, RDS), Netdata, Jenkins, CI/CD, Git}
+\resumeHeadingSkillEnd
+
+%---------- OPTIONAL SECTIONS (UNCOMMENT ONLY WITH VERIFIED DETAILS) ----------
+% \section{\textbf{Leadership Experience}}
+% \section{\textbf{Certifications}}
+% \section{\textbf{References}}
+
+\end{document}

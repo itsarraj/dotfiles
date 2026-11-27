@@ -1,0 +1,119 @@
+{
+  "01-yang-feng": {
+    "attachment": "Animesh_Raj_Academic_CV.pdf",
+    "from": "animesh080808@gmail.com",
+    "pdf_sha256": "8e5826bd8e2c919eacd474038aa564b370e7b65046870fea1e282002ccaeb798",
+    "sent_at": "2026-11-27T17:43:42.862634+00:00",
+    "subject": "Prospective 2027 Master's Student (CSC Scholarship) \u2013 Rust Systems, Compilers & C++-to-Rust",
+    "to": "fengyang@nju.edu.cn",
+    "transport": "manual"
+  },
+  "02-guangli-li": {
+    "attachment": "Animesh_Raj_Academic_CV.pdf",
+    "from": "animesh080808@gmail.com",
+    "pdf_sha256": "51ba199c18e9dbc3a00dd5f3e5ea4f79d37d70c733f806b6c100bd3571048d2b",
+    "sent_at": "2026-11-27T17:43:42.862791+00:00",
+    "subject": "Prospective 2027 Master's Student (CAS-ANSO) \u2013 AI Execution Runtimes & GPU Software Stack",
+    "to": "liguangli@ict.ac.cn",
+    "transport": "manual"
+  },
+  "03-jiacheng-zhao": {
+    "attachment": "Animesh_Raj_Academic_CV.pdf",
+    "from": "animesh080808@gmail.com",
+    "pdf_sha256": "ea0be856f73565c4cc8cd97aa68a1ea2152531b4636a97b1c2d3c8b88c48cc5a",
+    "sent_at": "2026-11-27T17:43:42.862918+00:00",
+    "subject": "Prospective 2027 Master's Student (CAS-ANSO) \u2013 GPU Runtime, Compiler & Systems Co-Design",
+    "to": "zhaojiacheng@ict.ac.cn",
+    "transport": "manual"
+  },
+  "04-huimin-cui": {
+    "attachment": "Animesh_Raj_Academic_CV.pdf",
+    "from": "animesh080808@gmail.com",
+    "pdf_sha256": "5cc7c1c3ae51e444172530fdd72308e6ef255a6aa79300a71c94b2d3d8c645ba",
+    "sent_at": "2026-11-27T17:43:42.863039+00:00",
+    "subject": "Prospective 2027 Master's Student (CAS-ANSO) \u2013 AI Compilers & Accelerator Runtime Systems",
+    "to": "cuihm@ict.ac.cn",
+    "transport": "manual"
+  },
+  "05-dingwen-tao": {
+    "attachment": "Animesh_Raj_Academic_CV.pdf",
+    "from": "animesh080808@gmail.com",
+    "pdf_sha256": "b58c2158d1600779e972ca28cae988426cbb71bc2e8824a1bb4c85676c844030",
+    "sent_at": "2026-11-27T17:43:42.863159+00:00",
+    "subject": "Prospective 2027 Master's Student (CAS-ANSO) \u2013 Cost/Energy-Efficient AI Runtimes & LLM Inference",
+    "to": "taodingwen@ict.ac.cn",
+    "transport": "manual"
+  },
+  "06-heng-zhang": {
+    "attachment": "Animesh_Raj_Academic_CV.pdf",
+    "from": "animesh080808@gmail.com",
+    "pdf_sha256": "012fc08fa63459712b80c851ecd3d7e662dccbbef26619cbc537997073a62214",
+    "sent_at": "2026-11-27T17:43:42.863279+00:00",
+    "subject": "Prospective 2027 Master's Student (CAS-ANSO) \u2013 Heterogeneous GPU Runtimes & LLM Inference",
+    "to": "zhangheng17@iscas.ac.cn",
+    "transport": "manual"
+  },
+  "07-yungang-bao": {
+    "attachment": "Animesh_Raj_Academic_CV.pdf",
+    "from": "animesh080808@gmail.com",
+    "pdf_sha256": "01d5b618377b4917c49f0aa0b5d8bcb1252771c30b91c51f52181c26cd24a3a7",
+    "sent_at": "2026-11-27T17:43:42.863401+00:00",
+    "subject": "Prospective 2027 Master's Student (CAS-ANSO) \u2013 Open-Source Processor & Software-Hardware Co-Design",
+    "to": "baoyg@ict.ac.cn",
+    "transport": "manual"
+  },
+  "08-mingyu-chen": {
+    "attachment": "Animesh_Raj_Academic_CV.pdf",
+    "from": "animesh080808@gmail.com",
+    "pdf_sha256": "2b44c0ffd51111aeef762f033f8099320e6b7a3288a9346874b5f2cb3c56d277",
+    "sent_at": "2026-11-27T17:43:42.863521+00:00",
+    "subject": "Prospective 2027 Master's Student (CAS-ANSO) \u2013 GPU Microarchitecture & System Co-Design",
+    "to": "cmy@ict.ac.cn",
+    "transport": "manual"
+  },
+  "09-guangming-tan": {
+    "attachment": "Animesh_Raj_Academic_CV.pdf",
+    "from": "animesh080808@gmail.com",
+    "pdf_sha256": "c97bb686a0737f0a7628d0ea818142a5a407a58a53da5d34ba6dee44e86d4b43",
+    "sent_at": "2026-11-27T17:43:42.863640+00:00",
+    "subject": "Prospective 2027 Master's Student (CAS-ANSO) \u2013 GPU Microarchitecture, ISA & Runtime Tuning",
+    "to": "tgm@ict.ac.cn",
+    "transport": "manual"
+  },
+  "10-zidong-du": {
+    "attachment": "Animesh_Raj_Academic_CV.pdf",
+    "from": "animesh080808@gmail.com",
+    "pdf_sha256": "2d420b4501e7d4a544a3847eae284ce54f0f316ec626c44e71babe2a71460160",
+    "sent_at": "2026-11-27T17:43:42.863758+00:00",
+    "subject": "Prospective 2027 Master's Student (CAS-ANSO) \u2013 AI Accelerator Architecture & Software Co-Design",
+    "to": "duzidong@ict.ac.cn",
+    "transport": "manual"
+  },
+  "11-xing-hu": {
+    "attachment": "Animesh_Raj_Academic_CV.pdf",
+    "from": "animesh080808@gmail.com",
+    "pdf_sha256": "9cad0af7b3a3c4d7e560e6528b3e0e42da0debf373fc31ccaf274b776b969cc9",
+    "sent_at": "2026-11-27T17:43:42.863879+00:00",
+    "subject": "Prospective 2027 Master's Student (CAS-ANSO) \u2013 AI Processor Architecture & Automated HDL/Tooling",
+    "to": "huxing@ict.ac.cn",
+    "transport": "manual"
+  },
+  "12-chenxi-wang": {
+    "attachment": "Animesh_Raj_Academic_CV.pdf",
+    "from": "animesh080808@gmail.com",
+    "pdf_sha256": "8b355919e808328c55c271cabac77a44470c28aa14c77f580901facfe46bee7f",
+    "sent_at": "2026-11-27T17:43:42.863998+00:00",
+    "subject": "Prospective 2027 Master's Student (CAS-ANSO) \u2013 GPU Systems, Disaggregation & AI Runtimes",
+    "to": "wangchenxi@ict.ac.cn",
+    "transport": "manual"
+  },
+  "13-tianyi-liu": {
+    "attachment": "Animesh_Raj_Academic_CV.pdf",
+    "from": "animesh080808@gmail.com",
+    "pdf_sha256": "5d770a74264d057c175a8af2a25209f8c68fd5a868ffea4dc2ed1c10c30e2c03",
+    "sent_at": "2026-11-27T17:47:35.230153+00:00",
+    "subject": "Prospective 2027 Master's Student (CAS-ANSO) \u2013 Heterogeneous Accelerators & Resource-Efficient AI Systems",
+    "to": "liutianyi@ict.ac.cn",
+    "transport": "smtp"
+  }
+}
